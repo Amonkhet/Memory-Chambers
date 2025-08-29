@@ -1,0 +1,21 @@
+{
+  "repoUrl": "https://github.com/feit-comp30019/2024s2-project-2-spirit",
+  "teamName": "Spirit",
+  "teamMembers": [
+    {
+      "name": "Joly Lin",
+      "github": "jolylin620",
+      "email": "zizlin@student.unimelb.edu.au"
+    },
+    {
+      "name": "Second Team Member Name",
+      "github": "second-github-username",
+      "email": "<second_member_email>@student.unimelb.edu.au"
+    },
+    {
+      "name": "Third Team Member Name",
+      "github": "third-github-username",
+      "email": "<third_member_email>@student.unimelb.edu.au"
+    }
+  ]
+}
