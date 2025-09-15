@@ -94,7 +94,9 @@ As more spaces are unlocked, players will need to solve increasingly challenging
 *Updated 15-09-2025 v0*
 - **Game World**
 This is a 3D game with isometric view. Camera will remain fixed but will zoom in and out accordingly. When player move in the space, the camera will also follows their movement smoothly, but it will always fixed to a isometric view. The game world consists of seven connected spaces, where each space is a separate diorama in a roughly cube shape. Player will need to solve puzzles, complete certain tasks (like racing or fishing) to acquire "body fragment" in a space, which will give the protagonist new ability and unlock the entrance to the next space. Each space will have different game mechanic and gameplay. The major game mechanic is that when player entering a space, they will either shrink or grow according to the set of relevant space. Any object they carried will also change to the scale of the space, which is crucial to solve puzzle. As an example, players will find themself moving from one space to another to get use of this scale-changing mechanic to change a scale of an object, which will solve a certain puzzle.
-
+<p align="center">
+  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="300">
+</p>
 
 - **Objects**
 	- Background
@@ -180,8 +182,10 @@ UI design has relatively low priority, this will be updated later when games' fe
 
 - Minimalist art style, simple and clear to use.
 - Considering our game is a puzzle game, all interfaces should maintain minimum amount of buttons and notifications. Allowing players to fully immersed in the world and focused on puzzle-solving experience.
-**Illustrations**
-
+**Illustrations Draft**
+<p align="center">
+  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="300">
+</p>
 ---
 
 #### Technology and Tools
