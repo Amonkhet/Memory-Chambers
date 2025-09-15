@@ -113,8 +113,7 @@ This is a 3D game with isometric view. Camera will remain fixed but will zoom in
 	- Player can throw, drop, push, pull, and grab interactive object. 
 	- Player cannot jump or climb a wall. 
 
-  
-- **Concept**
+- **Game Level Concept Draft**
 <p align="center">
   <img src="ConceptArt/Draft/d671fbfcf743ee31fb6295ed27a66ec7.jpg" width="300">
 </p>
@@ -257,7 +256,7 @@ Setting
 
 | Shared Task                             |
 | --------------------------------------- |
-| 1. Game Design<br>                      |
+| 1. Game Design                          |
 | 2. Shader Development                   |
 | 3. Art assets (model, texture, )        |
 | 4. Integration between different assets |
