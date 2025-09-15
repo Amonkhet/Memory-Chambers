@@ -159,6 +159,7 @@ Some other references showing what our game level might look like:
 
 
 
+
 - **Sound and Music**
   Sound and Music will focus on the theme of relaxing and calm. As our protagonist will experienced through their different memories, background music will also shift according to the scene. But the major tone is peaceful, gentle and soothing, implying our theme of healing and recovering yourself.
 
