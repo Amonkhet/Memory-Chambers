@@ -115,23 +115,14 @@ This is a 3D game with isometric view. Camera will remain fixed but will zoom in
 
 - **Game Level Concept Draft**
 <p align="center">
-  <img src="ConceptArt/Draft/d671fbfcf743ee31fb6295ed27a66ec7.jpg" width="300">
+  <img src="ConceptArt/Draft/d671fbfcf743ee31fb6295ed27a66ec7.jpg" width="250" style="margin:10px;">
+  <img src="ConceptArt/Draft/b4732e5776f76dc3eab5ebd654fd655f.jpg" width="250" style="margin:10px;">
+  <img src="ConceptArt/Draft/dd6691c469b383b359bfed12c3523f44.jpg" width="250" style="margin:10px;">
 </p>
 <p align="center">
-  <img src="ConceptArt/Draft/b4732e5776f76dc3eab5ebd654fd655f.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/dd6691c469b383b359bfed12c3523f44.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/8cdcfa75be1a5c3f011dd8d5481d1562.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/b2252f9577dc62f084950ba853c2e2d8.jpg" width="300">
-</p>
-
-<p align="center">
-  <img src="ConceptArt/Draft/ea334d248b8be6a5bc66acfb16bf6504.jpg" width="300">
+  <img src="ConceptArt/Draft/8cdcfa75be1a5c3f011dd8d5481d1562.jpg" width="250" style="margin:10px;">
+  <img src="ConceptArt/Draft/b2252f9577dc62f084950ba853c2e2d8.jpg" width="250" style="margin:10px;">
+  <img src="ConceptArt/Draft/ea334d248b8be6a5bc66acfb16bf6504.jpg" width="250" style="margin:10px;">
 </p>
 ---
 
@@ -146,32 +137,22 @@ Following are some other Moebius art style we are looking.
 
 
 <p align="center">
-  <img src="ConceptArt/References/MoebiusGondola.jpg" width="300">
+  <img src="ConceptArt/References/MoebiusGondola.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/ab5ac96353a641a498f1b29ab39edb23.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/Art_of_Moebius_.webp" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/67ca4ff66807549da432473482da0c89.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/1266e1f3-d1b8-42aa-8dc8-603ffd64f44f_rw_1920.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/a14fae1d-2cb3-442b-b892-e08e28c12a6f_rw_1920.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/8e2699c4-8fc9-4dbc-8a71-9dc807500d22_rw_1920.jpg" width="200" style="margin:10px;">
 </p>
+
 <p align="center">
-  <img src="ConceptArt/References/ab5ac96353a641a498f1b29ab39edb23.jpg" width="300">
+  <b>Some other references showing what our game level might look like:</b>
 </p>
+
 <p align="center">
-  <img src="ConceptArt/References/Art_of_Moebius_.webp" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/References/67ca4ff66807549da432473482da0c89.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/References/1266e1f3-d1b8-42aa-8dc8-603ffd64f44f_rw_1920.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/References/a14fae1d-2cb3-442b-b892-e08e28c12a6f_rw_1920.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/References/8e2699c4-8fc9-4dbc-8a71-9dc807500d22_rw_1920.jpg" width="300">
-</p>
-Some other references showing what our game level might look like:
-<p align="center">
-  <img src="ConceptArt/References/9a30bbf5fb2dbd64c2e59b1e65992d1f.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="300">
+  <img src="ConceptArt/References/9a30bbf5fb2dbd64c2e59b1e65992d1f.jpg" width="250" style="margin:10px;">
+  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="250" style="margin:10px;">
 </p>
 
 
