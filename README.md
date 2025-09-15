@@ -95,45 +95,6 @@ As more spaces are unlocked, players will need to solve increasingly challenging
 - **Game World**
 This is a 3D game with isometric view. Camera will remain fixed but will zoom in and out accordingly. When player move in the space, the camera will also follows their movement smoothly, but it will always fixed to a isometric view. The game world consists of seven connected spaces, where each space is a separate diorama in a roughly cube shape. Player will need to solve puzzles, complete certain tasks (like racing or fishing) to acquire "body fragment" in a space, which will give the protagonist new ability and unlock the entrance to the next space. Each space will have different game mechanic and gameplay. The major game mechanic is that when player entering a space, they will either shrink or grow according to the set of relevant space. Any object they carried will also change to the scale of the space, which is crucial to solve puzzle. As an example, players will find themself moving from one space to another to get use of this scale-changing mechanic to change a scale of an object, which will solve a certain puzzle.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p align="center">
-  <img src="ConceptArt/Draft/8cdcfa75be1a5c3f011dd8d5481d1562.jpg" width="300">
-</p>
-
-<p align="center">
-  <img src="ConceptArt/Draft/b2252f9577dc62f084950ba853c2e2d8.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/b4732e5776f76dc3eab5ebd654fd655f.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/d671fbfcf743ee31fb6295ed27a66ec7.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/dd6691c469b383b359bfed12c3523f44.jpg" width="300">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/ea334d248b8be6a5bc66acfb16bf6504.jpg" width="300">
-</p>
-
-
-
-
-
 - **Objects**
 	- Background
 		- All background objects (set, furnitures, trees etc.) is static unless there is a special mechanic attached to it. Background scenery like sky and mountain will demonstrated using a image for optimisation purpose.
@@ -152,6 +113,27 @@ This is a 3D game with isometric view. Camera will remain fixed but will zoom in
 	- Player can throw, drop, push, pull, and grab interactive object. 
 	- Player cannot jump or climb a wall. 
 
+  
+- **Concept**
+<p align="center">
+  <img src="ConceptArt/Draft/d671fbfcf743ee31fb6295ed27a66ec7.jpg" width="300">
+</p>
+<p align="center">
+  <img src="ConceptArt/Draft/b4732e5776f76dc3eab5ebd654fd655f.jpg" width="300">
+</p>
+<p align="center">
+  <img src="ConceptArt/Draft/dd6691c469b383b359bfed12c3523f44.jpg" width="300">
+</p>
+<p align="center">
+  <img src="ConceptArt/Draft/8cdcfa75be1a5c3f011dd8d5481d1562.jpg" width="300">
+</p>
+<p align="center">
+  <img src="ConceptArt/Draft/b2252f9577dc62f084950ba853c2e2d8.jpg" width="300">
+</p>
+
+<p align="center">
+  <img src="ConceptArt/Draft/ea334d248b8be6a5bc66acfb16bf6504.jpg" width="300">
+</p>
 ---
 
 #### **Art and Audio**
@@ -221,6 +203,10 @@ UI design has relatively low priority, this will be updated later when games' fe
 
 - **Illustrations Draft**
 
+Homepage
+<p align="center">
+  <img src="ConceptArt/Draft/home.jpg" width="300">
+</p>
 Gameplay interface (Hand as mouse)
 <p align="center">
   <img src="ConceptArt/Draft/7c7423e89e7f2b950067417783b41a9c.jpg" width="300">
