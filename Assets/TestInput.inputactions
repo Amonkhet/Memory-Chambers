@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "TestInput",
+    "maps": [
+        {
+            "name": "PlayerMove",
+            "id": "6e2000b7-929a-44d9-bac3-fdb34ccc02f4",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "b398de4f-9e3e-4003-854d-fbb355e4c08c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GetPoint",
+                    "type": "Value",
+                    "id": "974be099-297d-4868-a108-3acb2ffeeae6",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "70a087f9-b2ac-4a3a-9616-5c76b7ce63f5",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66275696-bae9-40d8-b8e6-edfa83b2b5e6",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GetPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
