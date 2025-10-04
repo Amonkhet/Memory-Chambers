@@ -10,14 +10,20 @@ public class SyncCollider : MonoBehaviour
 
     BoxCollider boxCollider;
 
-    void Awake()
+    void OnEnable()
     {
         boxCollider = GetComponent<BoxCollider>();
-        if (artRoot == null)
+        if (artRoot == null && transform.parent != null)
         {
-            var found = transform.parent != null ? transform.parent.Find("Art") : null;
-            if (found != null) artRoot = found;
+            var t = transform.parent.Find("Art");
+            if (t) artRoot = t;
         }
+        FitCollider();
+    }
+
+    void OnValidate()
+    {
+        if (boxCollider == null) boxCollider = GetComponent<BoxCollider>();
         FitCollider();
     }
 
@@ -32,36 +38,44 @@ public class SyncCollider : MonoBehaviour
     {
         if (boxCollider == null || artRoot == null) return;
 
-        var renderers = artRoot.GetComponentsInChildren<Renderer>();
+        var renderers = artRoot.GetComponentsInChildren<Renderer>(true);
         if (renderers.Length == 0) return;
 
-        Bounds combinedBounds = renderers[0].bounds;
+        var toLocal = transform.worldToLocalMatrix;
+
+        Vector3 min = new(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
+        Vector3 max = new(float.NegativeInfinity, float.NegativeInfinity, float.NegativeInfinity);
+
         foreach (var r in renderers)
-            combinedBounds.Encapsulate(r.bounds);
-
-        Vector3[] corners =
         {
-            new(combinedBounds.min.x, combinedBounds.min.y, combinedBounds.min.z),
-            new(combinedBounds.max.x, combinedBounds.min.y, combinedBounds.min.z),
-            new(combinedBounds.min.x, combinedBounds.max.y, combinedBounds.min.z),
-            new(combinedBounds.min.x, combinedBounds.min.y, combinedBounds.max.z),
-            new(combinedBounds.max.x, combinedBounds.max.y, combinedBounds.min.z),
-            new(combinedBounds.max.x, combinedBounds.min.y, combinedBounds.max.z),
-            new(combinedBounds.min.x, combinedBounds.max.y, combinedBounds.max.z),
-            new(combinedBounds.max.x, combinedBounds.max.y, combinedBounds.max.z),
-        };
+            var lb = r.localBounds;               // OBB in renderer local space
+            var c = lb.center;
+            var e = lb.extents;
 
-        Vector3 localMin = new(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
-        Vector3 localMax = new(float.NegativeInfinity, float.NegativeInfinity, float.NegativeInfinity);
+            // 8 corners in renderer local space
+            Vector3[] corners =
+            {
+                c + new Vector3( e.x,  e.y,  e.z),
+                c + new Vector3( e.x,  e.y, -e.z),
+                c + new Vector3( e.x, -e.y,  e.z),
+                c + new Vector3( e.x, -e.y, -e.z),
+                c + new Vector3(-e.x,  e.y,  e.z),
+                c + new Vector3(-e.x,  e.y, -e.z),
+                c + new Vector3(-e.x, -e.y,  e.z),
+                c + new Vector3(-e.x, -e.y, -e.z),
+            };
 
-        for (int i = 0; i < 8; i++)
-        {
-            var localCorner = transform.InverseTransformPoint(corners[i]);
-            localMin = Vector3.Min(localMin, localCorner);
-            localMax = Vector3.Max(localMax, localCorner);
+            var l2w = r.localToWorldMatrix;
+            for (int i = 0; i < 8; i++)
+            {
+                var worldP = l2w.MultiplyPoint3x4(corners[i]);   // to world
+                var p = toLocal.MultiplyPoint3x4(worldP);        // to collider local
+                min = Vector3.Min(min, p);
+                max = Vector3.Max(max, p);
+            }
         }
 
-        boxCollider.center = (localMin + localMax) * 0.5f;
-        boxCollider.size = (localMax - localMin) + padding;
+        boxCollider.center = (min + max) * 0.5f;
+        boxCollider.size   = (max - min) + padding;
     }
 }
