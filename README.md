@@ -1,7 +1,52 @@
 ## Game Design Document
 
+#### Structure Explain
+
+This Game Design Documentation includes three main parts:
+
+1. Version Control
+   - Explain how each version of the GDD changed and why
+2. GDD main body
+   - The main body of the **most recent version** of GDD
+3. Appendix
+   - Include all the previous version of GDD
+
+---
+
+## Version Control
+
+- How version control works in this documents
+  The GDD will present the latest version of our design. Version control within the document is managed on a section by section basis. Each section has its own version marker that is maintained independently, and only the sections that have changed will be updated. Previous versions will be archived in the Appendix.
+
+#### Change Log
+
+
+| Version | Version explain                                | Update date                                   | Change overview             |
+| ------- | ---------------------------------------------- | --------------------------------------------- | --------------------------- |
+| v0      | Initial GDD                                    | 15-09-2025                                    | Initial commit              |
+| v1      | Draft and paper prototypes for the initial GDD | designed in 20-09-2025, updated in 06-10-2025 | Add game design paper draft |
+|         |                                                |                                               |                             |
+
+#### Decisions and Actions Overview
+
+Here record all the big decision made during development
+
+| Version | Date | Decision |
+| ------- | ---- | -------- |
+|         |      |          |
+|         |      |          |
+
+---
+
+## Main Body
+
 #### Game Overview
-*Updated 15-09-2025 v0*
+
+>  [!NOTE]
+> **Version:** v1 
+> **Updated:** 07-10-2025 
+> **Change Log:** No change from v0
+
 - **Core Concept**
 The core concept of this game is to gradually reconstruct the protagonist's body through puzzle-solving and exploration of the scene. Players assume the role of a man who has lost fragments of his soul, exploring seven interconnected spaces. Each space represents a unique scene from the protagonist's memories. Players must solve puzzles, complete tasks, and collect body fragments. When all fragments are recovered, the protagonist will be restored to wholeness and reclaim his identity, leading the story to its final ending. Unlike traditional puzzle games, this title emphasizes not only logic and mechanics but also deeply integrates character growth with the puzzle-solving process. After acquiring body fragments, the protagonist gradually unlocks new abilities (such as switching perspectives or entering worlds of different scales), allowing players to access previously inaccessible areas. Through this growth journey, players progressively understand the game world's rules and learn to apply cross-space, cross-scale logic to solve puzzles. The game's uniqueness lies in the interweaving of memory, adventure, growth, and puzzle-solving. Players are not merely solving puzzles but embarking on a journey of self-reconstruction and exploration.
 
@@ -43,7 +88,10 @@ The core concept of this game is to gradually reconstruct the protagonist's body
 
 #### **Story and Narrative**
 
-*Updated 15-09-2025 v0*
+>  [!NOTE]
+>  **Version:** v1 
+>  **Updated:** 07-10-2025 
+>  **Change Log:** No change from v0
 
 - **Backstory**
 *Our game is not a heavily narrative-driven experience (not like an RPG). Instead, it tells its story through implication.*
@@ -60,7 +108,11 @@ Inner World (space): Seven interconnected miniature scenes representing distinct
 
 #### **Gameplay and Mechanics**
 
-*Updated 15-09-2025 v0*
+>  [!NOTE]
+>  **Version:** v1 
+>  **Updated:** 07-10-2025 
+>  **Change Log:** No change from v0
+
 - **Player Perspective**
 This is a 3D game with isometric camera view. The camera will be fixed but will zoom in and out to follower player movement. The game level consists of seven connected room, player plays as our protagonist, moving and solving puzzle in each space.
 - **Controls**
@@ -91,7 +143,11 @@ As more spaces are unlocked, players will need to solve increasingly challenging
 
 #### **Levels and World Design**
 
-*Updated 15-09-2025 v0*
+>  [!NOTE]
+>  **Version:** v1 
+>  **Updated:** 07-10-2025 
+>  **Change Log:** No change from v0
+
 - **Game World**
 This is a 3D game with isometric view. Camera will remain fixed but will zoom in and out accordingly. When player move in the space, the camera will also follows their movement smoothly, but it will always fixed to a isometric view. The game world consists of seven connected spaces, where each space is a separate diorama in a roughly cube shape. Player will need to solve puzzles, complete certain tasks (like racing or fishing) to acquire "body fragment" in a space, which will give the protagonist new ability and unlock the entrance to the next space. Each space will have different game mechanic and gameplay. The major game mechanic is that when player entering a space, they will either shrink or grow according to the set of relevant space. Any object they carried will also change to the scale of the space, which is crucial to solve puzzle. As an example, players will find themself moving from one space to another to get use of this scale-changing mechanic to change a scale of an object, which will solve a certain puzzle.
 
@@ -128,7 +184,10 @@ This is a 3D game with isometric view. Camera will remain fixed but will zoom in
 
 #### **Art and Audio**
 
-*Updated 15-09-2025 v0*
+>  [!NOTE]
+>  **Version:** v1 
+>  **Updated:** 07-10-2025 
+>  **Change Log:** No change from v0
 
 - **Art Style**
 Our game will adopt a comic/cartoon style art direction, featuring Moebius Art style. Following are some references of Moebius Art Style.
@@ -174,7 +233,11 @@ Following are some other Moebius art style we are looking.
 
 #### User Interface (UI)
 
-*Updated 15-09-2025 v0*
+>  [!NOTE]
+>  **Version:** v1 
+>  **Updated:** 07-10-2025 
+>  **Change Log:** No change from v0
+
 UI design has relatively low priority, this will be updated later when games' features are completed.
 **Concept**
 
@@ -204,7 +267,10 @@ Setting
 
 #### Technology and Tools
 
-*Updated 15-09-2025 v0*
+>  [!NOTE]
+>  **Version:** v1 
+>  **Updated:** 07-10-2025 
+>  **Change Log:** No change from v0
 
 - **Development Tools**
 	- Unity 6.1.000.1.14f1
@@ -225,7 +291,10 @@ Setting
 
 #### Team Communication, Timelines and Task Assignment
 
-*Updated 15-09-2025 v0*
+>  [!NOTE]
+>  **Version:** v1 
+>  **Updated:** 07-10-2025 
+>  **Change Log:** No change from v0
 
 - **Role**
 
@@ -280,3 +349,6 @@ Setting
 | Art or audio assets can be possibly delayed                  | Use simple placeholder models to ensure mechanics and features are completed to meet milestone requirement. |
 | Absent or illness                                            | Tasks should be reallocated properly. Other team members should assist in completing unfinished tasks, |
 
+---
+
+## Appendix
