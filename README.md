@@ -9,7 +9,7 @@ This Game Design Documentation includes three main parts:
 2. GDD main body
    - The main body of the **most recent version** of GDD
 3. Appendix
-   - Include all the previous version of GDD
+   - Include all the previous version of GDD and change overview
 
 ---
 
@@ -40,7 +40,7 @@ Here record all the big decision made during development
 
 ## Main Body
 
-#### Game Overview
+#### **Game Overview**
 
 >  [!NOTE]
 > **Version:** v1 
@@ -111,33 +111,67 @@ Inner World (space): Seven interconnected miniature scenes representing distinct
 >  [!NOTE]
 >  **Version:** v1 
 >  **Updated:** 07-10-2025 
->  **Change Log:** No change from v0
+>  **Change Log:** Update mechanics with paper draft
 
 - **Player Perspective**
-This is a 3D game with isometric camera view. The camera will be fixed but will zoom in and out to follower player movement. The game level consists of seven connected room, player plays as our protagonist, moving and solving puzzle in each space.
+  This is a 3D game with isometric camera view. The camera will be fixed but will zoom in and out to follower player movement. The game level consists of seven connected room, player plays as our protagonist, moving and solving puzzle in each space.
+
 - **Controls**
-Player control the protagonist moving through simple mouse click on the floor of the space. Player can also interact with interactive objects through clicking, dragging, and placing or dropping. Correspondingly, this action will be represented as protagonist pick, pull, throw and drop objects. There are also static objects in the space where players can interact by completing tasks. Space will have mechanics and trap where player can click or drag to trigger. For instance, a player can click a lever to hold and drag using mouse to pull the lever.
+  Player control the protagonist moving through simple mouse click on the floor of the space. Player can also interact with interactive objects through clicking, dragging, and placing or dropping. Correspondingly, this action will be represented as protagonist pick, pull, throw and drop objects. There are also static objects in the space where players can interact by completing tasks. Space will have mechanics and trap where player can click or drag to trigger. For instance, a player can click a lever to hold and drag using mouse to pull the lever.
+
+  - Click to move (left click)
+  - Click to interacte (left click)
+  - Hold an object to through (by click and hold)
+  - Hold and move to drag (left click)
+  - Click to climb (click a high ground, player will automatically climb if the height is in a appropriate range)
+
+  <p align="center">
+      <em>Player control (left part)</em><br>
+    <img src="ConceptArt/Draft/GDD v1/playermovement.jpg" width="600">
+  </p>
 
 - **Progression**
-The game world consists of seven connected space in roughly cube space. The goal of the game is to solve puzzle and find "body fragment" hidden in each space, and when all body fragment are found, game ends. Each space represents a scene from the protagonist's memory. Each space will have a unique game mechanics and gameplay. Player will need to achieve different task to get body fragment and unlock the entrance to the next space.
-Each space are interconnected, which sometime requires player to use objects from previous space to solve puzzle. As more space are unlocked by players, some objects in the previous space that seems useless become useful. The gameplay will start simple and become more and more difficult when more spaces are unlocked. In the last space, player will need to think and review all space they unlocked previously to solve the final puzzle.
-We expect players to feel refreshing through the first few levels. 
-As more spaces are unlocked, players will need to solve increasingly challenging puzzles. By the final stages, they will need to review and re-explore previous spaces, combining all the experiences they had to complete the game journey.
+  The game world consists of seven connected space in roughly cube space. The goal of the game is to solve puzzle and find "body fragment" hidden in each space, and when all body fragment are found, game ends. Each space represents a scene from the protagonist's memory. Each space will have a unique game mechanics and gameplay. Player will need to achieve different task to get body fragment and unlock the entrance to the next space.
+  Each space are interconnected, which sometime requires player to use objects from previous space to solve puzzle. As more space are unlocked by players, some objects in the previous space that seems useless become useful. The gameplay will start simple and become more and more difficult when more spaces are unlocked. In the last space, player will need to think and review all space they unlocked previously to solve the final puzzle.
+  We expect players to feel refreshing through the first few levels. 
+  As more spaces are unlocked, players will need to solve increasingly challenging puzzles. By the final stages, they will need to review and re-explore previous spaces, combining all the experiences they had to complete the game journey.
+
 - **Gameplay Mechanics**
+
 - Following are some major mechanics (more mechanics might be added when gameplay of different space change)
-	1. Scale: 
-		- Each space is in different scale, and when player entering a space, their scale will change accordingly.
-		- Interactive object that user carry from one space to another will also scale accordingly.
-		- Player can throw object through certain entrance, the scale of the object will change accordingly when passing through the entrance.
-		- Player's strength will increase or decrease when they grow or shrink in scale. Allowing them to interact with heavy object when they grow.
-		- Player will be heavy in large scale, and light in small scale.
-	2. Object
-		- Player can interact with interactive object, but they cannot interactive with static object unless they achieve certain task.
-		- Object has material and weight. Fragile object can be break by hard object. 
-	3. Player
-		- Player cannot jump, run, or climb a wall without any tools. 
-		- Player can acquire ability when they get each body fragment.
-		- Player can shrink or grow when passing the space entrances or through ability.
+  1. Scale: 
+    - Room scale: 
+      - Each space is in different scale, and when player entering a space, their scale will change accordingly.
+    - Player scale: 
+      - There are four different player scale: (taking the room as a 1x1x1 cube) 3/4 is Large (L), 1/2 is Medium (M), 1/4 is Small (S), 1/8 is Extral Small (XS)
+      - Player's strength will increase or decrease when they grow or shrink in scale. Allowing them to interact with heavy object when they grow.
+
+    <p align="center">
+      <em>Player scale (right part)</em><br>
+      <img src="ConceptArt/Draft/GDD v1/playermovement.jpg" width="600">
+    </p>
+
+    - Object to scale:
+      - Interactive object that user carry from one space to another will also scale accordingly.
+      - Player can throw object through certain entrance, the scale of the object will change accordingly when passing through the entrance.
+
+  2. Object
+    - Player can interact with interactive object, but they cannot interactive with static object unless they achieve certain task.
+    - Object has material and weight. Fragile object can be break by hard object. 
+
+  3. Player
+    - Player cannot jump, run, or climb a wall without any tools. 
+    - Player can acquire ability when they get each body fragment.
+    - Player can shrink or grow when passing the space entrances or through ability.
+
+  4. Room
+
+    - Each room can be moved through certain mechanics inside the room. By moving it, it will connect or disconnect to another room, creating new paths to solve the puzzle.
+  
+  -   <p align="center">
+        <em>Room mechanics</em><br>
+        <img src="ConceptArt/Draft/GDD v1/Mechanics.jpg" width="600">
+      </p>
 
 ---
 
@@ -146,40 +180,67 @@ As more spaces are unlocked, players will need to solve increasingly challenging
 >  [!NOTE]
 >  **Version:** v1 
 >  **Updated:** 07-10-2025 
->  **Change Log:** No change from v0
+>  **Change Log:** Update level design concept draft
+
+**Overview**
 
 - **Game World**
-This is a 3D game with isometric view. Camera will remain fixed but will zoom in and out accordingly. When player move in the space, the camera will also follows their movement smoothly, but it will always fixed to a isometric view. The game world consists of seven connected spaces, where each space is a separate diorama in a roughly cube shape. Player will need to solve puzzles, complete certain tasks (like racing or fishing) to acquire "body fragment" in a space, which will give the protagonist new ability and unlock the entrance to the next space. Each space will have different game mechanic and gameplay. The major game mechanic is that when player entering a space, they will either shrink or grow according to the set of relevant space. Any object they carried will also change to the scale of the space, which is crucial to solve puzzle. As an example, players will find themself moving from one space to another to get use of this scale-changing mechanic to change a scale of an object, which will solve a certain puzzle.
-
+  This is a 3D game with isometric view. Camera will remain fixed but will zoom in and out accordingly. When player move in the space, the camera will also follows their movement smoothly, but it will always fixed to a isometric view. The game world consists of seven connected spaces, where each space is a separate diorama in a roughly cube shape. Player will need to solve puzzles, complete certain tasks (like racing or fishing) to acquire "body fragment" in a space, which will give the protagonist new ability and unlock the entrance to the next space. Each space will have different game mechanic and gameplay. The major game mechanic is that when player entering a space, they will either shrink or grow according to the set of relevant space. Any object they carried will also change to the scale of the space, which is crucial to solve puzzle. As an example, players will find themself moving from one space to another to get use of this scale-changing mechanic to change a scale of an object, which will solve a certain puzzle.
 - **Objects**
-	- Background
-		- All background objects (set, furnitures, trees etc.) is static unless there is a special mechanic attached to it. Background scenery like sky and mountain will demonstrated using a image for optimisation purpose.
-	- Interactive object
-		- Interactive object includes objects where players use to solve puzzle and all the relevant dynamic design. This includes:
-			- Chest fragments: From protagonist and locate in different spaces. When play successfully acquire it, it will automatically fit into players body and give player a certain abilities.
-			- "Doors" (or other objects that allow players to go into another space): Through each "door", player will shrink or grow according to the space they went to, There will also be 3D to 2D shifting mechanics when using some doors.
-			- Static objects: Static object refers to object that cannot be moved. But it can be acquire through specific task. For instance, a rock that blocks the way.
-			- Interactive objects: Interactive objects refers to object that can be moved or collected by player. 
-			- All objects will be listed here later.
+  - Background
+  	- All background objects (set, furnitures, trees etc.) is static unless there is a special mechanic attached to it. Background scenery like sky and mountain will demonstrated using a image for optimisation purpose.
+  - Interactive object
+  	- Interactive object includes objects where players use to solve puzzle and all the relevant dynamic design. This includes:
+  		- Chest fragments: From protagonist and locate in different spaces. When play successfully acquire it, it will automatically fit into players body and give player a certain abilities.
+  		- "Doors" (or other objects that allow players to go into another space): Through each "door", player will shrink or grow according to the space they went to.
+  		- Static objects: Static object refers to object that cannot be moved. But it can be acquire through specific task. For instance, a rock that blocks the way.
+  		- Interactive objects: Interactive objects refers to object that can be moved or collected by player. 
 - **Physics**
-	- This game follows basic daily-life physics.
-	- Protagonist can shrink or grow. When this happened, player will lose or gain strength that limited how they can interact with other objects. Their collisions will also change accordingly.
-	- Static object cannot be moved, but can be break according to its material. For instance, glass wall can be break by throwing a rock.
-	- Interactive objects can be moved. Each objects has different materials that follows the physics of the real world. Interactive object has weight, when player gain strength through changing scale, they will be able to move object with large weight.
-	- Player can throw, drop, push, pull, and grab interactive object. 
-	- Player cannot jump or climb a wall. 
+  - This game follows basic daily-life physics.
+  - Protagonist can shrink or grow. When this happened, player will lose or gain strength that limited how they can interact with other objects. Their collisions will also change accordingly.
+  - Static object cannot be moved, but can be break according to its material. For instance, glass wall can be break by throwing a rock.
+  - Interactive objects can be moved. Each objects has different materials that follows the physics of the real world. Interactive object has weight, when player gain strength through changing scale, they will be able to move object with large weight.
+  - Player can throw, drop, push, pull, and grab interactive object. 
+  - Player cannot jump or climb a wall. 
 
-- **Game Level Concept Draft**
-<p align="center">
-  <img src="ConceptArt/Draft/d671fbfcf743ee31fb6295ed27a66ec7.jpg" width="250" style="margin:10px;">
-  <img src="ConceptArt/Draft/b4732e5776f76dc3eab5ebd654fd655f.jpg" width="250" style="margin:10px;">
-  <img src="ConceptArt/Draft/dd6691c469b383b359bfed12c3523f44.jpg" width="250" style="margin:10px;">
-</p>
-<p align="center">
-  <img src="ConceptArt/Draft/8cdcfa75be1a5c3f011dd8d5481d1562.jpg" width="250" style="margin:10px;">
-  <img src="ConceptArt/Draft/b2252f9577dc62f084950ba853c2e2d8.jpg" width="250" style="margin:10px;">
-  <img src="ConceptArt/Draft/ea334d248b8be6a5bc66acfb16bf6504.jpg" width="250" style="margin:10px;">
-</p>
+**Game Level Design**
+
+  <p align="center">
+    <em>Overall game level</em><br>
+    <img src="ConceptArt/Draft/GDD v1/gameworld.jpg" width="600">
+  </p>
+
+- The game world structure consists of seven different rooms with each in a shape of cube. The game world is an arrangement of interlocking cubes shown above. Following are names for different room cubes.
+  - Centre room: Located at the centre of the structure
+  - Junk room: Located at the bottom of the structure
+  - M1 M2 M3 M4: Located around the centre room
+  - Exit room: Located above the centre room.
+- The camera view will show the room in an isometric view. The camera will zoom in when player scale is small and it will zoom out with black background when player scale is large.
+
+  <p align="center">
+    <em>Overall level progression steps</em><br>
+    <img src="ConceptArt/Draft/GDD v1/leveldesign.jpg" width="600">
+  </p>
+
+- The progression is as follows: (sequence of the above draft is from top left to right, then right to left, then left to right)
+  1. M1 to M2 to C: Player solve puzzle in room M1 and proceed to room M2 and to Room C (central)
+  2. C to M3: Player get a crucial item, allow M1 to move to a new position
+  3. M3 to C to M1: In the new posisiton, a new door open, allow player to change to a different scale. Player discover and trigger new gimmick, unlock M4.
+  4. M1 to C to M4: Player enter M4
+  5. Player unlock mechanics to allow M4 movement. Player move M1 and M4 to align it with M2, unlock a path to Junk room (J)
+  6. M4 to M1 to M2 to J: Player go to J, get crucial item and unlock new puzzle in M3, which will allow movement of J
+  7. M3 to C to M2 to J: Player unlcok movement in M3, and move J to be below C, which unlock a path from J to E (from bottom to the top)
+  8. J to C to E: Player enter Exit room (E)
+  9. Move M1 M2 M3 M4 down, unlock the final door in E
+  10. Player exit from E, Game Over.
+
+  <p align="center">
+    <em>Camera move</em><br>
+    <img src="ConceptArt/Draft/GDD v1/cameramove.jpg" width="600">
+  </p>
+
+- This draft shows how camera will move and shift when players enter from one space to another (from one room to another). There will be a short cutscene to cover the scale shifting animation when using the door to enter another room, allowing a smooth transition.
+
 ---
 
 #### **Art and Audio**
@@ -352,3 +413,62 @@ Setting
 ---
 
 ## Appendix
+
+This part has all old versions of GDD (only the one has been changed)
+
+#### **Game Overview**
+
+#### **Gameplay and Mechanics** 
+
+
+
+#### **Levels and World Design**
+
+>  [!NOTE]
+>  **Version:** v0
+>  **Updated:** 15-09-2025 
+>  **Status:** Archived
+
+- **Game World**
+  This is a 3D game with isometric view. Camera will remain fixed but will zoom in and out accordingly. When player move in the space, the camera will also follows their movement smoothly, but it will always fixed to a isometric view. The game world consists of seven connected spaces, where each space is a separate diorama in a roughly cube shape. Player will need to solve puzzles, complete certain tasks (like racing or fishing) to acquire "body fragment" in a space, which will give the protagonist new ability and unlock the entrance to the next space. Each space will have different game mechanic and gameplay. The major game mechanic is that when player entering a space, they will either shrink or grow according to the set of relevant space. Any object they carried will also change to the scale of the space, which is crucial to solve puzzle. As an example, players will find themself moving from one space to another to get use of this scale-changing mechanic to change a scale of an object, which will solve a certain puzzle.
+
+- **Objects**
+  - Background
+    - All background objects (set, furnitures, trees etc.) is static unless there is a special mechanic attached to it. Background scenery like sky and mountain will demonstrated using a image for optimisation purpose.
+  - Interactive object
+    - Interactive object includes objects where players use to solve puzzle and all the relevant dynamic design. This includes:
+      - Chest fragments: From protagonist and locate in different spaces. When play successfully acquire it, it will automatically fit into players body and give player a certain abilities.
+      - "Doors" (or other objects that allow players to go into another space): Through each "door", player will shrink or grow according to the space they went to, There will also be 3D to 2D shifting mechanics when using some doors.
+      - Static objects: Static object refers to object that cannot be moved. But it can be acquire through specific task. For instance, a rock that blocks the way.
+      - Interactive objects: Interactive objects refers to object that can be moved or collected by player. 
+      - All objects will be listed here later.
+- **Physics**
+  - This game follows basic daily-life physics.
+  - Protagonist can shrink or grow. When this happened, player will lose or gain strength that limited how they can interact with other objects. Their collisions will also change accordingly.
+  - Static object cannot be moved, but can be break according to its material. For instance, glass wall can be break by throwing a rock.
+  - Interactive objects can be moved. Each objects has different materials that follows the physics of the real world. Interactive object has weight, when player gain strength through changing scale, they will be able to move object with large weight.
+  - Player can throw, drop, push, pull, and grab interactive object. 
+  - Player cannot jump or climb a wall. 
+
+- **Game Level Concept Draft**
+
+- <p align="center">
+    <img src="ConceptArt/Draft/d671fbfcf743ee31fb6295ed27a66ec7.jpg" width="250" style="margin:10px;">
+    <img src="ConceptArt/Draft/b4732e5776f76dc3eab5ebd654fd655f.jpg" width="250" style="margin:10px;">
+    <img src="ConceptArt/Draft/dd6691c469b383b359bfed12c3523f44.jpg" width="250" style="margin:10px;">
+  </p>
+  <p align="center">
+    <img src="ConceptArt/Draft/8cdcfa75be1a5c3f011dd8d5481d1562.jpg" width="250" style="margin:10px;">
+    <img src="ConceptArt/Draft/b2252f9577dc62f084950ba853c2e2d8.jpg" width="250" style="margin:10px;">
+    <img src="ConceptArt/Draft/ea334d248b8be6a5bc66acfb16bf6504.jpg" width="250" style="margin:10px;">
+  </p>
+
+#### **Art and Audio**
+
+#### User Interface (UI) 
+
+#### Technology and Tools 
+
+#### Team Communication, Timelines and Task Assignment
+
+#### Possible Challenges 
