@@ -23,7 +23,8 @@ placeholder for it [here](README.md).
 - Observational methods: cooperative evaluation, post-task walkthroughs. 
 - Querying technique: questionnaires.
 
-We adopted cooperative evaluation and post-task walkthroughs during observations. Cooperative evaluation allow user and experimenter to coomunicate, actively expressing the feelings and critizing the software during the game. And it can help reduce reduces intimidation and frustration since our game may not be intuitive for people who don't play game. 
+We adopted cooperative evaluation and post-task walkthroughs during observations. Cooperative evaluation allow user and experimenter to coomunicate, actively expressing the feelings and critizing the software during the game. It helps reveal real-time thinking process and receive any support if nessaasary to proceed the game. It also can help reduce user frustration since some narrative cues may not be intuitive or obvious enough, which we need later improvements. Post-task walkthroughs access users' overall emotional engagement and narrative comprehension of the game. 
+
 
 **Participants**: Our target audience is aged between 18 to 30 (catered for students and young people) who enjoy narrative-driven puzzle/adventure games, atmospheric story experiences, and exploration. We also include some causal players who play games less often, but enjoy aesthetics/emotion. To ensure the representativeness, we aim to balance between age (approx 70% university students, approx 30% working adults); gender (males/females); platform familiarity (at least 50% have experience on Unity.)
 
@@ -52,6 +53,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
