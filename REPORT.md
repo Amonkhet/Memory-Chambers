@@ -19,7 +19,10 @@ placeholder for it [here](README.md).
 
 ## Evaluation Plan
 
-TODO - see specification for details
+**Evaluation techniques** 
+
+**Participants** Our target audience is aged between 16 to 30 (catered for students and young people) who enjoy narrative-driven puzzle/adventure games, atmospheric story experiences, and exploration. We also include some causal players who play games less often, but enjoy aesthetics/emotion. 
+**Stratified quota sampling**: Puzzle-enthusiasts: 4 (33%). Narrative/adventure players: 4 (33%). Casual / occasional players: 4 (33%). 
 
 ## Evaluation Report
 
@@ -36,3 +39,4 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
