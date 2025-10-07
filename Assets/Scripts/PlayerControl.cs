@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     // Move speed of the player
     [Header("Movement Settings")]
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float moveSpeed = 10f;
     // Event listener to get click position and for adding future animation/effects
     public static event System.Action<Vector3> WhenGroundClicked;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             // If the ray cast by left click is on baked nev mesh
-            if (Physics.Raycast(ray, out RaycastHit hit, rangeWalkable, groundLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, NavMesh.AllAreas))
                 {

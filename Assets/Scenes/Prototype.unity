@@ -240,16 +240,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 70851452}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Radius: 0.19
+  m_Speed: 1.5
+  m_Acceleration: 50
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 500
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.8
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -262,13 +262,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 70851452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8de692c9aabb4ccfa98d65396aae357, type: 3}
+  m_Script: {fileID: 11500000, guid: a97ec2a394c5a482782d08849a67dc3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundMask:
+  rangeWalkable: 0.5
+  groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  maxRayDistance: 1000
+  moveSpeed: 5
 --- !u!1 &83962226
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83962228}
   - component: {fileID: 83962227}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +352,7 @@ GameObject:
   - component: {fileID: 205189056}
   - component: {fileID: 205189055}
   - component: {fileID: 205189054}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: P_Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,7 +1097,7 @@ GameObject:
   - component: {fileID: 1083500480}
   - component: {fileID: 1083500479}
   - component: {fileID: 1083500478}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: P_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1729011785}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: P_stairsA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
