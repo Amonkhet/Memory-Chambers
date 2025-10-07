@@ -19,10 +19,22 @@ placeholder for it [here](README.md).
 
 ## Evaluation Plan
 
-**Evaluation techniques** 
+**Evaluation techniques**: 
+- Observational methods: cooperative evaluation, post-task walkthroughs. 
+- Querying technique: semi-structured interviews, questionnaires.
 
-**Participants** Our target audience is aged between 16 to 30 (catered for students and young people) who enjoy narrative-driven puzzle/adventure games, atmospheric story experiences, and exploration. We also include some causal players who play games less often, but enjoy aesthetics/emotion. 
-**Stratified quota sampling**: Puzzle-enthusiasts: 4 (33%). Narrative/adventure players: 4 (33%). Casual / occasional players: 4 (33%). 
+
+**Participants**: Our target audience is aged between 16 to 30 (catered for students and young people) who enjoy narrative-driven puzzle/adventure games, atmospheric story experiences, and exploration. We also include some causal players who play games less often, but enjoy aesthetics/emotion. To ensure the representativeness, we aim to balance between age (approx 20% high school students, approx 60% university students, approx 20% working adults); gender (males/females); platform familiarity (at least 50% have experience on Unity.)
+
+**Stratified quota sampling**: 
+- Puzzle-enthusiasts: 4 (33%)
+- Narrative/adventure players: 4 (33%)
+- Casual / occasional players: 4 (33%)
+
+**Recruitment channel**: 
+- University / campus participant pools — target students in arts/CS/games courses.
+- Social media (Facebook/Instagram) with a short playtest call.
+- Mutual friends who play games. 
 
 ## Evaluation Report
 
@@ -39,4 +51,5 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
