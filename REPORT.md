@@ -50,7 +50,7 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 - We will conduct our evaluations with our improved (with sound/music effect) Demo game (by next week) and complete evaluation by Milestone 5. 
 
 **Responsibility**
-- Patrick to improve game level scenes with more models. 
+- Patrick to improve game levels with richer models and based on player feedbacks. 
 - Ryan to add the sound/music effect, and finalise shaders . 
 - Joly to add any special effect if needed and conduct data analysis. 
 - Every team needs to conduct game evaluation with 4 players and collect data.
@@ -71,6 +71,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
