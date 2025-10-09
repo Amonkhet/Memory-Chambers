@@ -38,7 +38,23 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 - Mutual friends who play games. 
 
 **Data collection**:
-for 
+- For think-aloud observation, we will collect qualitative (descriptive) data from observation and field notes.
+- For post-task walkthroughs, we will collect qualitative (descriptive) data when showing transcripts/footage of what they did. 
+- For questionnaires, we will collect quantitative data from ten written questions scaled from 1-5 to evaluate perceived usability, enjoyment, difficulty, immersion, and narrative understanding.  
+
+**Data analysis**:
+- For qualitative data, we will categorize all player quotes into aspects such as "Understanding goal", "Confusion/Misinterpretation", "Feedback Recognition" and "Emotional responses". This way helps us to analyse overall players' real-time reactions and know what aspect to be addressed. 
+- For quantitative data, we will address following aspects: Logics clarity, Feedback Responsiveness, Narrative Engagement, Satisfaction / Flow. With scalar 1-5, we aim to get an average score of 4 in every aspect. 
+
+**Timeline**: 
+- We will conduct our evaluations with our improved (with sound/music effect) Demo game (by next week) and complete evaluation by Milestone 5. 
+
+**Responsibility**
+- Patrick to improve game level scenes with more models. 
+- Ryan to add the sound/music effect, and finalise shaders . 
+- Joly to add any special effect if needed and conduct data analysis. 
+- Every team needs to conduct game evaluation with 4 players and collect data.
+
 
 ## Evaluation Report
 
@@ -55,6 +71,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
