@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
             // If the ray cast by left click is on baked nev mesh
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
-                if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, NavMesh.AllAreas))
+                int mask = agent.areaMask;
+                if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, mask))
                 {
                     agent.SetDestination(navHit.position);
                     // Interface for animation and click effects
