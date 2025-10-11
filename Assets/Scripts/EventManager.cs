@@ -1,16 +1,23 @@
-using UnityEngine;
+using System;
 
-public class EventManager : MonoBehaviour
+public static class EventManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // Use a struct to pack switch scene data
+    public struct DoorToScene
     {
-        
-    }
+        public string targetScene;
+        public string spawnPoint;
+        public string scale;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public DoorToScene(string targetScene, string spawnPoint, string scale)
+        {
+            this.targetScene = targetScene;
+            this.spawnPoint = spawnPoint;
+            this.scale = scale;
+        }
     }
+    // Event 
+    public static event Action<DoorToScene> OnDoorEnter;
+    public static void WhenEnterDoor(DoorToScene door) => OnDoorEnter?.Invoke(door);
+    
 }
