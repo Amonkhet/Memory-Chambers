@@ -17,15 +17,16 @@ public class PlayerSwitcher : MonoBehaviour
         agent.ResetPath();
         // Delete previous player model
         if(currentPlayer) Destroy(currentPlayer);
-        // Find player model
-        var playerTransform = playerRoot.Find(id + "Model");
-        currentPlayer = Instantiate(playerTransform.gameObject, playerRoot);
-        currentPlayer.transform.localPosition = Vector3.zero;
-        currentPlayer.transform.localRotation = Quaternion.identity;
-        currentPlayer.transform.localScale    = Vector3.one;
         // Find nav mesh agent
         var agentTransform = agentsRoot.Find(id + "Player");
         var agentTemplate = agentTransform.GetComponent<NavMeshAgent>();
+        // Find player model
+        var playerTransform = playerRoot.Find(id + "Model");
+        currentPlayer = Instantiate(playerTransform.gameObject, playerRoot);
+        currentPlayer.SetActive(true);
+        currentPlayer.transform.localPosition = Vector3.zero;
+        currentPlayer.transform.localRotation = Quaternion.identity;
+        currentPlayer.transform.localScale    = playerTransform.localScale;
         // Sync agent and model collider attributes(will be changed to model later)
         capsuleCollider.height = agentTemplate.height;
         capsuleCollider.radius = agentTemplate.radius;
@@ -42,5 +43,12 @@ public class PlayerSwitcher : MonoBehaviour
         agent.Warp(transform.position);
         agent.isStopped = false;
         // Set camera
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            SwitchPlayer("XS");   // 按键 1 切换为 XS 体型
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            SwitchPlayer("S");    // 按键 2 切换为 S 体型
     }
 }
