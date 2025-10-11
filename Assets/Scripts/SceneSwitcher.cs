@@ -10,7 +10,7 @@ public class SceneSwitcher : MonoBehaviour
 
     void OnDisable()
     {
-        EventManager.OnDoorEnter += ActivateDoor;
+        EventManager.OnDoorEnter -= ActivateDoor;
     }
     // Listen to event
     void ActivateDoor(EventManager.DoorToScene door)
