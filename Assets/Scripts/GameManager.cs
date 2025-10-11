@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     {
         string scale = SceneSwitchData.HasData ? SceneSwitchData.ScaleId    : defaultScale;
         string spawn = SceneSwitchData.HasData ? SceneSwitchData.SpawnPoint : defaultSpawnPoint;
+        if (SceneSwitchData.HasData)
+        {
+            SceneSwitchData.ClearData();
+        }
         // Set player to spawn position
         Transform spawnPoint = spawnPointRoot.Find(spawn);
         playerSwitcher.transform.position = spawnPoint.position;
