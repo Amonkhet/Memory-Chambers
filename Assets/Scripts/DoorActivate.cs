@@ -26,8 +26,7 @@ public class DoorActivate : MonoBehaviour
             return;
         }
         activated = true;
-        // Add data from SceneSwitchData
-        SceneSwitchData.SetData(targetScene, targetSpawnPoint, targetScale);
-        SceneManager.LoadScene(targetScene);
+        // Trigger event
+        EventManager.WhenEnterDoor(new EventManager.DoorToScene(targetScene, targetSpawnPoint, targetScale));
     }
 }
