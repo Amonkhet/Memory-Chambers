@@ -1,24 +1,23 @@
-using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public static class SceneSwitchData
 {
     // Store attribute across scene
-    public static bool hasData;
-    public static string targetScene;
-    public static string spawnPoint;
-    public static string scaleId;
+    public static bool HasData;
+    public static string TargetScene;
+    public static string SpawnPoint;
+    public static string ScaleId;
 
     public static void SetData(string scene, string spawn, string scale)
     {
-        hasData = true;
-        targetScene = scene;
-        spawnPoint = spawn;
-        scaleId = scale;
+        HasData = true;
+        TargetScene = scene;
+        SpawnPoint = spawn;
+        ScaleId = scale;
     }
 
     public static void ClearData()
     {
-        hasData = false;
+        HasData = false;
     }
 }

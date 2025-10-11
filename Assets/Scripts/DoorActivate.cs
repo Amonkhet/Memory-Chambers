@@ -1,16 +1,33 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorActivate : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // Attributes
+    [Header("Target Scene parameters")]
+    public string targetScene;
+    public string targetSpawnPoint;
+    [SerializeField]
+    public string targetScale = "XS";
+    
+    public string playerTag = "Player";
+ 
+    private bool activated;
+    // Activate 
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
+        if (activated)
+        {
+            return;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (!other.CompareTag(playerTag))
+        {
+            return;
+        }
+        activated = true;
+        // Add data from SceneSwitchData
+        SceneSwitchData.SetData(targetScene, targetSpawnPoint, targetScale);
+        SceneManager.LoadScene(targetScene);
     }
 }
