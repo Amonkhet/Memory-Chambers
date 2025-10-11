@@ -12,18 +12,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        string scale = SceneSwitchData.HasData ? SceneSwitchData.ScaleId    : defaultScale;
+        string spawn = SceneSwitchData.HasData ? SceneSwitchData.SpawnPoint : defaultSpawnPoint;
         // Set player to spawn position
-        Transform spawnPoint = spawnPointRoot.Find(defaultSpawnPoint);
+        Transform spawnPoint = spawnPointRoot.Find(spawn);
         playerSwitcher.transform.position = spawnPoint.position;
-        playerSwitcher.SwitchPlayer(defaultScale);
-        Vector3 pos = spawnPoint.position;
-        NavMeshHit hit;
-        float searchRadius = 2f;                   
-        int mask = playerSwitcher.agent.areaMask; 
-        if (NavMesh.SamplePosition(pos, out hit, searchRadius, mask))
-        {
-            playerSwitcher.agent.Warp(hit.position);
-        }
+        playerSwitcher.SwitchPlayer(scale);
     }
     
 }
