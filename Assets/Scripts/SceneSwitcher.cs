@@ -15,6 +15,7 @@ public class SceneSwitcher : MonoBehaviour
     // Listen to event
     void ActivateDoor(EventManager.DoorToScene door)
     {
+        SceneSwitchData.SetData(door.targetScene, door.spawnPoint, door.scale);
         SceneManager.LoadScene(door.targetScene);
     }
 }
