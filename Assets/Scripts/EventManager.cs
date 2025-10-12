@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public static class EventManager
 {
@@ -19,5 +20,7 @@ public static class EventManager
     // Event 
     public static event Action<DoorToScene> OnDoorEnter;
     public static void WhenEnterDoor(DoorToScene door) => OnDoorEnter?.Invoke(door);
-    
+    // Interactive Event
+    public static event Action<RaycastHit, Transform> OnObjectClicked;
+    public static void WhenObjectClicked(RaycastHit hit, Transform player) => OnObjectClicked?.Invoke(hit, player);
 }
