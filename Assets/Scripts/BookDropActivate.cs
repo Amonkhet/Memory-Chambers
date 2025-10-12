@@ -1,3 +1,4 @@
+using System;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -10,8 +11,23 @@ public class BookActivate : MonoBehaviour
     public NavMeshLink navMeshLink;
     [Header("Mechanics key id")]
     [SerializeField] private string mechanicKey = "BookDrop";
+
+    [Header("Settings")]
+    [SerializeField] private float activateRange = 0.2f;
+    [SerializeField] private bool activateOnce = true;
     private bool hasTriggered = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Transform player;
+    // Subscribe to event
+    private void OnEnable()
+    {
+        EventManager.OnObjectClicked += HandleObjectClicked;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnObjectClicked -= HandleObjectClicked;
+    }
+
     void Start()
     {
         // If this mechanics activated, reset
@@ -24,9 +40,26 @@ public class BookActivate : MonoBehaviour
             SetDoorStatus();
         }
     }
-
+    // Handle object clicked
+    private void HandleObjectClicked(RaycastHit hit, Transform playerTransform)
+    {
+        // Check if ray hit this object mechanics
+        if (hit.collider.transform.IsChildOf(transform))
+        {
+            float distance = Vector3.Distance(playerTransform.position, transform.position);
+            if (distance > activateRange)
+            {
+                return;
+            }
+            ActivateDoor();
+        }
+    }
     public void ActivateDoor()
     {
+        if (activateOnce && hasTriggered)
+        {
+            return;
+        }
         // Play timeline animation
         if (playableDirector)
         {
