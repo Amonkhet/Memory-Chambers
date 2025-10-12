@@ -1714,12 +1714,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4396923738865666377, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396923738865666377, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
       propertyPath: m_Height
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4396923738865666377, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
       propertyPath: m_Radius
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396923738865666377, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
+      propertyPath: m_Acceleration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7375537743657597903, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
       propertyPath: m_IsActive
