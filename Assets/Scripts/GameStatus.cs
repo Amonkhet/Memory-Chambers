@@ -1,16 +1,22 @@
 using UnityEngine;
-
-public class GameStatus : MonoBehaviour
+using System.Collections.Generic;
+public static class GameStatus
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // Save mechanics status with key id
+    private static Dictionary<string, bool> activatedMechanics = new Dictionary<string, bool>();
+    // Record mechanics status
+    public static void Activated(string key, bool value = true)
     {
-        
+        activatedMechanics[key] = value;
     }
-
-    // Update is called once per frame
-    void Update()
+    // Find mechanics status
+    public static bool IsActivated(string key)
     {
-        
+        return activatedMechanics.TryGetValue(key, out bool values) && values;
+    }
+    // Clear all status
+    public static void ClearStatus()
+    {
+        activatedMechanics.Clear();
     }
 }
