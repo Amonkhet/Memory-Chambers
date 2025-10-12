@@ -6029,7 +6029,7 @@ GameObject:
   - component: {fileID: 2034483648}
   - component: {fileID: 2034483647}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
