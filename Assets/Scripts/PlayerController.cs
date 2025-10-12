@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // Activate event if click on interative object
+            if (Physics.Raycast(ray, out RaycastHit hitClick))
+            {
+                EventManager.WhenObjectClicked(hitClick, transform);
+            }
             // If the ray cast by left click is on baked nev mesh
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
