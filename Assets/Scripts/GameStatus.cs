@@ -1,9 +1,24 @@
 using UnityEngine;
 using System.Collections.Generic;
-public static class GameStatus
+public class GameStatus : MonoBehaviour
 {
+    // Save game status
+    private static GameStatus _instance;
     // Save mechanics status with key id
     private static Dictionary<string, bool> activatedMechanics = new Dictionary<string, bool>();
+
+    void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Record mechanics status
     public static void Activated(string key, bool value = true)
     {
