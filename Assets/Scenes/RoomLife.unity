@@ -3457,12 +3457,12 @@ MonoBehaviour:
   m_EndPoint: {x: 0.000000011963294, y: 0.1922369, z: 0.75439364}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
-  m_Activated: 0
+  m_Activated: 1
   m_Width: 0
   m_CostModifier: 1
   m_IsOverridingCost: 0
   m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
+  m_AutoUpdatePosition: 1
   m_Area: 0
 --- !u!1001 &1229794789
 PrefabInstance:
@@ -3829,6 +3829,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playableDirector: {fileID: 1436570597}
   navMeshLink: {fileID: 1221312333}
+  rootTarget: {fileID: 1436570599}
+  rotateTarget: {fileID: 1253225014}
+  distanceAnchor: {fileID: 0}
+  planarDistance: 1
   mechanicKey: BookDrop
   activateRange: 2
   activateOnce: 1
