@@ -27,6 +27,10 @@ public class PlayerSwitcher : MonoBehaviour
         currentPlayer.transform.localPosition = Vector3.zero;
         currentPlayer.transform.localRotation = Quaternion.identity;
         currentPlayer.transform.localScale    = playerTransform.localScale;
+        // Sync agent and model collider with capsulemodel
+        capsuleCollider.height = agentTemplate.height;
+        capsuleCollider.radius = agentTemplate.radius;
+        capsuleCollider.center = new Vector3(0, agentTemplate.height / 2, 0);
         // Sync agent and model collider attributes(will be changed to model later)
         capsuleCollider.height = agentTemplate.height;
         capsuleCollider.radius = agentTemplate.radius;
