@@ -3830,6 +3830,8 @@ MonoBehaviour:
   playableDirector: {fileID: 1436570597}
   navMeshLink: {fileID: 1221312333}
   mechanicKey: BookDrop
+  transformModel: {fileID: 1436570599}
+  rotateModel: {fileID: 1253225014}
   activateRange: 2
   activateOnce: 1
 --- !u!1001 &1275494381
