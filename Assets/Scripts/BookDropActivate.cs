@@ -3,7 +3,7 @@ using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class BookActivate : MonoBehaviour
+public class BookDropActivate : MonoBehaviour
 {
     // Attributes
     [Header("Animation and NavMeshLink")]
@@ -11,8 +11,10 @@ public class BookActivate : MonoBehaviour
     public NavMeshLink navMeshLink;
     [Header("Mechanics key id")]
     [SerializeField] private string mechanicKey = "BookDrop";
-
-    [Header("Settings")]
+    [Header("Animated model")]
+    public Transform transformModel;
+    public Transform rotateModel;
+    [Header("Activate range")]
     [SerializeField] private float activateRange = 0.2f;
     [SerializeField] private bool activateOnce = true;
     private bool hasTriggered = false;
@@ -54,6 +56,8 @@ public class BookActivate : MonoBehaviour
             ActivateDoor();
         }
     }
+
+    // Activate door mechanics
     public void ActivateDoor()
     {
         if (activateOnce && hasTriggered)
@@ -61,6 +65,10 @@ public class BookActivate : MonoBehaviour
             return;
         }
         // Play timeline animation
+        if (playableDirector)
+        {
+            playableDirector.stopped -=
+        }
         if (playableDirector)
         {
             playableDirector.time = 0;
