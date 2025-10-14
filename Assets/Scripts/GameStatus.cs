@@ -5,8 +5,15 @@ public class GameStatus : MonoBehaviour
     // Save game status
     private static GameStatus _instance;
     // Save mechanics status with key id
-    private static Dictionary<string, bool> activatedMechanics = new Dictionary<string, bool>();
-
+    private static readonly Dictionary<string, bool> activatedMechanics = new Dictionary<string, bool>();
+    // Add struct to save the dropped book status
+    public struct BookDroppedStatus
+    {
+        public Vector3 droppedPosition;
+        public Vector3 droppedRotation;
+        public Vector3 droppedScale;
+    }
+    private static readonly Dictionary<string, BookDroppedStatus> droppedStatus = new Dictionary<string, BookDroppedStatus>();
     void Awake()
     {
         if (_instance == null)
@@ -33,5 +40,22 @@ public class GameStatus : MonoBehaviour
     public static void ClearStatus()
     {
         activatedMechanics.Clear();
+        droppedStatus.Clear();
+    }
+    // Save the dropped book position
+    public static void SaveBookDroppedStatus(string key, Transform transform)
+    {
+        // Save vector position
+        droppedStatus[key] = new BookDroppedStatus
+        {
+            droppedPosition = transform.localPosition,
+            droppedRotation = transform.localEulerAngles,
+            droppedScale = transform.localScale
+        };
+    }
+
+    public static bool GetBookDroppedStatus(string key, out BookDroppedStatus value)
+    {
+        return droppedStatus.TryGetValue(key, out value);
     }
 }
