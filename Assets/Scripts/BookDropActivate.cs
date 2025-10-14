@@ -35,7 +35,7 @@ public class BookDropActivate : MonoBehaviour
         // If this mechanics activated, reset
         if (GameStatus.IsActivated(mechanicKey))
         {
-            ResetDoorStatus();
+            ResetBookStatus();
         }
         else
         {
@@ -56,7 +56,22 @@ public class BookDropActivate : MonoBehaviour
             ActivateDoor();
         }
     }
+    // Save the dropped book status once mechanics activated
+    private void BookActivated(PlayableDirector playableDirector)
+    {
+        if (transformModel)
+        {
+            // Add a "_root" to differentiate key place, transformation is on the root
+            GameStatus.SaveBookDroppedStatus(mechanicKey + "_root", transformModel);
+        }
 
+        if (rotateModel)
+        {
+            GameStatus.SaveBookDroppedStatus(mechanicKey + "_child", rotateModel);
+        }
+        // Do not activated once animation stopped
+        playableDirector.stopped -= BookActivated;
+    }
     // Activate door mechanics
     public void ActivateDoor()
     {
@@ -67,10 +82,10 @@ public class BookDropActivate : MonoBehaviour
         // Play timeline animation
         if (playableDirector)
         {
-            playableDirector.stopped -=
-        }
-        if (playableDirector)
-        {
+            playableDirector.stopped -= BookActivated;
+            playableDirector.stopped += BookActivated;
+            
+            playableDirector.playOnAwake = false;
             playableDirector.time = 0;
             playableDirector.Play();
         }
@@ -83,17 +98,43 @@ public class BookDropActivate : MonoBehaviour
         GameStatus.Activated(mechanicKey, true);
     }
     // Make sure when door activated, it will keep the dropped status even when change scene
-    private void ResetDoorStatus()
+    private void ResetBookStatus()
     {
-        if (playableDirector)
-        {
-            playableDirector.time = playableDirector.duration;
-            playableDirector.Evaluate();
-        }
-
+        bool reseted = false;
         if (navMeshLink)
         {
             navMeshLink.enabled = true;
+        }
+        // Reset book transformation status
+        if (transformModel && GameStatus.GetBookDroppedStatus(mechanicKey + "_root", out var transform))
+        {
+            transformModel.localPosition = transform.droppedPosition;
+            transformModel.localEulerAngles = transform.droppedRotation;
+            transformModel.localScale = transform.droppedScale;
+            reseted = true;
+        }
+        // Reset book rotation status
+        if (rotateModel && GameStatus.GetBookDroppedStatus(mechanicKey + "_child", out var rotate))
+        {
+            rotateModel.localPosition = rotate.droppedPosition;
+            rotateModel.localEulerAngles = rotate.droppedRotation;
+            rotateModel.localScale = rotate.droppedScale;
+            reseted = true;
+        }
+        // Check if reseted
+        if (reseted)
+        {
+            hasTriggered = true;
+        }
+
+        if (transformModel)
+        {
+            GameStatus.SaveBookDroppedStatus(mechanicKey + "_root", transformModel);
+        }
+
+        if (rotateModel)
+        {
+            GameStatus.SaveBookDroppedStatus(mechanicKey + "_child", rotateModel);
         }
         hasTriggered = true;
     }
