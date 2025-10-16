@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2840294333042160030, guid: b857134af29a944a882f0638703a40bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 943b155896655884fb75db4369f7655f, type: 2}
     - target: {fileID: 3128449275221280571, guid: b857134af29a944a882f0638703a40bd, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -416,7 +420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac9292bdd6eae470daa46912a0e459f5, type: 2}
+  - {fileID: 2100000, guid: 943b155896655884fb75db4369f7655f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -659,6 +663,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2840294333042160030, guid: b857134af29a944a882f0638703a40bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 943b155896655884fb75db4369f7655f, type: 2}
     - target: {fileID: 3128449275221280571, guid: b857134af29a944a882f0638703a40bd, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -744,7 +752,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac9292bdd6eae470daa46912a0e459f5, type: 2}
+  - {fileID: 2100000, guid: 943b155896655884fb75db4369f7655f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -887,10 +895,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 904602283506133730, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 943b155896655884fb75db4369f7655f, type: 2}
     - target: {fileID: 1043419574469471368, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1405226574095476182, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 943b155896655884fb75db4369f7655f, type: 2}
     - target: {fileID: 2423021802798247072, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -903,6 +919,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3158554672175740031, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dece438fc261f004b89192443b682d33, type: 2}
     - target: {fileID: 4883306907137100727, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1077,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ccf5bfb606244318f3255fee61f3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: RoomLife
+  targetScene: TestScene
   targetSpawnPoint: SpawnXS
   targetScale: XS
   playerTag: Player
@@ -1160,6 +1180,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2840294333042160030, guid: b857134af29a944a882f0638703a40bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dece438fc261f004b89192443b682d33, type: 2}
     - target: {fileID: 3128449275221280571, guid: b857134af29a944a882f0638703a40bd, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1245,7 +1269,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac9292bdd6eae470daa46912a0e459f5, type: 2}
+  - {fileID: 2100000, guid: 943b155896655884fb75db4369f7655f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
