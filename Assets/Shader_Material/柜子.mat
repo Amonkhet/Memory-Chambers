@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Tint
-  m_Shader: {fileID: 4800000, guid: a4c11190b4cc60b47bd8c7df5e6d4979, type: 3}
+  m_Name: "\u67DC\u5B50"
+  m_Shader: {fileID: 4800000, guid: d700d56fae72f5d4398224a497bd119b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlbedoTex:
+        m_Texture: {fileID: 2800000, guid: 2b01917ba305a734584d8a230ddf3a65, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,11 +60,31 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: a0f1f94ea5e2b884c9305219f8d7b813, type: 3}
+    - _NormalDetailMap:
+        m_Texture: {fileID: 2800000, guid: 4614328d4c8141145908ecc4f7a13d82, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBRAOTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBRBaseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBRHeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBRMetallicTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBRNormalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -86,10 +110,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AOStrength: 1
     - _AddPrecomputedVelocity: 0
+    - _AlbedoDesat: 0
+    - _AlbedoUVMode: 0
+    - _AlbedoWorldRotDeg: 0
+    - _AlbedoWorldTiling: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Amount: 0.136
+    - _BaseMix: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -97,44 +126,71 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DebugMode: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DiffuseStrength: 0.206
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _GradientHeight: 1
+    - _GradientOffset: 0
+    - _MetalAffectsSpec: 1
     - _Metallic: 0
-    - _Monochrome: 1
-    - _NoiseIntensity: 0.18
+    - _NormalFollowAlbedo: 1
+    - _NormalScale: 0.5
     - _OcclusionStrength: 1
+    - _PBRNormalScale: 1
     - _Parallax: 0.005
+    - _ParallaxScale: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Saturation: 0.6
+    - _RimPower: 2
+    - _RimStrength: 0
+    - _ShadowStrength: 0.526
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _SpecBlend: 0.5
+    - _SpecIntensity: 0.7
+    - _SpecMarkEnable: 1
+    - _SpecMarkFeather: 0.08
+    - _SpecOutlineEnable: 1
+    - _SpecOutlineStrength: 1
+    - _SpecOutlineThickness: 0
+    - _SpecShadingEnable: 0
+    - _SpecThreshold: 0.85
+    - _SpecWidth: 0.08
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _UseNoiseTex: 1
+    - _UVScale: 1
+    - _UseAlbedo: 1
+    - _UseGradient: 1
+    - _UsePBRAO: 0
+    - _UsePBRBase: 0
+    - _UsePBRHeight: 0
+    - _UsePBRMetal: 0
+    - _UsePBRNormal: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
+    - _AlbedoWorldOffset: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BottomColor: {r: 0.3666939, g: 0.21780285, b: 0.077941224, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NoiseOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _NoiseSpeed: {r: 0, g: 0, b: 0, a: 0}
-    - _NoiseTiling: {r: 200, g: 200, b: 0, a: 0}
+    - _MainLightDir: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tint: {r: 0.5275636, g: 0.56705254, b: 1, a: 1}
+    - _SpecOutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _TopColor: {r: 0.74470866, g: 0.5028176, b: 0.1641536, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &4140335859068262543
+--- !u!114 &8837163670007061813
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
