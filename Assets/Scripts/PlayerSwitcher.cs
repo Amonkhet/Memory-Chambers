@@ -54,5 +54,7 @@ public class PlayerSwitcher : MonoBehaviour
             SwitchPlayer("XS");   // 按键 1 切换为 XS 体型
         if (Input.GetKeyDown(KeyCode.Alpha2))
             SwitchPlayer("S");    // 按键 2 切换为 S 体型
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SwitchPlayer("L");    // 按键 3 切换为 L 体型
     }
 }
