@@ -36,12 +36,28 @@ public class BuildingMove : MonoBehaviour
         Vector3 direction = player.forward;
         direction.Normalize();
         direction.y = 0;
+        // Restrict building to only move follow x or z axis in stright line
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+        {
+            // Stop z axis move while move x
+            direction.x = Mathf.Abs(direction.z);
+            direction.z = 0;
+        }
+        else
+        {
+            direction.z = Mathf.Abs(direction.x);
+            direction.x = 0;
+        }
         // Building location
         Vector3 targetBuilding = transform.position + direction * pushDistance;
-        // Move building draft
-        transform.position = targetBuilding;
         // Update obstcel for navmesh surfaces
         var obstcel = GetComponent<NavMeshObstacle>();
+        if (obstcel)
+        {
+            obstcel.carving = false;
+        }
+        // Move building draft
+        transform.position = targetBuilding;
         if (obstcel)
         {
             obstcel.carving = true;
