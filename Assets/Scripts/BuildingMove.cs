@@ -35,6 +35,7 @@ public class BuildingMove : MonoBehaviour
         // Player direction
         Vector3 direction = player.forward;
         direction.Normalize();
+        direction.y = 0;
         // Building location
         Vector3 targetBuilding = transform.position + direction * pushDistance;
         // Move building draft
