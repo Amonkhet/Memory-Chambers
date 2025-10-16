@@ -10,6 +10,18 @@ public class PlayerSwitcher : MonoBehaviour
     public NavMeshAgent agent;
 
     private GameObject currentPlayer;
+    // Broadcast this agent scale/type
+    public static System.Action<NavMeshAgent, Transform> OnPlayerSwitched;
+    // Save and allow get by others
+    public static NavMeshAgent CurrentAgent
+    {
+        get; private set;
+    }
+
+    public static Transform CurrentPlayerRoot
+    {
+        get; private set;
+    }
     // Switch player function
     public void SwitchPlayer(string id)
     {
@@ -47,12 +59,19 @@ public class PlayerSwitcher : MonoBehaviour
         agent.Warp(transform.position);
         agent.isStopped = false;
         // Set camera
+        //Update agent scale to event
+        CurrentAgent = agent;
+        CurrentPlayerRoot = this.transform;
+        OnPlayerSwitched?.Invoke(agent, this.transform);
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SwitchPlayer("XS");   // 按键 1 切换为 XS 体型
         if (Input.GetKeyDown(KeyCode.Alpha2))
             SwitchPlayer("S");    // 按键 2 切换为 S 体型
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SwitchPlayer("L");    // 按键 3 切换为 L 体型
     }
 }
