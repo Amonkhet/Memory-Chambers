@@ -34,7 +34,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NormalScale: 0.24
+    - _NormalScale: 0
     - _ShadowStrength: 0.5
     - _SpecIntensity: 0.7
     - _UseAlbedo: 0
