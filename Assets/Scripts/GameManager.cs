@@ -80,6 +80,8 @@ public class GameManager : MonoBehaviour
             playerSwitcher.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
         }
         playerSwitcher.SwitchPlayer(scale);
+        // Sync cinemachine camera 
+        playerSwitcher.SendMessage("SwitchCinemachineCamera", scale);
         // Add one frame load time for scene to switch player and attributes
 #if UNITY_WEBGL
         yield return null; 
