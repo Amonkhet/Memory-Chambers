@@ -47,7 +47,7 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 - For quantitative data, we will address following aspects: Logics clarity, Feedback Responsiveness, Narrative Engagement, Satisfaction / Flow. With scalar 1-5, we aim to get an average score of 4 in every aspect. 
 
 **Timeline**: 
-- We will conduct our evaluations with our improved (with sound/music effect) Demo game (by the 20th of October) and complete evaluation by Milestone 5. 
+- We will conduct our evaluations with our improved (with animation & special effect) Demo game (by the 20th of October) and complete evaluation by Milestone 6. 
 
 **Responsibility**
 - Patrick to improve game levels and overall developments based on player feedbacks. 
@@ -71,6 +71,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
