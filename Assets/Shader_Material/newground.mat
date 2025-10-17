@@ -138,7 +138,7 @@ Material:
     - _ReceiveShadows: 1
     - _RimPower: 2
     - _RimStrength: 0
-    - _ShadowStrength: 0.643
+    - _ShadowStrength: 0.718
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecBlend: 0.5
@@ -163,7 +163,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AlbedoWorldOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.29050925, g: 0.5224494, b: 0.5950778, a: 1}
+    - _BaseColor: {r: 0.9843108, g: 1, b: 0.84257585, a: 1}
     - _BottomColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
