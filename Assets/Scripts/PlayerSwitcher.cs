@@ -63,6 +63,28 @@ public class PlayerSwitcher : MonoBehaviour
         CurrentAgent = agent;
         CurrentPlayerRoot = this.transform;
         OnPlayerSwitched?.Invoke(agent, this.transform);
+        // Tell Cinemachine which camera to use
+        SwitchCinemachineCamera(id);
+    }
+    private void SwitchCinemachineCamera(string id)
+    {
+        // Find three vritual camera
+        var camXS = GameObject.Find("VCXS");
+        var camS  = GameObject.Find("VCS");
+        var camL  = GameObject.Find("VCL");
+
+        // Set camera priority to default 5
+        if (camXS) camXS.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 5;
+        if (camS)  camS.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 5;
+        if (camL)  camL.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 5;
+
+        // Change camera priority based on player id
+        if (id == "XS" && camXS)
+            camXS.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 20;
+        else if (id == "S" && camS)
+            camS.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 20;
+        else if (id == "L" && camL)
+            camL.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 20;
     }
 
     void Update()
