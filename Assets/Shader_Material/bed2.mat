@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoTex:
-        m_Texture: {fileID: 2800000, guid: 2b01917ba305a734584d8a230ddf3a65, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa25910f093872948b24aebf23f97c7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalDetailMap:
@@ -37,12 +37,12 @@ Material:
     - _AlbedoDesat: 0.7
     - _AlbedoUVMode: 0
     - _AlbedoWorldTiling: 1
-    - _NormalScale: 0.317
+    - _NormalScale: 0.3
     - _ShadowStrength: 0.2
     - _SpecIntensity: 0.401
     - _SpecMarkEnable: 1
     m_Colors:
-    - _BaseColor: {r: 0.5084495, g: 0.23025334, b: 0, a: 1}
+    - _BaseColor: {r: 0.6029532, g: 0.22740082, b: 0.0331896, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3849505926963362284
