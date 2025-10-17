@@ -131,14 +131,14 @@ Material:
     - _GradientOffset: 0
     - _Metallic: 0
     - _NormalFollowAlbedo: 1
-    - _NormalScale: 0.47
+    - _NormalScale: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimPower: 2
     - _RimStrength: 0
-    - _ShadowStrength: 0.558
+    - _ShadowStrength: 0.643
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecBlend: 0.5
