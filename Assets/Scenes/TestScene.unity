@@ -302494,7 +302494,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 100
+    maxNumParticles: 80
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -302641,7 +302641,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 3.23
     radius:
-      value: 2
+      value: 6
       mode: 0
       spread: 0
       speed:
