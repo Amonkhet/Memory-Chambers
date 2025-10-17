@@ -25,6 +25,24 @@ placeholder for it [here](README.md).
 
 We adopt think-aloud and post-task walkthroughs during observations. Because our game has elements of puzzle-solving, think-aloud method can reveal players’ reasoning paths in our puzzle pattern recognition, deduction, and cross-space logic. Think-aloud also exposes points of confusion early by hearing player's real-time expression. And it requires only screen/audio recording which is low setup cost. With the screen/audio recording, we will further conduct post-task walkthroughs to better understand players' reasoning. We will also ask questions to access users' overall emotional engagement and narrative comprehension of the game. With these two observational methods together, we want to encourage deeper verbalization without breaking too much immersion. For querting technique, we use questionnaires with ten fixed questions, each question scaling from 1 to 5 (Strongly disgree, disagree, neutral, agree, strongly agree). We will ask the players to play the game with the tasks to find the exit of the first room space; and to move the buildings in the second room space.
 
+**Think-abloud & Post-task walkthrough: 3~5 questions**: 
+- Why did you make certain movements (based on player's behaviours and observer's notes)?
+- Why did you express certain feelings (based on player's emotions, confused, frustrated or excited)?
+- How long did it take you to feel “comfortable” with how the game works?
+- Describe any moments when the game did not behave as you expected.
+
+**Questionnaire: 10 scaled questions**: (Strongly disgree, disagree, neutral, agree, strongly agree)
+1. The character control and interactions were comfortable and intuitive.
+2. The frame rate and animation felt smooth during play.
+3. It was clear what I needed to do to progress or escape from the start.
+4. I understood the time transition represented by the moon and building in the work space.
+5. The layout of the environment felt logical and cohesive.
+6. I understood the connection between the two rooms (“life” and “work”) and the larger space.
+7. The visual (lighting, color, text) enhanced the experience of exploring.
+8. The sound effects and/or background music enhanced the experience.
+9. The overall performance met my expectations for a playable prototype.
+10. The gameplay felt engaging and coherent.
+
 **Participants**: Our target audience is mainly university students who enjoy narrative-driven puzzle/adventure games, atmospheric story experiences, and exploration. We also include some causal players who play games less often, but enjoy aesthetics/emotion. To ensure the representativeness, we aim to balance game familiarity (70% who play games often, 30% otherwise) and gender (males/females).
 
 **Stratified quota sampling**: 
@@ -71,6 +89,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
