@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Event listener to get click position and for adding future animation/effects
     public static event System.Action<Vector3> WhenGroundClicked;
     [Header("Jump Settings")]
-    [SerializeField] float jumpHeightThreshold = 0.6f; // how high must the target be to jump
+    [SerializeField] float jumpHeightThreshold = 1.0f; // how high must the target be to jump
     [SerializeField] float jumpDuration = 5.9f;        // how long jump animation lasts
     private bool isJumping = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
