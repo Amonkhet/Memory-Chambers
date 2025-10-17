@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     // Nev mesh agent variables
     private NavMeshAgent agent;
+    private Animator anim;
     // Range to find walkable point
     [Header("Control Settings")]
     [SerializeField] float rangeWalkable = 0.5f;
@@ -15,9 +16,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     // Event listener to get click position and for adding future animation/effects
     public static event System.Action<Vector3> WhenGroundClicked;
+    [Header("Jump Settings")]
+    [SerializeField] float jumpHeightThreshold = 0.6f; // how high must the target be to jump
+    [SerializeField] float jumpDuration = 5.9f;        // how long jump animation lasts
+    private bool isJumping = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
     }
@@ -26,28 +32,55 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Check if left mouse clicked every frame
-        if (Input.GetMouseButtonDown(0))
+       if (Input.GetMouseButtonDown(0) && !isJumping)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            // Activate event if click on interative object
             if (Physics.Raycast(ray, out RaycastHit hitClick))
             {
                 EventManager.WhenObjectClicked(hitClick, transform);
             }
-            // If the ray cast by left click is on baked nev mesh
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
                 int mask = agent.areaMask;
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, mask))
                 {
-                    agent.SetDestination(navHit.position);
-                    // Interface for animation and click effects
+                    float heightDiff = navHit.position.y - transform.position.y;
+                    if (heightDiff > jumpHeightThreshold)
+                    {
+                        StartCoroutine(JumpTo(navHit.position));
+                    }
+                    else
+                    {
+                        agent.SetDestination(navHit.position);
+                    }
                     if (WhenGroundClicked != null)
                     {
                         WhenGroundClicked.Invoke(navHit.position);
                     }
                 }
+                else
+                {
+                    Debug.Log("Clicked point is not a walkable area.");
+                }
             }
         }
+        float normalizedSpeed = Mathf.InverseLerp(0f, agent.speed, agent.velocity.magnitude);
+        anim.SetFloat("Speed", normalizedSpeed);
     }
+
+        private System.Collections.IEnumerator JumpTo(Vector3 destination)
+        {
+            isJumping = true;
+            agent.isStopped = true;
+
+            anim.SetTrigger("Jump"); // trigger jump animation
+
+            yield return new WaitForSeconds(jumpDuration * 0.8f);
+
+            agent.Warp(destination); // teleport or move the character to new position
+            agent.isStopped = false;
+
+            isJumping = false;
+        }
+            
 }
