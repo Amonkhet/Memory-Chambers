@@ -45,14 +45,15 @@ public class PlayerController : MonoBehaviour
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, mask))
                 {
                     float heightDiff = navHit.position.y - transform.position.y;
-                    if (heightDiff > jumpHeightThreshold)
-                    {
-                        StartCoroutine(JumpTo(navHit.position));
-                    }
-                    else
-                    {
-                        agent.SetDestination(navHit.position);
-                    }
+                    // if (heightDiff > jumpHeightThreshold)
+                    // {
+                    //     StartCoroutine(JumpTo(navHit.position));
+                    // }
+                    // else
+                    // {
+                    //     agent.SetDestination(navHit.position);
+                    // }
+                    agent.SetDestination(navHit.position);
                     if (WhenGroundClicked != null)
                     {
                         WhenGroundClicked.Invoke(navHit.position);
@@ -68,19 +69,19 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", normalizedSpeed);
     }
 
-        private System.Collections.IEnumerator JumpTo(Vector3 destination)
-        {
-            isJumping = true;
-            agent.isStopped = true;
-
-            anim.SetTrigger("Jump"); // trigger jump animation
-
-            yield return new WaitForSeconds(jumpDuration * 0.8f);
-
-            agent.Warp(destination); // teleport or move the character to new position
-            agent.isStopped = false;
-
-            isJumping = false;
-        }
+        // private System.Collections.IEnumerator JumpTo(Vector3 destination)
+        // {
+        //     isJumping = true;
+        //     agent.isStopped = true;
+        //
+        //     anim.SetTrigger("Jump"); // trigger jump animation
+        //
+        //     yield return new WaitForSeconds(jumpDuration * 0.8f);
+        //
+        //     agent.Warp(destination); // teleport or move the character to new position
+        //     agent.isStopped = false;
+        //
+        //     isJumping = false;
+        // }
             
 }
