@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2488490297749098303
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u67DC\u5B50"
+  m_Name: Final_floor
   m_Shader: {fileID: 4800000, guid: d700d56fae72f5d4398224a497bd119b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoTex:
-        m_Texture: {fileID: 2800000, guid: 24e1938c8199cae4e882b288a0947f8f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 05639ceb0eb077f429832c6260aa6e95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -61,30 +74,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalDetailMap:
-        m_Texture: {fileID: 2800000, guid: cc90a75efdd0bca4e8aa046c64d3f091, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6188e91f42919349bdea4ec9dd2f8d5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _PBRAOTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _PBRBaseTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _PBRHeightTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _PBRMetallicTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _PBRNormalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -110,15 +103,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AOStrength: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoDesat: 0
     - _AlbedoUVMode: 0
     - _AlbedoWorldRotDeg: 0
-    - _AlbedoWorldTiling: 2
+    - _AlbedoWorldTiling: 12
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _BaseMix: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -136,32 +127,29 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GradientHeight: 0
+    - _GradientHeight: 2
     - _GradientOffset: 0
-    - _MetalAffectsSpec: 1
     - _Metallic: 0
-    - _NormalFollowAlbedo: 1
-    - _NormalScale: 1.425
+    - _NormalFollowAlbedo: 0
+    - _NormalScale: 0.276
     - _OcclusionStrength: 1
-    - _PBRNormalScale: 1
     - _Parallax: 0.005
-    - _ParallaxScale: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimPower: 2
     - _RimStrength: 0
-    - _ShadowStrength: 0.332
+    - _ShadowStrength: 0.497
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecBlend: 0.5
     - _SpecIntensity: 0.7
-    - _SpecMarkEnable: 1
-    - _SpecMarkFeather: 0.326
+    - _SpecMarkEnable: -4.39
+    - _SpecMarkFeather: 0.08
     - _SpecOutlineEnable: 1
     - _SpecOutlineStrength: 1
-    - _SpecOutlineThickness: 0
+    - _SpecOutlineThickness: 1
     - _SpecShadingEnable: 0
-    - _SpecThreshold: 1
+    - _SpecThreshold: 0.85
     - _SpecWidth: 0.08
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -170,36 +158,18 @@ Material:
     - _UVScale: 1
     - _UseAlbedo: 1
     - _UseGradient: 0
-    - _UsePBRAO: 0
-    - _UsePBRBase: 0
-    - _UsePBRHeight: 0
-    - _UsePBRMetal: 0
-    - _UsePBRNormal: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
     - _AlbedoWorldOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.90588236, g: 0.70980394, b: 0.13725491, a: 1}
-    - _BottomColor: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
+    - _BaseColor: {r: 0.8745098, g: 0.76862746, b: 0.6431373, a: 1}
+    - _BottomColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MainLightDir: {r: 0, g: 1, b: 0, a: 0}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecOutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0.74470866, g: 0.5028176, b: 0.1641536, a: 1}
+    - _TopColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8837163670007061813
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 9

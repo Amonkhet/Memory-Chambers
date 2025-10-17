@@ -37,7 +37,7 @@ Material:
     - _AlbedoDesat: 0.7
     - _AlbedoUVMode: 0
     - _AlbedoWorldTiling: 1
-    - _NormalScale: 0.48
+    - _NormalScale: 0.317
     - _ShadowStrength: 0.2
     - _SpecIntensity: 0.401
     - _SpecMarkEnable: 1
