@@ -111,15 +111,31 @@ public class BuildingTimeActivate : MonoBehaviour
                 agent.ResetPath();
             }
         }
+        // Play forward or backward
+        const double EPS = 0.01;
+        var duration = playableDirector.duration;
+        var time = playableDirector.time;
         if (playForward)
         {
-            playableDirector.time = 0;
+            if (time >= duration - EPS)
+            {
+                time = EPS;
+            }else if (time <= EPS)
+            {
+                time = EPS;
+            }
         }
         else
         {
-            playableDirector.time = playableDirector.duration;
-
+            if (time <= EPS)
+            {
+                time = duration - EPS;
+            }else if (time >= duration - EPS)
+            {
+                time = duration - EPS;
+            }
         }
+        playableDirector.time = time;
         playableDirector.Evaluate();
         playableDirector.Play();
         // Set play forward or backward
