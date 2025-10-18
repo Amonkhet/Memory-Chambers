@@ -80,6 +80,18 @@ public class BuildingTimeActivate : MonoBehaviour
                 agent.ResetPath();
             }
         }
+        // Play forward or backward
+        if (playForward)
+        {
+            playableDirector.time = 0;
+            playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
+        }
+        else
+        {
+            playableDirector.time = playableDirector.duration;
+            playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(-1);
+        }
+        playableDirector.Play();
     }
 
     void OnBuildingTimelineStopped()
@@ -106,10 +118,5 @@ public class BuildingTimeActivate : MonoBehaviour
         }
         isActive = false;
     }
-    // Show activate range visually
-    void ShowActivateRange()
-    {
-        Gizmos.color = new Color(0, 1, 1, 0.25f);
-        Gizmos.DrawWireSphere(transform.position, activateRange);
-    }
+
 }
