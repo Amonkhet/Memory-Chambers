@@ -9,6 +9,7 @@ public class BuildingTimeActivate : MonoBehaviour
     [Header("Activate Range")]
     [SerializeField] float activateRange = 2f;
     [SerializeField] LayerMask buildingTimeMask;
+    [SerializeField] Collider doorCollider;
     
     [Header("Animation Timeline")]
     [SerializeField] PlayableDirector playableDirector;
@@ -27,11 +28,31 @@ public class BuildingTimeActivate : MonoBehaviour
     private bool playerRotUpdate;
     // Control Camera
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            CheckActivateRange();
+        }
+        
+    }
+    // Calculate player distance range to door
+    float CalculateActivateRange()
+    {
+        if (doorCollider)
+        {
+            Vector3 player = agent.transform.position;
+            Vector3 closetPoint = doorCollider.ClosestPoint(player);
+            return Vector2.Distance(new Vector2(player.x, player.z), new Vector2(closetPoint.x, closetPoint.z));
+        }
+
+        return 0;
+    }
     void CheckActivateRange()
     {
         // Check if near activate range
-        Transform playerPosition = agent.transform;
-        float distance = Vector3.Distance(playerPosition.position, transform.position);
+        // Transform playerPosition = agent.transform;
+        float distance = CalculateActivateRange();
         if (distance > activateRange)
         {
             return;
