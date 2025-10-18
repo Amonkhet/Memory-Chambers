@@ -10,6 +10,7 @@ public class BuildingTimelineManager : MonoBehaviour
     [Header("Timeline")]
     [SerializeField] PlayableDirector timelineForward;
     [SerializeField] PlayableDirector timelineBackward;
+    [SerializeField] PlayableDirector timelineReset;
 
     [Header("Door trigger")]
     [SerializeField] GameObject doorA; 
@@ -37,6 +38,7 @@ public class BuildingTimelineManager : MonoBehaviour
     {
         if (timelineForward)  timelineForward.stopped  += _ => OnTimelineStopped();
         if (timelineBackward) timelineBackward.stopped += _ => OnTimelineStopped();
+        if (timelineReset) timelineReset.stopped += _ => OnTimelineStopped();
         SwitchDoorWithStage(currentBuildingStge);
     }
 
@@ -63,7 +65,7 @@ public class BuildingTimelineManager : MonoBehaviour
                 else if (door == DoorTiggerID.B)
                 {
                     // S1 with B to S0
-                    PlayBackward(BuildingSceneStage.S0, () =>
+                    PlayReset(BuildingSceneStage.S0, () =>
                     {
                         SetGroup1Door(DoorTiggerID.D);    
                         MovePlayerTo(doorGroup1ExitPoint); 
@@ -96,11 +98,20 @@ public class BuildingTimelineManager : MonoBehaviour
                 break;
         }
     }
+    // Stop all playable directors
+    // 播放任何一条前先停掉其他，防并发 ——【新增】
+    void StopAllDirectors()
+    {
+        if (timelineForward  && timelineForward.state  == PlayState.Playing) timelineForward.Stop();
+        if (timelineBackward && timelineBackward.state == PlayState.Playing) timelineBackward.Stop();
+        if (timelineReset && timelineReset.state == PlayState.Playing) timelineReset.Stop();
+    }
 
     // Timeline playforward and backward
 
     void PlayForward(BuildingSceneStage toState, System.Action after)
     {
+        StopAllDirectors();
         if (!timelineForward)
         {
             return;
@@ -117,6 +128,7 @@ public class BuildingTimelineManager : MonoBehaviour
 
     void PlayBackward(BuildingSceneStage toState, System.Action after)
     {
+        StopAllDirectors();
         if (!timelineBackward)
         {
             return;
@@ -137,8 +149,30 @@ public class BuildingTimelineManager : MonoBehaviour
         currentBuildingStge = toState;
         StartCoroutine(InvokeOnStop(timelineBackward, after));
     }
+    
+    void PlayReset(BuildingSceneStage toState, System.Action after)
+    {
+        if (!timelineReset)
+        {
+            return;
+        }
 
+        StopAllDirectors();
+        ActivateTimelineAnimation();
 
+        const double EPS = 0.001; 
+        timelineReset.time = Mathf.Max((float)timelineReset.duration - (float)EPS, (float)EPS);
+        timelineReset.Evaluate();
+
+        var root = timelineReset.playableGraph.GetRootPlayable(0);
+        if (root.IsValid())
+        {
+            root.SetSpeed(-1.0);
+        } 
+        timelineReset.Play();
+        currentBuildingStge = toState;
+        StartCoroutine(InvokeOnStop(timelineReset, after));
+    }
 
     void ActivateTimelineAnimation()
     {
