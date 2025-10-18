@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mat_SobelOutlineFS
-  m_Shader: {fileID: 4800000, guid: 7cdad62666325fa4891d937081ce0940, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8766f384a6dea054292368e5d5ef0a1e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -103,6 +103,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _MaskRead: 255
+    - _MaskRef: 1
     - _Metallic: 0
     - _NormalScale: 2.35
     - _OcclusionStrength: 1
