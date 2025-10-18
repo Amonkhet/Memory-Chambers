@@ -17,6 +17,6 @@ public class SyncPlayerAnimation : MonoBehaviour
         if (!agent || !animator) return;
         float speed = agent.velocity.magnitude;
         animator.SetFloat("Speed", speed, damp, Time.deltaTime);
-        animator.SetBool("Moving", speed > 0.05f);
+        // animator.SetBool("Moving", speed > 0.05f);
     }
 }
