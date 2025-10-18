@@ -387,10 +387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0329f1d3dde4858b7ed58e59de22d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateRange: 2
+  activateRange: 0.6
   buildingTimeMask:
     serializedVersion: 2
     m_Bits: 512
+  doorCollider: {fileID: 654661928}
   playableDirector: {fileID: 537812936}
   playForward: 1
   agent: {fileID: 153299808}
@@ -2576,7 +2577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2040907635}
   - component: {fileID: 2040907637}
-  - component: {fileID: 2040907636}
+  - component: {fileID: 2040907638}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -2599,19 +2600,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2125389091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2040907636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040907634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7754e0473902a4a9cb8d46a900ab381c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateRange: 0.6
 --- !u!65 &2040907637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2633,6 +2621,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2040907638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040907634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7754e0473902a4a9cb8d46a900ab381c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateRange: 0.6
 --- !u!1 &2095818953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,10 +2960,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0329f1d3dde4858b7ed58e59de22d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateRange: 0.2
+  activateRange: 0.6
   buildingTimeMask:
     serializedVersion: 2
     m_Bits: 512
+  doorCollider: {fileID: 2040907637}
   playableDirector: {fileID: 537812936}
   playForward: 1
   agent: {fileID: 153299808}
