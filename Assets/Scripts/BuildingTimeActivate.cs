@@ -18,9 +18,13 @@ public class BuildingTimeActivate : MonoBehaviour
     [Header("Deactivate Player")]
     [SerializeField] NavMeshAgent agent;
     [SerializeField] bool deactivatePlayer = true;
-    [SerializeField] MonoBehaviour playerController;
+    [SerializeField] MonoBehaviour playerControllerScript;
     
-    bool isActive = false;
+    private bool isActive;
+    private bool playerControlEnabled;
+    private bool agentEnabled;
+    private bool playerPosUpdate;
+    private bool playerRotUpdate;
     // Control Camera
 
     void CheckActivateRange()
@@ -53,6 +57,59 @@ public class BuildingTimeActivate : MonoBehaviour
     {
         isActive = true;
         // Deactivate player before play animation
+        if (playerControllerScript)
+        {
+            playerControlEnabled = agent.enabled;
+            playerControllerScript.enabled = false;
+        }
+        if (agent)
+        {
+            if (deactivatePlayer)
+            {
+                agentEnabled = agent.enabled;
+                agent.enabled = false;
+            }
+            else
+            {
+                // deactivate agent control
+                playerPosUpdate = agent.updatePosition;
+                playerRotUpdate = agent.updateRotation;
+                agent.isStopped = true;
+                agent.updatePosition = false;
+                agent.updateRotation = false;
+                agent.ResetPath();
+            }
+        }
     }
 
+    void OnBuildingTimelineStopped()
+    {
+        // Recover player control
+        if (playerControllerScript)
+            playerControllerScript.enabled = playerControlEnabled;
+
+        // Recover agent control
+        if (agent)
+        {
+            if (deactivatePlayer)
+            {
+                // Recover agent in new timeline player position
+                agent.enabled = agentEnabled;
+                agent.Warp(agent.transform.position);
+            }
+            else
+            {
+                agent.updatePosition = playerPosUpdate;
+                agent.updateRotation = playerRotUpdate;
+                agent.isStopped = false;
+            }
+        }
+        isActive = false;
+    }
+    // Show activate range visually
+    void ShowActivateRange()
+    {
+        Gizmos.color = new Color(0, 1, 1, 0.25f);
+        Gizmos.DrawWireSphere(transform.position, activateRange);
+    }
 }
