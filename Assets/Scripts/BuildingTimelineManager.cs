@@ -99,7 +99,6 @@ public class BuildingTimelineManager : MonoBehaviour
         }
     }
     // Stop all playable directors
-    // 播放任何一条前先停掉其他，防并发 ——【新增】
     void StopAllDirectors()
     {
         if (timelineForward  && timelineForward.state  == PlayState.Playing) timelineForward.Stop();
@@ -196,8 +195,7 @@ public class BuildingTimelineManager : MonoBehaviour
             playerAgent.ResetPath();
         }
     }
-
-    void OnTimelineStopped()
+    void FinishPlay()
     {
         // Recover player
         if (playerControlScript) playerControlScript.enabled = playerControlEnabled;
@@ -210,13 +208,18 @@ public class BuildingTimelineManager : MonoBehaviour
         SwitchDoorWithStage(currentBuildingStge);
         isPlaying = false;
     }
+    void OnTimelineStopped()
+    {
+        FinishPlay();
+    }
 
     System.Collections.IEnumerator InvokeOnStop(PlayableDirector d, System.Action after)
     {
         // wait until stop
         yield return null;
-        while (d.state == PlayState.Playing) yield return null;
+        while (d && d.state == PlayState.Playing) yield return null;
         after?.Invoke();
+        FinishPlay();
     }
     
 
