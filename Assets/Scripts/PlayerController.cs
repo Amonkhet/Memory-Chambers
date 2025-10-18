@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
                 int mask = agent.areaMask;
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, mask))
                 {
-                    float heightDiff = navHit.position.y - transform.position.y;
+                    // float heightDiff = navHit.position.y - transform.position.y;
                     // if (heightDiff > jumpHeightThreshold)
                     // {
                     //     StartCoroutine(JumpTo(navHit.position));
@@ -73,14 +73,14 @@ public class PlayerController : MonoBehaviour
         // {
         //     isJumping = true;
         //     agent.isStopped = true;
-        //
+        
         //     anim.SetTrigger("Jump"); // trigger jump animation
-        //
+        
         //     yield return new WaitForSeconds(jumpDuration * 0.8f);
-        //
+        
         //     agent.Warp(destination); // teleport or move the character to new position
         //     agent.isStopped = false;
-        //
+        
         //     isJumping = false;
         // }
             
