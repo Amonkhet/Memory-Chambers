@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChatGPT Image Oct 9, 2025, 01_44_19 AM
+  m_Name: greycolourdefault
   m_Shader: {fileID: 4800000, guid: d700d56fae72f5d4398224a497bd119b, type: 3}
   m_Parent: {fileID: 2100000, guid: dfc6eedbab89d7d4da72a9fd651f5381, type: 2}
   m_ModifiedSerializedProperties: 0
