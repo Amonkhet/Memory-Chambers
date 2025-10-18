@@ -34,7 +34,6 @@ public class BuildingTimeActivate : MonoBehaviour
         {
             CheckActivateRange();
         }
-        
     }
     // Calculate player distance range to door
     float CalculateActivateRange()
@@ -101,18 +100,30 @@ public class BuildingTimeActivate : MonoBehaviour
                 agent.ResetPath();
             }
         }
-        // Play forward or backward
         if (playForward)
         {
             playableDirector.time = 0;
-            playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
         }
         else
         {
             playableDirector.time = playableDirector.duration;
-            playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(-1);
+
         }
+        playableDirector.Evaluate();
         playableDirector.Play();
+        // Set play forward or backward
+        var graph = playableDirector.playableGraph;
+        if (graph.IsValid())
+        {
+            if (playForward)
+            {
+                playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1);
+            }
+            else
+            {
+                playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(-1);
+            }
+        }
     }
 
     void OnBuildingTimelineStopped()
