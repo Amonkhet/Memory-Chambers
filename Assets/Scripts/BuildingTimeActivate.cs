@@ -27,7 +27,11 @@ public class BuildingTimeActivate : MonoBehaviour
     private bool playerPosUpdate;
     private bool playerRotUpdate;
     // Control Camera
-
+    void Awake()
+    {
+        if (playableDirector)
+            playableDirector.stopped += _ => OnBuildingTimelineStopped();
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -79,7 +83,14 @@ public class BuildingTimeActivate : MonoBehaviour
         // Deactivate player before play animation
         if (playerControllerScript)
         {
-            playerControlEnabled = agent.enabled;
+            if (playerControllerScript != null)
+            {
+                playerControlEnabled = playerControllerScript.enabled;
+            }
+            else
+            {
+                playerControlEnabled = false;
+            }
             playerControllerScript.enabled = false;
         }
         if (agent)
