@@ -26,7 +26,12 @@ public class BuildingTimelineManager : MonoBehaviour
 
     [Header("Current building scene stage")]
     [SerializeField] BuildingSceneStage currentBuildingStge = BuildingSceneStage.S1;
+    [SerializeField] string doorInteractLayerName = "BuildingTimelineDoor";
 
+    // Move door to different layer while playing
+    [SerializeField] string doorDisabledLayerName = "Ignore Raycast";
+    int _doorInteractLayer = -1;
+    int _doorDisabledLayer = -1;
     // Save status while playing
     private bool isPlaying;
     private bool playerControlEnabled;
@@ -36,9 +41,22 @@ public class BuildingTimelineManager : MonoBehaviour
 
     void Awake()
     {
-        if (timelineForward)  timelineForward.stopped  += _ => OnTimelineStopped();
-        if (timelineBackward) timelineBackward.stopped += _ => OnTimelineStopped();
-        if (timelineReset) timelineReset.stopped += _ => OnTimelineStopped();
+        if (timelineForward)
+        {
+            timelineForward.stopped  += _ => OnTimelineStopped();
+        }
+
+        if (timelineBackward)
+        {
+            timelineBackward.stopped += _ => OnTimelineStopped();
+        }
+
+        if (timelineReset)
+        {
+            timelineReset.stopped += _ => OnTimelineStopped();
+        }
+        _doorInteractLayer  = LayerMask.NameToLayer(doorInteractLayerName);
+        _doorDisabledLayer  = LayerMask.NameToLayer(doorDisabledLayerName);
         SwitchDoorWithStage(currentBuildingStge);
     }
 
@@ -177,7 +195,7 @@ public class BuildingTimelineManager : MonoBehaviour
     {
         isPlaying = true;
         // Deactivate door while playing
-        SetAllDoorsActive(false);
+        SetDoorsClickable(false);
 
         // Deactivate playr movement
         if (playerControlScript)
@@ -206,6 +224,7 @@ public class BuildingTimelineManager : MonoBehaviour
             playerAgent.isStopped = false;
         }
         SwitchDoorWithStage(currentBuildingStge);
+        SetDoorsClickable(true);
         isPlaying = false;
     }
     void OnTimelineStopped()
@@ -290,4 +309,22 @@ public class BuildingTimelineManager : MonoBehaviour
         playerAgent.Warp(transform.position);
         playerAgent.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
     }
+    // Set door layer to be clickable
+    void SetDoorsClickable(bool canClick)
+    {
+        int layer = canClick ? _doorInteractLayer : _doorDisabledLayer;
+        if (layer < 0) return; 
+        SetLayerSafe(doorA, layer);
+        SetLayerSafe(doorB, layer);
+        SetLayerSafe(doorC, layer);
+        SetLayerSafe(doorD, layer);
+    }
+
+    static void SetLayerSafe(GameObject safe, int layer)
+    {
+        if (!safe) return;
+        safe.layer = layer;
+        foreach (Transform t in safe.transform) SetLayerSafe(t.gameObject, layer);
+    }
+    
 }
