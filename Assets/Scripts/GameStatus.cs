@@ -73,4 +73,9 @@ public class GameStatus : MonoBehaviour
     {
         return buildingPosition.TryGetValue(key, out position);
     }
+    // Reset building status
+    public static void ClearBuildingPositionStatus()
+    {
+        buildingPosition.Clear();
+    }
 }
