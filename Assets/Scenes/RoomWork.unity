@@ -928,6 +928,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingID: BuildingA
+--- !u!114 &412771537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232070303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7754e0473902a4a9cb8d46a900ab381c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateRange: 3.2
 --- !u!1 &430960245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6703645683931249260, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
@@ -2614,7 +2627,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1126806143962665916, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126806143962665916, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
+      propertyPath: activateRange
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1444173121688267812, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
@@ -2646,6 +2663,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4371637883408375086, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500171550441186532, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5022601453420738112, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
@@ -3548,6 +3569,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1126806143962665916, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
+      propertyPath: activateRange
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1444173121688267812, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -3852,6 +3877,10 @@ PrefabInstance:
     - target: {fileID: 988343475447352833, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126806143962665916, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
+      propertyPath: activateRange
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1444173121688267812, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
@@ -4971,6 +5000,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1126806143962665916, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
+      propertyPath: activateRange
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1444173121688267812, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -5005,7 +5038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4500171550441186532, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5022601453420738112, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
@@ -5106,6 +5139,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1655648364194372531, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       insertIndex: 1
       addedObject: {fileID: 412771532}
+    - targetCorrespondingSourceObject: {fileID: 1655648364194372531, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 412771537}
     - targetCorrespondingSourceObject: {fileID: 6703645683931249260, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1008787390}
