@@ -466,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 106199534}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6583097, y: -0.39076352, z: 5.617689}
+  m_LocalPosition: {x: 0.6583097, y: 3.62, z: 5.617689}
   m_LocalScale: {x: 6.3909497, y: 3.7463899, z: 3.7463899}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2006,8 +2006,8 @@ Camera:
   m_GameObject: {fileID: 548100734}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2125,7 +2125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &567981157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5735,7 +5735,7 @@ PrefabInstance:
     - target: {fileID: 904602283506133730, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 25cd375247b188f45a2d9aa9f1be2bac, type: 2}
+      objectReference: {fileID: 2100000, guid: dbbb07a40ff06d3409f009bdd54c9de3, type: 2}
     - target: {fileID: 1405226574095476182, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -5743,7 +5743,7 @@ PrefabInstance:
     - target: {fileID: 3158554672175740031, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 25cd375247b188f45a2d9aa9f1be2bac, type: 2}
+      objectReference: {fileID: 2100000, guid: dbbb07a40ff06d3409f009bdd54c9de3, type: 2}
     - target: {fileID: 6085530050507967072, guid: 130ff1f54a8cc43e19d189fbfe4de229, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.98897
@@ -6894,8 +6894,8 @@ Camera:
   m_GameObject: {fileID: 2042825745}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
