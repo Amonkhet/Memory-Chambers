@@ -13,6 +13,12 @@ public class ResetWorkScene : MonoBehaviour
         if (Input.GetKeyDown(resetKey))
         {
             GameStatus.ClearBuildingPositionStatus();
+            // Reset all building position to initial state
+            var buildings = FindObjectsOfType<BuildingMove>();
+            foreach (var building in buildings)
+            {
+                building.ResetBuildingPosition();
+            }
             // var currentScene = SceneManager.GetActiveScene();
             // SceneManager.LoadScene(currentScene.buildIndex);
         }

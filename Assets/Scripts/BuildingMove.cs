@@ -9,9 +9,11 @@ public class BuildingMove : MonoBehaviour
     [Header("Pushable activate range")]
     [SerializeField] float activateRange = 2.8f;
     private BuildingKeyID buildingKeyID;
+    private Vector3 initialPosition;
 
     void Awake()
     {
+        initialPosition = transform.position;
         buildingKeyID = GetComponent<BuildingKeyID>();
     }
     // If moved, resume building position
@@ -96,5 +98,19 @@ public class BuildingMove : MonoBehaviour
             obstcel.carving = true;
         }
         GameStatus.SaveBuildingPositionStatus(buildingKeyID.BuildingID, transform.position);
+    }
+    // Reset building position to initial
+    public void ResetBuildingPosition()
+    {
+        var obstcel = GetComponent<NavMeshObstacle>();
+        if (obstcel)
+        {
+            obstcel.carving = false;
+        }
+        transform.position = initialPosition;
+        if (obstcel)
+        {
+            obstcel.carving = true;
+        }
     }
 }
