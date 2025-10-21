@@ -16,18 +16,19 @@ public class BlueprintManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AllOnCorrectTile = CheckAllOnCOrrectTile();
+        AllOnCorrectTile = CheckAllOnCorrectTile();
         if (AllOnCorrectTile != lastState)
         {
             lastState = AllOnCorrectTile;
             if (AllOnCorrectTile)
             {
+                Debug.Log("All On Correct Tile 1");
                 WhenAllOnCorrectTile();
             }
         }
     }
 
-    bool CheckAllOnCOrrectTile()
+    bool CheckAllOnCorrectTile()
     {
         return blueprintA && blueprintA.IsBuildingOnCorrectTile() && blueprintB && blueprintB.IsBuildingOnCorrectTile() && blueprintC && blueprintC.IsBuildingOnCorrectTile() && blueprintD && blueprintD.IsBuildingOnCorrectTile();
     }
@@ -35,6 +36,6 @@ public class BlueprintManager : MonoBehaviour
     // When all on correct tile, use this method
     void WhenAllOnCorrectTile()
     {
-        Debug.Log("All On Correct Tile");
+        Debug.Log("All On Correct Tile 2");
     }
 }
