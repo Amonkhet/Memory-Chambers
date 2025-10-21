@@ -6,7 +6,7 @@ public class GameStatus : MonoBehaviour
     private static GameStatus _instance;
     // Save mechanics status with key id
     private static readonly Dictionary<string, bool> activatedMechanics = new Dictionary<string, bool>();
-    // Add struct to save the dropped book status
+    // For Book Drop Status: Add struct to save the dropped book status
     public struct BookDroppedStatus
     {
         public Vector3 droppedPosition;
@@ -14,6 +14,9 @@ public class GameStatus : MonoBehaviour
         public Vector3 droppedScale;
     }
     private static readonly Dictionary<string, BookDroppedStatus> droppedStatus = new Dictionary<string, BookDroppedStatus>();
+    
+    // For Move building Status:
+    private static readonly Dictionary<string, Vector3> buildingPosition = new Dictionary<string, Vector3>();
     void Awake()
     {
         if (_instance == null)
@@ -26,6 +29,7 @@ public class GameStatus : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    // For book drop status in room life
     // Record mechanics status
     public static void Activated(string key, bool value = true)
     {
@@ -57,5 +61,16 @@ public class GameStatus : MonoBehaviour
     public static bool GetBookDroppedStatus(string key, out BookDroppedStatus value)
     {
         return droppedStatus.TryGetValue(key, out value);
+    }
+    
+    // For move building status in room work
+    public static void SaveBuildingPositionStatus(string key, Vector3 position)
+    {
+        buildingPosition[key] = position;
+    }
+
+    public static bool GetBuildingPositionStatus(string key, out Vector3 position)
+    {
+        return buildingPosition.TryGetValue(key, out position);
     }
 }

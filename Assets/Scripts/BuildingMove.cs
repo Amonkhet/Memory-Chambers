@@ -8,6 +8,30 @@ public class BuildingMove : MonoBehaviour
     [SerializeField] float pushDistance = 2.5f;
     [Header("Pushable activate range")]
     [SerializeField] float activateRange = 2.8f;
+    private BuildingKeyID buildingKeyID;
+    // If moved, resume building position
+    private void Start()
+    {
+        if (GameStatus.GetBuildingPositionStatus(buildingKeyID.BuildingID, out var savedPosition))
+        {
+            // Enable obsctel carving or not
+            var obstacel = GetComponent<NavMeshObstacle>();
+            if (obstacel)
+            {
+                obstacel.carving = false;
+                transform.position = new Vector3(savedPosition.x, transform.position.y, savedPosition.z);
+            }
+
+            if (obstacel)
+            {
+                obstacel.carving = true;
+            }
+        }
+        else
+        {
+            GameStatus.SaveBuildingPositionStatus(buildingKeyID.BuildingID, transform.position);
+        }
+    }
 
     private void Update()
     {
@@ -67,5 +91,6 @@ public class BuildingMove : MonoBehaviour
         {
             obstcel.carving = true;
         }
+        GameStatus.SaveBuildingPositionStatus(buildingKeyID.BuildingID, transform.position);
     }
 }
