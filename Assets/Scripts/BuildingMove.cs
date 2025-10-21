@@ -9,6 +9,11 @@ public class BuildingMove : MonoBehaviour
     [Header("Pushable activate range")]
     [SerializeField] float activateRange = 2.8f;
     private BuildingKeyID buildingKeyID;
+
+    void Awake()
+    {
+        buildingKeyID = GetComponent<BuildingKeyID>();
+    }
     // If moved, resume building position
     private void Start()
     {
@@ -19,9 +24,8 @@ public class BuildingMove : MonoBehaviour
             if (obstacel)
             {
                 obstacel.carving = false;
-                transform.position = new Vector3(savedPosition.x, transform.position.y, savedPosition.z);
             }
-
+            transform.position = new Vector3(savedPosition.x, transform.position.y, savedPosition.z);
             if (obstacel)
             {
                 obstacel.carving = true;
