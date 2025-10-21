@@ -4,7 +4,6 @@ public class BlueprintManager : MonoBehaviour
 {
     // Attribute
     [Header("Blueprint tile")] 
-    [SerializeField] private BlueprintActivate blueprintA;
     [SerializeField] private BlueprintActivate blueprintB;
     [SerializeField] private BlueprintActivate blueprintC;
     [SerializeField] private BlueprintActivate blueprintD;
@@ -30,7 +29,7 @@ public class BlueprintManager : MonoBehaviour
 
     bool CheckAllOnCorrectTile()
     {
-        return blueprintA && blueprintA.IsBuildingOnCorrectTile() && blueprintB && blueprintB.IsBuildingOnCorrectTile() && blueprintC && blueprintC.IsBuildingOnCorrectTile() && blueprintD && blueprintD.IsBuildingOnCorrectTile();
+        return blueprintB && blueprintB.IsBuildingOnCorrectTile() && blueprintC && blueprintC.IsBuildingOnCorrectTile() && blueprintD && blueprintD.IsBuildingOnCorrectTile();
     }
     
     // When all on correct tile, use this method
