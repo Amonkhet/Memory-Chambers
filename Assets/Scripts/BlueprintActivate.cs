@@ -13,7 +13,7 @@ public class BlueprintActivate : MonoBehaviour
     public string currentBuildingID { get; private set; }
 
     // When building is on this blueprint tile
-    void BuildingOnTile(Collider collider)
+    void OnTriggerEnter(Collider collider)
     {
         var value = collider.GetComponentInParent<BuildingKeyID>();
         if (!value)
@@ -27,14 +27,14 @@ public class BlueprintActivate : MonoBehaviour
         }
     }
     // Reset status
-    void BuildingOffTile(Collider collider)
+    void OnTriggerExit(Collider collider)
     {
         var value = collider.GetComponentInParent<BuildingKeyID>();
         if (!value)
         {
             return;
         }
-        if(!IsOccupied && value.BuildingID == currentBuildingID)
+        if(IsOccupied && value.BuildingID == currentBuildingID)
         {
             IsOccupied = false;
             currentBuildingID = null;
