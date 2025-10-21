@@ -13,8 +13,8 @@ public class ResetWorkScene : MonoBehaviour
         if (Input.GetKeyDown(resetKey))
         {
             GameStatus.ClearBuildingPositionStatus();
-            var currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.buildIndex);
+            // var currentScene = SceneManager.GetActiveScene();
+            // SceneManager.LoadScene(currentScene.buildIndex);
         }
     }
 }
