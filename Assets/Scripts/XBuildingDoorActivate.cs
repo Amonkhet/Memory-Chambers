@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BuildingDoorActivate : MonoBehaviour
+public class XBuildingDoorActivate : MonoBehaviour
 {
     public DoorTiggerID doorID = DoorTiggerID.A;          
-    public BuildingTimelineManager manager;           
+    public XBuildingTimelineManager manager;           
     public NavMeshAgent agent;              
     public Collider doorCollider;          
 

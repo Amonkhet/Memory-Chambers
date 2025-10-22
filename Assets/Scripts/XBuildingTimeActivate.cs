@@ -3,7 +3,7 @@ using UnityEngine.AI;
 using UnityEngine.Playables;
 using Cinemachine;
 
-public class BuildingTimeActivate : MonoBehaviour
+public class XBuildingTimeActivate : MonoBehaviour
 {
     // Attribute
     [Header("Activate Range")]
