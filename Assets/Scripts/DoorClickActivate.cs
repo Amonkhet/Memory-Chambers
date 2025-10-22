@@ -55,13 +55,19 @@ public class DoorClickActivate : MonoBehaviour
                 return;
             }
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hit))
+            if (!Physics.Raycast(ray, out var hit, Mathf.Infinity))
             {
-                if (hit.collider.transform == transform || hit.collider.transform.root == transform.root)
-                {
-                    doorSwitcher?.SwitchDoor(doorID);
-                }
+                return;
             }
+            if (!(hit.collider && (hit.collider.transform == transform || hit.collider.transform.IsChildOf(transform))))
+            {
+                return;
+            }
+            if (doorSwitcher)
+            {
+                doorSwitcher.SwitchDoor(doorID);
+            }
+
             if (playRiseTimeline)
             {
                 manager.PlayTimelineRise(playBackward);
