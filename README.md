@@ -1,5 +1,6 @@
 ## Game Design Document
 
+### Memory Chambers
 #### Structure Explain
 
 This Game Design Documentation includes three main parts:
@@ -369,7 +370,7 @@ Setting
 | --------------------------------------- |
 | 1. Game Design                          |
 | 2. Shader Development                   |
-| 3. Art assets (model, texture, )        |
+| 3. Art assets (models, textures)        |
 | 4. Integration between different assets |
 |                                         |
 
@@ -397,7 +398,7 @@ Setting
 | Week 3 (29/9 - 5/10)   | Implement core mechanics. Construct scene in Unity           |
 | Week 4 (6/10 - 12/10)  | Integrate. Finish basic UI design                            |
 | Milestone 4 Submission | Test and Review                                              |
-| *Update later*         |                                                              |
+| Milestone 5 Submission | Improve models, aesthetics, UI design                        |
 ---
 
 #### Possible Challenges
@@ -472,3 +473,4 @@ This part has all old versions of GDD (only the one has been changed)
 #### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
