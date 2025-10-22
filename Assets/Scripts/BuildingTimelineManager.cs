@@ -1,330 +1,72 @@
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.AI;
-
-public enum BuildingSceneStage { S0, S1, S2 }   
-public enum DoorTiggerID    { A, B, C, D }     
 
 public class BuildingTimelineManager : MonoBehaviour
 {
-    [Header("Timeline")]
-    [SerializeField] PlayableDirector timelineForward;
-    [SerializeField] PlayableDirector timelineBackward;
-    [SerializeField] PlayableDirector timelineReset;
+    [Header("Timelines")]
+    public PlayableDirector timelineRise;
+    public PlayableDirector timelineFall;
 
-    [Header("Door trigger")]
-    [SerializeField] GameObject doorA; 
-    [SerializeField] GameObject doorD; 
-    [SerializeField] GameObject doorB; 
-    [SerializeField] GameObject doorC; 
-
-    [Header("Player")]
-    [SerializeField] NavMeshAgent playerAgent;            
-    [SerializeField] MonoBehaviour playerControlScript;   
-    [SerializeField] Transform doorGroup1ExitPoint;         
-    [SerializeField] Transform doorGroup2ExitPoint;        
-
-    [Header("Current building scene stage")]
-    [SerializeField] BuildingSceneStage currentBuildingStge = BuildingSceneStage.S1;
-    [SerializeField] string doorInteractLayerName = "BuildingTimelineDoor";
-
-    // Move door to different layer while playing
-    [SerializeField] string doorDisabledLayerName = "Ignore Raycast";
-    int _doorInteractLayer = -1;
-    int _doorDisabledLayer = -1;
-    // Save status while playing
+    public bool risePlayEnd = false;
+    public bool fallPlayEnd = false;
     private bool isPlaying;
-    private bool playerControlEnabled;
-    private bool playerPosUpdate;
-    private bool playerRotUpdate;
-        
 
-    void Awake()
+    // Play timeline
+    void PlayTimeline(PlayableDirector playableDirector, bool playBackward)
     {
-        if (timelineForward)
+        const double EPS = 0.001;
+        if (playBackward)
         {
-            timelineForward.stopped  += _ => OnTimelineStopped();
+            playableDirector.time = playableDirector.duration - EPS;
+            playableDirector.Evaluate();
+            var root = playableDirector.playableGraph.GetRootPlayable(0);
+            if (root.IsValid())
+            {
+                root.SetSpeed(-1.0);
+            }
         }
-
-        if (timelineBackward)
+        else
         {
-            timelineBackward.stopped += _ => OnTimelineStopped();
+            playableDirector.time = EPS;
+            playableDirector.Evaluate();
+            var root = playableDirector.playableGraph.GetRootPlayable(0);
+            if (root.IsValid())
+            {
+                root.SetSpeed(1.0);
+            }
         }
-
-        if (timelineReset)
-        {
-            timelineReset.stopped += _ => OnTimelineStopped();
-        }
-        _doorInteractLayer  = LayerMask.NameToLayer(doorInteractLayerName);
-        _doorDisabledLayer  = LayerMask.NameToLayer(doorDisabledLayerName);
-        SwitchDoorWithStage(currentBuildingStge);
-    }
-
-    // Activate door
-    public void ActivateDoor(DoorTiggerID door)
-    {
-        if (isPlaying)
-        {
-            return;
-        }
-
-        switch (currentBuildingStge)
-        {
-            case BuildingSceneStage.S1:
-                if (door == DoorTiggerID.A)
-                {
-                    // S1 with A to S2
-                    PlayForward(BuildingSceneStage.S2, () =>
-                    {
-                        SetGroup2Door(DoorTiggerID.C);   
-                        MovePlayerTo(doorGroup2ExitPoint); 
-                    });
-                }
-                else if (door == DoorTiggerID.B)
-                {
-                    // S1 with B to S0
-                    PlayReset(BuildingSceneStage.S0, () =>
-                    {
-                        SetGroup1Door(DoorTiggerID.D);    
-                        MovePlayerTo(doorGroup1ExitPoint); 
-                    });
-                }
-                break;
-
-            case BuildingSceneStage.S2:
-                if (door == DoorTiggerID.C)
-                {
-                    // S2 with C to S1
-                    PlayBackward(BuildingSceneStage.S1, () =>
-                    {
-                        SetGroup2Door(DoorTiggerID.B);   
-                        MovePlayerTo(doorGroup1ExitPoint); 
-                    });
-                }
-                break;
-
-            case BuildingSceneStage.S0:
-                if (door == DoorTiggerID.D)
-                {
-                    // S0 with D to S1 palyforward
-                    PlayForward(BuildingSceneStage.S1, () =>
-                    {
-                        SetGroup1Door(DoorTiggerID.A);    
-                        MovePlayerTo(doorGroup2ExitPoint); 
-                    });
-                }
-                break;
-        }
-    }
-    // Stop all playable directors
-    void StopAllDirectors()
-    {
-        if (timelineForward  && timelineForward.state  == PlayState.Playing) timelineForward.Stop();
-        if (timelineBackward && timelineBackward.state == PlayState.Playing) timelineBackward.Stop();
-        if (timelineReset && timelineReset.state == PlayState.Playing) timelineReset.Stop();
-    }
-
-    // Timeline playforward and backward
-
-    void PlayForward(BuildingSceneStage toState, System.Action after)
-    {
-        StopAllDirectors();
-        if (!timelineForward)
-        {
-            return;
-        }
-        ActivateTimelineAnimation();
-        
-        timelineForward.time = 0.001;
-        timelineForward.Evaluate();
-        timelineForward.Play();
-
-        currentBuildingStge = toState;
-        StartCoroutine(InvokeOnStop(timelineForward, after));
-    }
-
-    void PlayBackward(BuildingSceneStage toState, System.Action after)
-    {
-        StopAllDirectors();
-        if (!timelineBackward)
-        {
-            return;
-        }
-        ActivateTimelineAnimation();
-        
-        timelineBackward.time = Mathf.Max(0.001f, (float)timelineBackward.duration - 0.001f);
-        timelineBackward.Evaluate();
-        timelineBackward.Play();
-
-
-        var root = timelineBackward.playableGraph.GetRootPlayable(0);
-        if (root.IsValid())
-        {
-            root.SetSpeed(-1.0);
-        }
-
-        currentBuildingStge = toState;
-        StartCoroutine(InvokeOnStop(timelineBackward, after));
-    }
-    
-    void PlayReset(BuildingSceneStage toState, System.Action after)
-    {
-        if (!timelineReset)
-        {
-            return;
-        }
-
-        StopAllDirectors();
-        ActivateTimelineAnimation();
-
-        const double EPS = 0.001; 
-        timelineReset.time = Mathf.Max((float)timelineReset.duration - (float)EPS, (float)EPS);
-        timelineReset.Evaluate();
-
-        var root = timelineReset.playableGraph.GetRootPlayable(0);
-        if (root.IsValid())
-        {
-            root.SetSpeed(-1.0);
-        } 
-        timelineReset.Play();
-        currentBuildingStge = toState;
-        StartCoroutine(InvokeOnStop(timelineReset, after));
-    }
-
-    void ActivateTimelineAnimation()
-    {
         isPlaying = true;
-        // Deactivate door while playing
-        SetDoorsClickable(false);
-
-        // Deactivate playr movement
-        if (playerControlScript)
+        playableDirector.Play();
+    }
+    // Stop play other timeline while playing this timeline
+    void StopOtherTimeline(PlayableDirector director)
+    {
+        if (director && director.state == PlayState.Playing)
         {
-            playerControlEnabled = playerControlScript.enabled;
-            playerControlScript.enabled = false;
-        }
-        if (playerAgent)
-        {
-            playerPosUpdate = playerAgent.updatePosition;
-            playerRotUpdate = playerAgent.updateRotation;
-            playerAgent.isStopped = true;
-            playerAgent.updatePosition = false;
-            playerAgent.updateRotation = false;
-            playerAgent.ResetPath();
+            director.Stop();
         }
     }
-    void FinishPlay()
+    // Play timeline rise
+    public void PlayTimelineRise(bool playBackward)
     {
-        // Recover player
-        if (playerControlScript) playerControlScript.enabled = playerControlEnabled;
-        if (playerAgent)
-        {
-            playerAgent.updatePosition = playerPosUpdate;
-            playerAgent.updateRotation = playerRotUpdate;
-            playerAgent.isStopped = false;
-        }
-        SwitchDoorWithStage(currentBuildingStge);
-        SetDoorsClickable(true);
-        isPlaying = false;
-    }
-    void OnTimelineStopped()
-    {
-        FinishPlay();
-    }
-
-    System.Collections.IEnumerator InvokeOnStop(PlayableDirector d, System.Action after)
-    {
-        // wait until stop
-        yield return null;
-        while (d && d.state == PlayState.Playing) yield return null;
-        after?.Invoke();
-        FinishPlay();
-    }
-    
-
-    void SwitchDoorWithStage(BuildingSceneStage s)
-    {
-        switch (s)
-        {
-            case BuildingSceneStage.S1:
-                SetGroup1Door(DoorTiggerID.A);
-                SetGroup2Door(DoorTiggerID.B);
-                break;
-
-            case BuildingSceneStage.S2:
-                SetGroup1DoorActive(false);
-                SetGroup2Door(DoorTiggerID.C);
-                break;
-
-            case BuildingSceneStage.S0:
-                SetGroup2DoorActive(false);
-                SetGroup1Door(DoorTiggerID.D);
-                break;
-        }
-    }
-
-    void SetGroup1Door(DoorTiggerID id) => SetPair(doorA, doorD, id == DoorTiggerID.A);
-    void SetGroup2Door(DoorTiggerID id) => SetPair(doorB, doorC, id == DoorTiggerID.B);
-
-    void SetPair(GameObject main, GameObject alternative, bool mainOn)
-    {
-        if (main)
-        {
-            main.SetActive(mainOn);
-        }
-
-        if (alternative)
-        {
-            alternative.SetActive(!mainOn);
-        }
-    }
-
-    void SetGroup1DoorActive(bool on)
-    {
-        if (doorA) doorA.SetActive(on && currentBuildingStge == BuildingSceneStage.S1);
-        if (doorD) doorD.SetActive(on && currentBuildingStge == BuildingSceneStage.S0);
-    }
-
-    void SetGroup2DoorActive(bool on)
-    {
-        if (doorB) doorB.SetActive(on && currentBuildingStge == BuildingSceneStage.S1);
-        if (doorC) doorC.SetActive(on && currentBuildingStge == BuildingSceneStage.S2);
-    }
-
-    void SetAllDoorsActive(bool on)
-    {
-        if (doorA) doorA.SetActive(on);
-        if (doorB) doorB.SetActive(on);
-        if (doorC) doorC.SetActive(on);
-        if (doorD) doorD.SetActive(on);
-    }
-    
-    // Move player to another door when animation stopped
-    void MovePlayerTo(Transform transform)
-    {
-        if (!playerAgent || !transform)
+        if (isPlaying || !timelineRise)
         {
             return;
         }
-        playerAgent.Warp(transform.position);
-        playerAgent.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
-    }
-    // Set door layer to be clickable
-    void SetDoorsClickable(bool canClick)
-    {
-        int layer = canClick ? _doorInteractLayer : _doorDisabledLayer;
-        if (layer < 0) return; 
-        SetLayerSafe(doorA, layer);
-        SetLayerSafe(doorB, layer);
-        SetLayerSafe(doorC, layer);
-        SetLayerSafe(doorD, layer);
-    }
 
-    static void SetLayerSafe(GameObject safe, int layer)
-    {
-        if (!safe) return;
-        safe.layer = layer;
-        foreach (Transform t in safe.transform) SetLayerSafe(t.gameObject, layer);
+        StopOtherTimeline(timelineFall);
+        PlayTimeline(timelineRise, playBackward);
     }
+    // Play timeline fall
+    public void PlayTimelineFall(bool playBackward)
+    {
+        if (isPlaying || !timelineFall)
+        {
+            return;
+        }
+        StopOtherTimeline(timelineFall);
+        PlayTimeline(timelineFall, playBackward);
+    }
+    
     
 }
