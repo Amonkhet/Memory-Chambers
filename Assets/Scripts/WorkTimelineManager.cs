@@ -7,6 +7,11 @@ public class WorkTimelineManager : MonoBehaviour
     public PlayableDirector timelineRise;
     public PlayableDirector timelineFall;
     private bool isPlaying;
+    void Awake()
+    {
+        if (timelineRise)  timelineRise.stopped  += OnPlayStopped;
+        if (timelineFall)  timelineFall.stopped  += OnPlayStopped;
+    }
 
     // Play timeline
     void PlayTimeline(PlayableDirector playableDirector, bool playBackward)
@@ -65,5 +70,8 @@ public class WorkTimelineManager : MonoBehaviour
         PlayTimeline(timelineFall, playBackward);
     }
     
-    
+    void OnPlayStopped(PlayableDirector d)
+    {
+        isPlaying = false;
+    }
 }
