@@ -16,21 +16,7 @@ public class PlayBuildingTimeline : MonoBehaviour
     [Header("Activate key")]
     public KeyCode activateKey = KeyCode.Mouse1;
     public LayerMask clickMask = ~0;
-
-    void Update()
-    {
-        if (Input.GetKeyDown(activateKey))
-        {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hit, 100f, clickMask))
-            {
-                if (hit.collider && (hit.collider.transform == transform || hit.collider.transform.IsChildOf(transform)))
-                {
-                    PlayTimeline();
-                }
-            }
-        }
-    }
+    
 
     void PlayTimeline()
     {

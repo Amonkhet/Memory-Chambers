@@ -12,7 +12,19 @@ public class DoorClickActivate : MonoBehaviour
     [SerializeField] float activateRange = 2f;     
     [SerializeField] private LayerMask doorLayerMask;
     public NavMeshAgent agent;              
-    public Collider doorCollider;    
+    public Collider doorCollider; 
+    
+    [Header("Timeline manager")] 
+    public WorkTimelineManager manager;
+
+    [Header("TimelineRise or Fall")] 
+    public bool playRiseTimeline = true;
+    
+    [Header("Play direction")]
+    public bool playBackward = false;
+    
+    [Header("Activate key")]
+    public KeyCode activateKey = KeyCode.Mouse1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     // Get player position
@@ -32,7 +44,7 @@ public class DoorClickActivate : MonoBehaviour
     void Update()
     {
         // right click to activate
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(activateKey))
         {
             Vector3 playerPosition = agent.transform.position;
             Vector3 near = doorCollider.ClosestPoint(playerPosition);
@@ -49,6 +61,14 @@ public class DoorClickActivate : MonoBehaviour
                 {
                     doorSwitcher?.SwitchDoor(doorID);
                 }
+            }
+            if (playRiseTimeline)
+            {
+                manager.PlayTimelineRise(playBackward);
+            }
+            else
+            {
+                manager.PlayTimelineFall(playBackward);
             }
         }
     }
