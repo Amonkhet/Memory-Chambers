@@ -1,14 +1,11 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class BuildingTimelineManager : MonoBehaviour
+public class WorkTimelineManager : MonoBehaviour
 {
     [Header("Timelines")]
     public PlayableDirector timelineRise;
     public PlayableDirector timelineFall;
-
-    public bool risePlayEnd = false;
-    public bool fallPlayEnd = false;
     private bool isPlaying;
 
     // Play timeline
@@ -64,7 +61,7 @@ public class BuildingTimelineManager : MonoBehaviour
         {
             return;
         }
-        StopOtherTimeline(timelineFall);
+        StopOtherTimeline(timelineRise);
         PlayTimeline(timelineFall, playBackward);
     }
     

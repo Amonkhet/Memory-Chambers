@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 public class PlayBuildingTimeline : MonoBehaviour
 {
     [Header("Timeline manager")] 
-    public BuildingTimelineManager manager;
+    public WorkTimelineManager manager;
 
     [Header("TimelineRise or Fall")] 
     public bool playRiseTimeline = true;

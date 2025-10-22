@@ -1479,64 +1479,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1610750429540761337, guid: e9925a0b1352b4ec1bea79a260dbb964, type: 3}
   m_PrefabInstance: {fileID: 685432893}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &685619153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 685619155}
-  - component: {fileID: 685619154}
-  m_Layer: 0
-  m_Name: BuildingTimelineManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &685619154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685619153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8db2a6e28490e4a06aaf8e885dc4b2d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timelineForward: {fileID: 466127229}
-  timelineBackward: {fileID: 1218427719}
-  timelineReset: {fileID: 1219623802}
-  doorA: {fileID: 2125389090}
-  doorD: {fileID: 1625040542}
-  doorB: {fileID: 184257824}
-  doorC: {fileID: 288970275}
-  playerAgent: {fileID: 153299808}
-  playerControlScript: {fileID: 0}
-  doorGroup1ExitPoint: {fileID: 586759730}
-  doorGroup2ExitPoint: {fileID: 394912270}
-  currentBuildingStge: 1
-  doorInteractLayerName: BuildingTimelineDoor
-  doorDisabledLayerName: Ignore Raycast
---- !u!4 &685619155
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685619153}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.51103, y: 6.00457, z: 0.52652}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &693462818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1855,6 +1797,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c621bf04934a7799f5e7519761de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &917893017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917893018}
+  m_Layer: 0
+  m_Name: SceneTimelineManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917893018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917893017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.92174, y: 1, z: 0.6575}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919165237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6703645683931249260, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
@@ -3112,7 +3085,7 @@ GameObject:
   - component: {fileID: 1409222736}
   - component: {fileID: 1409222735}
   m_Layer: 0
-  m_Name: TimelineUnrise
+  m_Name: TimelineFall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5699,7 +5672,6 @@ SceneRoots:
   - {fileID: 1918280277}
   - {fileID: 1750961830}
   - {fileID: 1330288496}
-  - {fileID: 685619155}
   - {fileID: 466127230}
   - {fileID: 1218427720}
   - {fileID: 1219623803}
@@ -5709,3 +5681,4 @@ SceneRoots:
   - {fileID: 1970719069}
   - {fileID: 642246398}
   - {fileID: 1409222736}
+  - {fileID: 917893018}
