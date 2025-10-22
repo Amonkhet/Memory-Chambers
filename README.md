@@ -1,6 +1,6 @@
 ## Game Design Document
 
-### Memory Chambers
+### Game: Memory Chambers
 #### Structure Explain
 
 This Game Design Documentation includes three main parts:
@@ -473,4 +473,5 @@ This part has all old versions of GDD (only the one has been changed)
 #### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
 
