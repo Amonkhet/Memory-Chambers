@@ -479,9 +479,13 @@ MonoBehaviour:
   activateRange: 0.6
   doorLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   agent: {fileID: 153299808}
   doorCollider: {fileID: 654661928}
+  manager: {fileID: 917893019}
+  playRiseTimeline: 0
+  playBackward: 0
+  activateKey: 324
 --- !u!1 &232070303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1655648364194372531, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
@@ -719,9 +723,13 @@ MonoBehaviour:
   activateRange: 0.6
   doorLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   agent: {fileID: 153299808}
   doorCollider: {fileID: 926445072}
+  manager: {fileID: 917893019}
+  playRiseTimeline: 1
+  playBackward: 1
+  activateKey: 324
 --- !u!1001 &314880090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1806,6 +1814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 917893018}
+  - component: {fileID: 917893019}
   m_Layer: 0
   m_Name: SceneTimelineManager
   m_TagString: Untagged
@@ -1828,6 +1837,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917893019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917893017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264124a17965146f0ac82cda0f5442c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineRise: {fileID: 642246397}
+  timelineFall: {fileID: 1409222735}
 --- !u!1 &919165237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6703645683931249260, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
@@ -3711,9 +3734,13 @@ MonoBehaviour:
   activateRange: 0.6
   doorLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   agent: {fileID: 153299808}
   doorCollider: {fileID: 2067150715}
+  manager: {fileID: 917893019}
+  playRiseTimeline: 0
+  playBackward: 1
+  activateKey: 324
 --- !u!1001 &1627558376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3966,7 +3993,7 @@ PrefabInstance:
     - target: {fileID: 4204604024227072145, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b84ae47d04158405f97d7f12dab6c6f9, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4371637883408375086, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -4307,7 +4334,7 @@ PrefabInstance:
     - target: {fileID: 4204604024227072145, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: fd104c07b26bf418a8f71726157813bb, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4371637883408375086, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -5193,6 +5220,10 @@ MonoBehaviour:
     m_Bits: 0
   agent: {fileID: 153299808}
   doorCollider: {fileID: 2040907637}
+  manager: {fileID: 917893019}
+  playRiseTimeline: 1
+  playBackward: 0
+  activateKey: 324
 --- !u!1001 &2135250453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5526,7 +5557,7 @@ PrefabInstance:
     - target: {fileID: 4204604024227072145, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b8150ee0e5c204d5b83b813c3227d090, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4371637883408375086, guid: d320bbd8f9c354b1b82c01e31958146a, type: 3}
       propertyPath: m_Layer
       value: 0
