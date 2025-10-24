@@ -9,24 +9,39 @@ public class SceneDoorActivate : MonoBehaviour
     public string targetSpawnPoint;
     [SerializeField]
     public string targetScale = "XS";
-    
     public string playerTag = "Player";
- 
     private bool activated;
+    [Header("Key binds")]
+    [SerializeField] KeyCode activateKey = KeyCode.Mouse1;
+    bool playerInRange = false;
+    Collider playerCollider;
+    
     // Activate 
     void OnTriggerEnter(Collider other)
     {
-        if (activated)
+        if (other.CompareTag(playerTag))
         {
-            return;
+            playerInRange = true;
+            playerCollider = other;
         }
+    }
 
-        if (!other.CompareTag(playerTag))
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(playerTag))
         {
-            return;
+            playerInRange = false;
+            playerCollider = null;
         }
-        activated = true;
-        // Trigger event
-        EventManager.WhenEnterDoor(new EventManager.DoorToScene(targetScene, targetSpawnPoint, targetScale));
+    }
+
+    void Update()
+    {
+        if (playerInRange && !activated && Input.GetKeyDown(activateKey))
+        {
+            activated = true;
+            // Trigger event
+            EventManager.WhenEnterDoor(new EventManager.DoorToScene(targetScene, targetSpawnPoint, targetScale));
+        }
     }
 }
