@@ -10,7 +10,7 @@ public class HintManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -20,13 +20,22 @@ public class HintManager : MonoBehaviour
 
     void OnEnable()
     {
-        Hint.OnShowHint += (text) => OnDisplayHint?.Invoke(text);
-        Hint.OnHideHint += () => OnClearHint?.Invoke();
+        Hint.OnShowHint += HandleShowHint;
+        Hint.OnHideHint += HandleHideHint;
     }
 
     void OnDisable()
     {
-        Hint.OnShowHint -= text => OnDisplayHint?.Invoke(text);
-        Hint.OnHideHint -= () => OnClearHint?.Invoke();
+        Hint.OnShowHint -= HandleShowHint;
+        Hint.OnHideHint -= HandleHideHint;
+    }
+    private void HandleShowHint(string text)
+    {
+        OnDisplayHint?.Invoke(text);
+    }
+
+    private void HandleHideHint()
+    {
+        OnClearHint?.Invoke();
     }
 }
