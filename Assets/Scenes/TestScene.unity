@@ -105286,6 +105286,7 @@ MonoBehaviour:
   targetSpawnPoint: SpawnXS
   targetScale: XS
   playerTag: Player
+  activateKey: 324
 --- !u!43 &756719937
 Mesh:
   m_ObjectHideFlags: 0
@@ -316392,6 +316393,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5898435528854099656, guid: 9ac9c81a91b3f452aa5f5225fa8c76c2, type: 3}
+      propertyPath: activateKey
+      value: 101
+      objectReference: {fileID: 0}
     - target: {fileID: 7631273747930008829, guid: 9ac9c81a91b3f452aa5f5225fa8c76c2, type: 3}
       propertyPath: m_Name
       value: DoorStoXS

@@ -17,6 +17,9 @@ public class GameStatus : MonoBehaviour
     
     // For Move building Status:
     private static readonly Dictionary<string, Vector3> buildingPosition = new Dictionary<string, Vector3>();
+    
+    // For move room status in outworld scene
+    private static readonly Dictionary<string, Vector3> roomMove = new Dictionary<string, Vector3>();
     void Awake()
     {
         if (_instance == null)
@@ -77,5 +80,21 @@ public class GameStatus : MonoBehaviour
     public static void ClearBuildingPositionStatus()
     {
         buildingPosition.Clear();
+    }
+    
+    // For room move in outworld scene
+    public static void SaveRoomMoveStatus(string key, Vector3 position)
+    {
+        roomMove[key] = position;
+    }
+
+    public static bool GetRoomMoveStatus(string key, out Vector3 position)
+    {
+        return roomMove.TryGetValue(key, out position);
+    }
+    // Reset building status
+    public static void ClearRoomMoveStatus()
+    {
+        roomMove.Clear();
     }
 }
