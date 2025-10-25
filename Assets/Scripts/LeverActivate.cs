@@ -16,6 +16,7 @@ public class LeverActivate : MonoBehaviour
         if (other.CompareTag(playerTag))
         {
             playerInRange = true;
+            Debug.Log("[TimelineDoorActivate] Player entered trigger area");
         }
     }
 
@@ -24,6 +25,7 @@ public class LeverActivate : MonoBehaviour
         if (other.CompareTag(playerTag))
         {
             playerInRange = false;
+            Debug.Log("[TimelineDoorActivate] Player exited trigger area");
         }
     }
 
@@ -40,8 +42,10 @@ public class LeverActivate : MonoBehaviour
     {
         if (timeline == null)
         {
+            Debug.LogWarning("[TimelineDoorActivate] No timeline assigned!");
             return;
         }
+        Debug.Log("[TimelineDoorActivate] Playing timeline...");
         timeline.Play();
     }
 }
