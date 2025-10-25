@@ -51,28 +51,37 @@ public class ClimbActivate : MonoBehaviour
 
         playerAgent.isStopped = true;
         playerAgent.updatePosition = false;
+        
+        Vector3 a = link.transform.TransformPoint(link.startPoint);
+        Vector3 b = link.transform.TransformPoint(link.endPoint);
+        
+        Vector3 playerPos = playerAgent.transform.position;
+        bool fromA = (playerPos - a).sqrMagnitude <= (playerPos - b).sqrMagnitude;
+        Vector3 startPosition = fromA ? a : b;
+        Vector3 endPosition   = fromA ? b : a;
 
-        Vector3 startPosition = link.transform.TransformPoint(link.startPoint);
-        Vector3 endPosition   = link.transform.TransformPoint(link.endPoint);
+        // if use animation, use this
+        // bool climbUp = endPosition.y > startPosition.y;
+        // playerAnimator.CrossFade(climbUp ? "ClimbUp" : "ClimbDown", 0.1f);
 
-        float duration = 1.0f; 
+        float duration = 3.0f;
         float t = 0f;
-        Vector3 pos;
         
         Vector3 dir = (endPosition - startPosition).normalized;
-        playerAgent.transform.rotation = Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
-
+        playerAgent.transform.rotation =
+            Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
+        // Simple move aniamtion
         while (t < 1f)
         {
             t += Time.deltaTime / duration;
-            pos = Vector3.Lerp(startPosition, endPosition, t);
-            pos.y += Mathf.Sin(t * Mathf.PI) * 0.3f;
+            Vector3 pos = Vector3.Lerp(startPosition, endPosition, t);
+            pos.y += Mathf.Sin(t * Mathf.PI) * 0.3f;    
             playerAgent.transform.position = pos;
+            playerAgent.nextPosition = pos;             
             yield return null;
         }
-        
-        playerAgent.Warp(endPosition);
 
+        playerAgent.Warp(endPosition);
         playerAgent.updatePosition = true;
         playerAgent.isStopped = false;
         climbing = false;
