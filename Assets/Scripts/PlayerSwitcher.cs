@@ -10,6 +10,7 @@ public class PlayerSwitcher : MonoBehaviour
     public NavMeshAgent agent;
 
     private GameObject currentPlayer;
+    public string currentId { get; private set; } 
     // Broadcast this agent scale/type
     public static System.Action<NavMeshAgent, Transform> OnPlayerSwitched;
     // Save and allow get by others
@@ -25,6 +26,7 @@ public class PlayerSwitcher : MonoBehaviour
     // Switch player function
     public void SwitchPlayer(string id)
     {
+        currentId = id;
         agent.isStopped = true;
         agent.ResetPath();
         // Delete previous player model
