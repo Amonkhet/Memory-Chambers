@@ -1873,6 +1873,18 @@ PrefabInstance:
       propertyPath: activateKey
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetScale
+      value: XS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetScene
+      value: OutWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetSpawnPoint
+      value: SpawnXS3
+      objectReference: {fileID: 0}
     - target: {fileID: 8502073251109020885, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5295,6 +5307,18 @@ PrefabInstance:
     - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: activateKey
       value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetScale
+      value: XS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetScene
+      value: OutWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetSpawnPoint
+      value: SpawnXS2
       objectReference: {fileID: 0}
     - target: {fileID: 8502073251109020885, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: m_IsActive
