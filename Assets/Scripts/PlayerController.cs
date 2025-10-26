@@ -1,26 +1,29 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    // Nev mesh agent variables
+    // NavMeshAgent 和 Animator 引用
     private NavMeshAgent agent;
     private Animator anim;
-    // Range to find walkable point
+
     [Header("Control Settings")]
     [SerializeField] float rangeWalkable = 0.5f;
-    // Select the Ground layer for ray hit
     [SerializeField] LayerMask groundLayer;
-    // Move speed of the player
+
     [Header("Movement Settings")]
     [SerializeField] float moveSpeed = 10f;
-    // Event listener to get click position and for adding future animation/effects
-    public static event System.Action<Vector3> WhenGroundClicked;
-    [Header("Jump Settings")]
-    [SerializeField] float jumpHeightThreshold = 1.0f; // how high must the target be to jump
-    [SerializeField] float jumpDuration = 5.9f;        // how long jump animation lasts
+
+    // 爬梯相关变量
+    [Header("Climb Settings")]
+    [SerializeField] float climbSpeed = 1.0f;
+    [SerializeField] float climbDuration = 3.5f;
+    private bool isClimbing = false;
+
     private bool isJumping = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Start 方法
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -28,36 +31,24 @@ public class PlayerController : MonoBehaviour
         agent.speed = moveSpeed;
     }
 
-    // Update is called once per frame
+    // Update 方法
     void Update()
     {
-        // Check if left mouse clicked every frame
-       if (Input.GetMouseButtonDown(0) && !isJumping)
+        // 检查鼠标点击事件
+        if (Input.GetMouseButtonDown(0) && !isJumping && !isClimbing)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hitClick))
             {
                 EventManager.WhenObjectClicked(hitClick, transform);
             }
+
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
                 int mask = agent.areaMask;
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, mask))
                 {
-                    // float heightDiff = navHit.position.y - transform.position.y;
-                    // if (heightDiff > jumpHeightThreshold)
-                    // {
-                    //     StartCoroutine(JumpTo(navHit.position));
-                    // }
-                    // else
-                    // {
-                    //     agent.SetDestination(navHit.position);
-                    // }
                     agent.SetDestination(navHit.position);
-                    if (WhenGroundClicked != null)
-                    {
-                        WhenGroundClicked.Invoke(navHit.position);
-                    }
                 }
                 else
                 {
@@ -65,23 +56,50 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        float normalizedSpeed = Mathf.InverseLerp(0f, agent.speed, agent.velocity.magnitude);
-        anim.SetFloat("Speed", normalizedSpeed);
+
+        // 爬梯子检测
+        if (agent.isOnOffMeshLink && !isClimbing)
+        {
+            StartCoroutine(HandleClimb());
+        }
+
+        // 如果正在爬梯子，则停止行走动画
+        if (isClimbing)
+        {
+            anim.SetBool("isClimbing", true);
+            anim.SetFloat("Speed", 0f); // 停止行走动画
+        }
+        else
+        {
+            // 设置 Speed 动画参数（当不爬梯时，基于速度设置行走动画）
+            float normalizedSpeed = Mathf.InverseLerp(0f, agent.speed, agent.velocity.magnitude);
+            anim.SetFloat("Speed", normalizedSpeed);
+        }
     }
 
-        // private System.Collections.IEnumerator JumpTo(Vector3 destination)
-        // {
-        //     isJumping = true;
-        //     agent.isStopped = true;
-        
-        //     anim.SetTrigger("Jump"); // trigger jump animation
-        
-        //     yield return new WaitForSeconds(jumpDuration * 0.8f);
-        
-        //     agent.Warp(destination); // teleport or move the character to new position
-        //     agent.isStopped = false;
-        
-        //     isJumping = false;
-        // }
-            
+    // 处理爬梯子逻辑
+    private IEnumerator HandleClimb()
+    {
+        isClimbing = true;
+        anim.SetBool("isClimbing", true); // 设置爬梯动画参数
+
+        agent.isStopped = true; // 停止 NavMeshAgent 的自动移动
+        Vector3 climbStartPos = transform.position; // 确保爬升从当前位置开始
+        Vector3 climbEndPos = agent.currentOffMeshLinkData.endPos; // 获取 OffMeshLink 的目标位置
+        float climbTime = 0f;
+
+        // 以爬梯速度过渡到目标位置
+        while (climbTime < climbDuration)
+        {
+            climbTime += Time.deltaTime;
+            float lerpFactor = Mathf.Clamp01(climbTime / climbDuration);
+            transform.position = Vector3.Lerp(climbStartPos, climbEndPos, lerpFactor);
+            yield return null;
+        }
+
+        agent.CompleteOffMeshLink(); // 确保完成链接
+        isClimbing = false;
+        anim.SetBool("isClimbing", false); // 动画回到正常状态
+        agent.isStopped = false; // 恢复 NavMeshAgent 的移动功能
+    }
 }

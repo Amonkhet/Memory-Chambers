@@ -23,7 +23,7 @@ public class OutlineSelection : MonoBehaviour
         {
             if (hit.transform.CompareTag("Selectable"))
             {
-                // Get or add Outline component
+                // Get or add Outline
                 currentOutline = hit.transform.GetComponent<Outline>();
                 if (currentOutline == null)
                     currentOutline = hit.transform.gameObject.AddComponent<Outline>();
@@ -32,18 +32,6 @@ public class OutlineSelection : MonoBehaviour
                 currentOutline.OutlineColor = hoverColor;
                 currentOutline.OutlineWidth = outlineWidth;
                 currentOutline.enabled = true;
-
-                // 🔹 NEW PART: Force outline to render after normal geometry
-                Renderer rend = hit.transform.GetComponent<Renderer>();
-                if (rend != null)
-                {
-                    foreach (var mat in rend.materials)
-                    {
-                        // Default opaque queue = 2000; transparent = 3000
-                        // We set it a bit later so it draws over the player
-                        mat.renderQueue = 3100;
-                    }
-                }
             }
         }
 
