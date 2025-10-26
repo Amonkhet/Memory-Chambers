@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: outline
+  m_Name: Scene2_gournd
   m_Shader: {fileID: 4800000, guid: d700d56fae72f5d4398224a497bd119b, type: 3}
-  m_Parent: {fileID: 2100000, guid: 8b938e2d46bc8b04a9a6af027a9cf5df, type: 2}
+  m_Parent: {fileID: 2100000, guid: 1dfd26dcf88ca584d9d8f5aa5c351583, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -25,27 +25,20 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalDetailMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 00bf982f9116bbb439b4b2a72e0e49a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlbedoDesat: 0.7
-    - _DiffuseStrength: 0.6
-    - _NormalScale: 2
-    - _ShadowStrength: 0.5
-    - _SpecOutlineThickness: 1
-    - _SpecThreshold: 0.85
-    - _UseAlbedo: 0
+    - _AlbedoDesat: 1
+    - _DiffuseStrength: 0
+    - _NormalScale: 0.69
+    - _ShadowStrength: 0.402
     m_Colors:
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _BaseColor: {r: 0.5714519, g: 0.55553955, b: 0.5084937, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &4057389055140525719
+--- !u!114 &3721945713596708668
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
