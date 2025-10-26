@@ -4,12 +4,18 @@ using UnityEngine.AI;
 public class BuildingMove : MonoBehaviour
 {
     // Attribute
+    [Header("Agent type")] 
+    [SerializeField] private string targetAgent = "L";
+    [SerializeField] private GameObject agent;
     [Header("Building pushed distance")]
     [SerializeField] float pushDistance = 2.5f;
     [Header("Pushable activate range")]
     [SerializeField] float activateRange = 2.8f;
     private BuildingKeyID buildingKeyID;
     private Vector3 initialPosition;
+    
+    [Header("Key binds")]
+    [SerializeField] KeyCode activateKey = KeyCode.Mouse1;
 
     void Awake()
     {
@@ -41,21 +47,31 @@ public class BuildingMove : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!Input.GetKeyDown(activateKey))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject == gameObject)
-            {
-                PushBuilding();
-            }
+            return;
         }
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (!(Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject == gameObject))
+            return;
+        // check if it is the right agent
+        var playerRoot = PlayerSwitcher.CurrentPlayerRoot; 
+        if (!playerRoot) return;
+
+        var switcher = playerRoot.GetComponentInParent<PlayerSwitcher>();
+        if (switcher != null && switcher.currentId != targetAgent)
+        {
+            return;
+        }
+        float distance = Vector3.Distance(transform.position, playerRoot.position);
+        if (distance > activateRange) return;
+        PushBuilding(playerRoot);
     }
     // Push the building
-    void PushBuilding()
+    void PushBuilding(Transform player)
     {
         // Get current agent scale from player switcher
         var agent = PlayerSwitcher.CurrentAgent;
-        var player = PlayerSwitcher.CurrentPlayerRoot;
         // Player distance from building
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance > activateRange)
