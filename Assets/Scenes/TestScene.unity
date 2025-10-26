@@ -111883,8 +111883,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.68782187, y: 0.9010949, z: 1.7410464}
-  m_Center: {x: 0.093998194, y: -0.049452543, z: 0.6838629}
+  m_Size: {x: 0.68782187, y: 1.1165657, z: 1.7410464}
+  m_Center: {x: 0.093998194, y: 0.058282852, z: 0.6838629}
 --- !u!114 &796563133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121614,6 +121614,7 @@ GameObject:
   - component: {fileID: 869926636}
   - component: {fileID: 869926635}
   - component: {fileID: 869926634}
+  - component: {fileID: 869926637}
   m_Layer: 0
   m_Name: HintText
   m_TagString: Untagged
@@ -121752,6 +121753,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869926632}
   m_CullTransparentMesh: 1
+--- !u!225 &869926637
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869926632}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &870155943
 PrefabInstance:
   m_ObjectHideFlags: 0
