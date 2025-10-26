@@ -8,19 +8,28 @@ public class HintUI : MonoBehaviour
 
     void Awake()
     {
-        group = GetComponent<CanvasGroup>();
-        group.alpha = 0f;
-        HintManager.OnDisplayHint += ShowHintUI;
-        HintManager.OnClearHint   += HideHintUI;
+        group = GetComponent<CanvasGroup>() ?? GetComponentInParent<CanvasGroup>();
+        if (group)
+        {
+            group.alpha = 0f;
+        }
     }
     void ShowHintUI(string text)
     {
+        if (!group)
+        {
+            return;
+        }
         if (message) message.text = text;
         group.alpha = 1f;  
     }
 
     void HideHintUI()
     {
+        if (!group)
+        {
+            return;
+        }
         group.alpha = 0f; 
     }
     
@@ -34,5 +43,10 @@ public class HintUI : MonoBehaviour
     {
         HintManager.OnDisplayHint -= ShowHintUI;
         HintManager.OnClearHint -= HideHintUI;
+    }
+    void OnDestroy()
+    {
+        HintManager.OnDisplayHint -= ShowHintUI;
+        HintManager.OnClearHint   -= HideHintUI;
     }
 }
