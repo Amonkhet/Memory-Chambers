@@ -18,6 +18,9 @@ public class GameStatus : MonoBehaviour
     // For Move building Status:
     private static readonly Dictionary<string, Vector3> buildingPosition = new Dictionary<string, Vector3>();
     
+    // For building rise status
+    private static readonly Dictionary<string, int> buildingRiseStage = new Dictionary<string, int>();
+    
     // For move room status in outworld scene
     private static readonly Dictionary<string, Vector3> roomMove = new Dictionary<string, Vector3>();
     void Awake()
@@ -48,6 +51,7 @@ public class GameStatus : MonoBehaviour
     {
         activatedMechanics.Clear();
         droppedStatus.Clear();
+        buildingPosition.Clear();
     }
     // Save the dropped book position
     public static void SaveBookDroppedStatus(string key, Transform transform)
@@ -96,5 +100,16 @@ public class GameStatus : MonoBehaviour
     public static void ClearRoomMoveStatus()
     {
         roomMove.Clear();
+    }
+    
+    // For building rise status in work scene
+    public static void SaveBuildingRiseStage(string key, int stage)
+    {
+        buildingRiseStage[key] = stage;
+    }
+
+    public static bool GetBuildingRiseStage(string key, out int stage)
+    {
+        return buildingRiseStage.TryGetValue(key, out stage);
     }
 }
