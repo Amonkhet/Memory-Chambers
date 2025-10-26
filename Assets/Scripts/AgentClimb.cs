@@ -61,7 +61,7 @@ public class AgentClimb : MonoBehaviour
             // stop climbing animation
             animator.SetBool("isClimbing", false);
             animator.SetFloat("Speed", 1f);  // walking
-            // agent.enabled = true;  // 
+            // agent.enabled = true; 
         }
     }
 }
