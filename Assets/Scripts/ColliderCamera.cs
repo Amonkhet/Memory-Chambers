@@ -28,10 +28,10 @@ public class ColliderCamera : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(playerTag))
-        {
-            return;
-        }
+        var root = PlayerSwitcher.CurrentPlayerRoot;
+        if (!root) return;
+        if (!other.transform.IsChildOf(root)) return;
+
         if (CheckAgentType(agentType))
         {
             defualtPriority = targetCamera.Priority;
@@ -39,18 +39,13 @@ public class ColliderCamera : MonoBehaviour
             isActive = true;
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag(playerTag))
-        {
-            return;
-        }
+        var root = PlayerSwitcher.CurrentPlayerRoot;
+        if (!root) return;
+        if (!other.transform.IsChildOf(root)) return;
 
-        if (!isActive)
-        {
-            return;
-        }
+        if (!isActive) return;
         targetCamera.Priority = defualtPriority;
         isActive = false;
     }
