@@ -13,8 +13,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private KeyCode activateKey = KeyCode.E;
     
+    [Header("Jump Height")]
+    [SerializeField] private float jumpHeight;
+    
     private bool playerInRange = false;
     private bool jumping = false;
+    private bool jumped = false;
     
     
     private NavMeshLink link;
@@ -52,18 +56,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
     System.Collections.IEnumerator Jump()
     {
         jumping = true;
-
+        if (playerAnimator)
+        {
+            playerAnimator.Play("HumanoidIdleJumpUp"); 
+        }
+        
+        
         playerAgent.isStopped = true;
         playerAgent.updatePosition = false;
-        // Set start and end point using mesh link
-        Vector3 a = link.transform.TransformPoint(link.startPoint);
-        Vector3 b = link.transform.TransformPoint(link.endPoint);
        
         // Setup animation hardcode
-        Vector3 playerPosition = playerAgent.transform.position;
-        bool fromA = (playerPosition - a).sqrMagnitude <= (playerPosition - b).sqrMagnitude;
-        Vector3 startPosition = fromA ? a : b;
-        Vector3 endPosition = fromA ? b : a;
+        Vector3 startPosition = link.transform.TransformPoint(link.startPoint);
+        Vector3 endPosition = link.transform.TransformPoint(link.endPoint);
 
         float duration = 1.2f;
         float t = 0f;
@@ -71,7 +75,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         Vector3 direction = (endPosition - startPosition).normalized;
         playerAgent.transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         
-        float height = Mathf.Abs(endPosition.y - startPosition.y) + 1.0f; 
+        float height = jumpHeight + 1f; 
 
         while (t < 1f)
         {
@@ -86,6 +90,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
         playerAgent.Warp(endPosition);
         playerAgent.updatePosition = true;
         playerAgent.isStopped = false;
+        jumped = true;
+        playerInRange = false;
+        var col = GetComponent<Collider>();
+        if (col) col.enabled = false;
         jumping = false;
     }
 }
