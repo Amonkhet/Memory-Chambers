@@ -27,12 +27,12 @@ public class DoorClickActivate : MonoBehaviour
     [Header("Activate key")]
     public KeyCode activateKey = KeyCode.Mouse1;
     
-    [Header("Camera activate")]
-    [SerializeField] private Cinemachine.CinemachineVirtualCamera targetCamera;
-    [SerializeField] private int activePriority = 25;
-    [SerializeField] private float holdDuration = 3.5f;
-    private int defaultPriority;
-    private Coroutine camRoutine; 
+    // [Header("Camera activate")]
+    // [SerializeField] private Cinemachine.CinemachineVirtualCamera targetCamera;
+    // [SerializeField] private int activePriority = 25;
+    // [SerializeField] private float holdDuration = 3.5f;
+    // private int defaultPriority;
+    // private Coroutine camRoutine; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     // Get player position
@@ -48,10 +48,10 @@ public class DoorClickActivate : MonoBehaviour
             doorCollider = GetComponent<Collider>();
         }
 
-        if (targetCamera)
-        {
-            defaultPriority = targetCamera.Priority;
-        }
+        // if (targetCamera)
+        // {
+        //     defaultPriority = targetCamera.Priority;
+        // }
     }
     // Update is called once per frame
     void Update()
@@ -90,13 +90,13 @@ public class DoorClickActivate : MonoBehaviour
                 manager.PlayTimelineFall(playBackward);
             }
 
-            if (targetCamera)
-            {
-                if (camRoutine != null) {
-                    StopCoroutine(camRoutine);  
-}
-                camRoutine = StartCoroutine(SwitchCamera());      
-            }
+//             if (targetCamera)
+//             {
+//                 if (camRoutine != null) {
+//                     StopCoroutine(camRoutine);  
+// }
+//                 camRoutine = StartCoroutine(SwitchCamera());      
+//             }
         }
     }
     // Door disable/enable door collider interact
@@ -116,25 +116,25 @@ public class DoorClickActivate : MonoBehaviour
         }
     }
     // Switch to camera when playing timeline
-    private System.Collections.IEnumerator SwitchCamera()
-    {
-        targetCamera.Priority = activePriority;
-        yield return new WaitForSeconds(holdDuration);
-        targetCamera.Priority = defaultPriority;
-        camRoutine = null;
-    }
-    void OnDisable()
-    {
-        if (camRoutine != null)
-        {
-            StopCoroutine(camRoutine); camRoutine = null;
-        }
-
-        if (targetCamera)
-        {
-            targetCamera.Priority = defaultPriority;
-        }
-    }
+    // private System.Collections.IEnumerator SwitchCamera()
+    // {
+    //     targetCamera.Priority = activePriority;
+    //     yield return new WaitForSeconds(holdDuration);
+    //     targetCamera.Priority = defaultPriority;
+    //     camRoutine = null;
+    // }
+    // void OnDisable()
+    // {
+    //     if (camRoutine != null)
+    //     {
+    //         StopCoroutine(camRoutine); camRoutine = null;
+    //     }
+    //
+    //     if (targetCamera)
+    //     {
+    //         targetCamera.Priority = defaultPriority;
+    //     }
+    // }
     void OnDrawGizmosSelected()
     {
         if (!doorCollider) return;
