@@ -317247,6 +317247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OutlineSelection
       objectReference: {fileID: 0}
+    - target: {fileID: 3723127430262288499, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
