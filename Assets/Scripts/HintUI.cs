@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 public class HintUI : MonoBehaviour
 {
     // Show hint message
@@ -20,10 +21,30 @@ public class HintUI : MonoBehaviour
         {
             return;
         }
-        if (message) message.text = text;
-        group.alpha = 1f;  
+
+        if (message)
+        {
+            message.text = text;
+        }
+        StopAllCoroutines();
+        group.alpha = 1f;
+        StartCoroutine(AutoHideHint());
     }
 
+    // Wait a bit and fade
+    IEnumerator AutoHideHint()
+    {
+        yield return new WaitForSeconds(1f);
+        float fadeTime = 0.5f;
+        float time = 0f;
+        while (time < 1f)
+        {
+            time += Time.deltaTime / fadeTime;
+            group.alpha = Mathf.Lerp(1f, 0f, time);
+            yield return null;
+        }
+        group.alpha = 0f;
+    }
     void HideHintUI()
     {
         if (!group)
