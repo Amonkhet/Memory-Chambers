@@ -2868,7 +2868,7 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 2351838545904947677, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
   m_PrefabInstance: {fileID: 2009271255}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1777982576
+--- !u!114 &1777982574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3315,7 +3315,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1077481720566723402, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1777982576}
+      addedObject: {fileID: 1777982574}
   m_SourcePrefab: {fileID: 100100000, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
 --- !u!1001 &2017663523
 PrefabInstance:

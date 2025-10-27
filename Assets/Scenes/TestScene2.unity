@@ -1083,6 +1083,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHAHIN_DOOR (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 472cfdcbf4caf7443a6b4681a22fe555, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 472cfdcbf4caf7443a6b4681a22fe555, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1892,6 +1900,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4aedf3238627834cbb780754432ea61, type: 3}
+--- !u!1001 &787525550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05456
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.75675
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.61731
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377770759044349020, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723127430262288499, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
+      propertyPath: m_Name
+      value: OutlineSelection
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46dd541e74b97408891a2382fbd33629, type: 3}
 --- !u!1001 &808438694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2824,6 +2889,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 472cfdcbf4caf7443a6b4681a22fe555, type: 3}
       propertyPath: m_Name
       value: CHAHIN_DOOR
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 472cfdcbf4caf7443a6b4681a22fe555, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 472cfdcbf4caf7443a6b4681a22fe555, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3823,7 +3896,7 @@ GameObject:
   - component: {fileID: 1470829098}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6679,9 +6752,10 @@ SceneRoots:
   - {fileID: 1022895801}
   - {fileID: 736527652}
   - {fileID: 664445525}
-  - {fileID: 1874492317}
   - {fileID: 1257440094}
   - {fileID: 536490902}
   - {fileID: 1464856045}
   - {fileID: 1277126017}
   - {fileID: 779784501}
+  - {fileID: 787525550}
+  - {fileID: 1874492317}
