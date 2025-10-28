@@ -10,7 +10,7 @@ public class BuildingMove : MonoBehaviour
     [SerializeField] float activateRange = 2.8f;
     private BuildingKeyID buildingKeyID;
     private Vector3 initialPosition;
-    
+    private string requiredAgentType = "L";
     void Awake()
     {
         initialPosition = transform.position;
@@ -57,6 +57,15 @@ public class BuildingMove : MonoBehaviour
         // Get current agent scale from player switcher
         var agent = PlayerSwitcher.CurrentAgent;
         var player = PlayerSwitcher.CurrentPlayerRoot;
+        if (agent == null)
+        {
+            return;
+        }
+        string currentType = NavMesh.GetSettingsNameFromID(agent.agentTypeID);
+        if (!string.Equals(currentType, requiredAgentType, StringComparison.Ordinal))
+        {
+            return;
+        }
         // Player distance from building
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance > activateRange)
