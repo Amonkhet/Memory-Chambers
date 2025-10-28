@@ -111844,7 +111844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce30da7a97894d5db7c6cf05f99f766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Press "E" to jump
+  text: Right click to jump
 --- !u!4 &796563134
 Transform:
   m_ObjectHideFlags: 0
@@ -111902,7 +111902,7 @@ MonoBehaviour:
   playerAgent: {fileID: 1540501350}
   playerAnimator: {fileID: 1540501348}
   playerTag: Player
-  activateKey: 101
+  activateKey: 324
   jumpHeight: 1
 --- !u!114 &796563137
 MonoBehaviour:
@@ -317002,7 +317002,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5898435528854099656, guid: 9ac9c81a91b3f452aa5f5225fa8c76c2, type: 3}
       propertyPath: activateKey
-      value: 101
+      value: 324
       objectReference: {fileID: 0}
     - target: {fileID: 7631273747930008829, guid: 9ac9c81a91b3f452aa5f5225fa8c76c2, type: 3}
       propertyPath: m_Name
