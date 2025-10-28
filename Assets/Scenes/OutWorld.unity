@@ -3543,6 +3543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a25b091248f44f5ae2c167639b50f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mechanicKey: BookDrop
+  activeWhenDropped: 1
 --- !u!1 &2103040300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,7 +3720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1710332108496752879, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4699843632844928530, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: m_LocalScale.x
