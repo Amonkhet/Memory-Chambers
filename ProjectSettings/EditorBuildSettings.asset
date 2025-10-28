@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OutWorld.unity
     guid: c6b311d8a83fb4b399db4809c6c20468
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RoomLife.unity
     guid: f0baba260da2a4f3f8eee8499cb6a972
   - enabled: 1
