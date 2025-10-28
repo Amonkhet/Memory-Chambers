@@ -19,6 +19,7 @@ public class BookDropActivate : MonoBehaviour
     [SerializeField] private bool activateOnce = true;
     private bool hasTriggered = false;
     private Transform player;
+    public static bool Dropped = false;
     // Subscribe to event
     private void OnEnable()
     {
@@ -95,6 +96,7 @@ public class BookDropActivate : MonoBehaviour
             navMeshLink.enabled = true;
         }
         hasTriggered = true;
+        Dropped = true;
         GameStatus.Activated(mechanicKey, true);
     }
     // Make sure when door activated, it will keep the dropped status even when change scene
@@ -145,6 +147,7 @@ public class BookDropActivate : MonoBehaviour
         {
             navMeshLink.enabled = false;
         }
+        Dropped = false;
         hasTriggered = false;
     }
 }
