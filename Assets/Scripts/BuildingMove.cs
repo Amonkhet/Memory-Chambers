@@ -41,7 +41,7 @@ public class BuildingMove : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             int layerMask = ~LayerMask.GetMask("CameraCollider");
