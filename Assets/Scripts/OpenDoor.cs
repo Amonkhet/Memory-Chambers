@@ -3,14 +3,29 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    private bool hasOpened = false;
+    [Header("Mechanics key id")]
+    [SerializeField] private string mechanicKey = "BookDrop";
+    [SerializeField] private bool activeWhenDropped = true;
 
-    void Update()
+    void Awake()
     {
-        if (BookDropActivate.Dropped && !hasOpened)
-        {
-            hasOpened = true;
-            gameObject.SetActive(true); 
-        }
+        UpdateState();
+    }
+
+    void OnEnable()
+    {
+        UpdateState();
+    }
+
+    void Start()
+    {
+        UpdateState();
+    }
+
+    private void UpdateState()
+    {
+        bool dropped = GameStatus.IsActivated(mechanicKey);
+        bool targetActive = activeWhenDropped ? dropped : !dropped;
+        gameObject.SetActive(targetActive);
     }
 }
