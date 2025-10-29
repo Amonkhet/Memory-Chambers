@@ -10,7 +10,7 @@ public class BuildingMove : MonoBehaviour
     [SerializeField] float activateRange = 2.8f;
     private BuildingKeyID buildingKeyID;
     private Vector3 initialPosition;
-    private string requiredAgentType = "L";
+    private string requiredAgentType = "LPlayer";
     void Awake()
     {
         initialPosition = transform.position;
@@ -43,12 +43,13 @@ public class BuildingMove : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            int layerMask = ~LayerMask.GetMask("CameraCollider");
-            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask) && hit.collider.gameObject == gameObject)
-            {
-                PushBuilding();
-            }
+            // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // int layerMask = ~LayerMask.GetMask("CameraCollider");
+            // if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask) && hit.collider.gameObject == gameObject)
+            // {
+            //     PushBuilding();
+            // }
+            PushBuilding();
         }
     }
     // Push the building
