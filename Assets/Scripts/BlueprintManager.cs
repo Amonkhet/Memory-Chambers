@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class BlueprintManager : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class BlueprintManager : MonoBehaviour
     [SerializeField] private BlueprintActivate blueprintB;
     [SerializeField] private BlueprintActivate blueprintC;
     [SerializeField] private BlueprintActivate blueprintD;
+    [Header("Endscene timeline")]
+    public PlayableDirector  timeline;  
     
     public bool AllOnCorrectTile {get; private set;}
     // Only check if all on correct tile if there is a difference between last state and current state
@@ -35,6 +38,7 @@ public class BlueprintManager : MonoBehaviour
     // When all on correct tile, use this method
     void WhenAllOnCorrectTile()
     {
+        timeline.Play();
         Debug.Log("All On Correct Tile 2");
     }
 }
