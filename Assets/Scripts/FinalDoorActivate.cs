@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class FinalDoorActivate : MonoBehaviour
 {
     private string playerTag = "Player";
     private bool playerInRange = false;
+    [SerializeField] private PlayableDirector  timeline; 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,5 +34,6 @@ public class FinalDoorActivate : MonoBehaviour
     private void ActivateFinalScene()
     {
         // Will activate and start final scene timeline
+        timeline.Play();
     }
 }
