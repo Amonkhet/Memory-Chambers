@@ -76,7 +76,9 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 
 ## Evaluation Report
 
-TODO - see specification for details
+Through ten questions in questionnaires, we addressed different aspects of the game and the average results were: 
+- Q1: Control & Interaction experience -- 3.0 
+- Q2 
 
 ## Shaders and Special Effects
 
@@ -89,6 +91,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
