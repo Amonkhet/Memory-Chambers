@@ -58,11 +58,12 @@ public class ClimbActivate : MonoBehaviour
         Vector3 playerPos = playerAgent.transform.position;
         bool fromA = (playerPos - a).sqrMagnitude <= (playerPos - b).sqrMagnitude;
         Vector3 startPosition = fromA ? a : b;
-        Vector3 endPosition   = fromA ? b : a;
+        Vector3 endPosition = fromA ? b : a;
 
         // if use animation, use this
-        // bool climbUp = endPosition.y > startPosition.y;
-        // playerAnimator.CrossFade(climbUp ? "ClimbUp" : "ClimbDown", 0.1f);
+        bool climbUp = endPosition.y > startPosition.y;
+        playerAnimator.SetBool("isClimbing", true); // requires a bool parameter in Animator
+        playerAnimator.CrossFade(climbUp ? "ClimbUp" : "ClimbDown", 0.1f);
 
         float duration = 3.0f;
         float t = 0f;
