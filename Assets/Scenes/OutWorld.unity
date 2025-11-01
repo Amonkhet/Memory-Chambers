@@ -1282,32 +1282,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &897837150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 301ff4359bc28f5428e848b78bb17abf, type: 3}
-  m_PrefabInstance: {fileID: 1953125617}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &897837152
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897837150}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 977.80475, y: 13422.044, z: 423.3789}
-  m_Center: {x: -17307.404, y: 4459.876, z: -5434.6953}
 --- !u!1001 &908971728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1532,9 +1506,10 @@ GameObject:
   - component: {fileID: 990908820}
   - component: {fileID: 990908821}
   - component: {fileID: 990908822}
+  - component: {fileID: 990908823}
   m_Layer: 3
   m_Name: ClimbLink
-  m_TagString: Untagged
+  m_TagString: Ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1625,6 +1600,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &990908823
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990908818}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1cd664fa02ced6e48af22b6df2472799, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2b86f8c9fa42543d890573cbd23a2ea3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &993414593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2080659121764590225, guid: b857134af29a944a882f0638703a40bd, type: 3}
@@ -3320,13 +3317,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 301ff4359bc28f5428e848b78bb17abf, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 301ff4359bc28f5428e848b78bb17abf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 897837152}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 301ff4359bc28f5428e848b78bb17abf, type: 3}
 --- !u!1 &1968166972
 GameObject:
@@ -3374,6 +3372,18 @@ PrefabInstance:
     - target: {fileID: 1077481720566723402, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
       propertyPath: m_Name
       value: PlayerControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579057112913870502, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579057112913870502, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579057112913870502, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2351838545904947677, guid: 99964cb1b3f404f838996394956edb6d, type: 3}
       propertyPath: m_AgentTypeID
