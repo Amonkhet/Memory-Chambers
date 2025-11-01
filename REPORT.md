@@ -76,6 +76,9 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 
 ## Evaluation Report
 
+For think-aloud and posttask walkthroughs,
+
+
 
 Here is a detailed summary of the questionnaire results and changes we have made to the game. 
 | **Question* | **Gameplay Area Addressed** | **Average scores** | **Participants' Feedback** | **Changes** | 
@@ -89,7 +92,7 @@ Here is a detailed summary of the questionnaire results and changes we have made
 | Q7 | Visual design | 4.0 | Visual elements look decent yet simple. Limited to three small spaces. |    | 
 | Q8 | Audio design | 4.0 | The music feels natural and comfortable. Not too relevant with player itself.  |       | 
 | Q9 | Overall experience | 3.9 | It's a playable game however can be very hard to play. | Created some glow and outline effects for hints. | 
-| Q10 | Engagement | 4.0 | Lack of excitement and interactions with different objects. |     | 
+| Q10 | Engagement | 4.0 | At this stage, it's lack of excitement and interactions with different objects. With more developed elements, it'd be an interesting game to play. |     | 
 
 ## Shaders and Special Effects
 
@@ -102,6 +105,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
