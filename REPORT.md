@@ -43,12 +43,12 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 9. The overall performance met my expectations for a playable prototype.
 10. The gameplay felt engaging and coherent.
 
-**Participants**: Our target audience is mainly university students who enjoy narrative-driven puzzle/adventure games, atmospheric story experiences, and exploration. We also include some causal players who play games less often, but enjoy aesthetics/emotion. To ensure the representativeness, we aim to balance game familiarity (70% who play games often, 30% otherwise) and gender (males/females).
+**Participants**: Our target audience is mainly university students who enjoy narrative-driven puzzle games, stylish indie games, and exploration. We also include some causal players who play games less often, but enjoy aesthetics/emotion. To ensure the representativeness, we aim to balance game familiarity (70% who play games often, 30% otherwise) and gender (males/females).
 
 **Stratified quota sampling**: 
-- Narrative / atmospheric players: 4 (33%)
-- Puzzle / exploration players: 4 (33%)
-- Casual / occasional players: 4 (33%)
+- Cartoon-style/Indie game players: 4 (40%)
+- Patient puzzle / exploration players: 4 (40%)
+- Casual players: 2 (20%)
 
 **Recruitment channel**: 
 - University / campus participant pools — target students in arts/CS/games courses.
@@ -105,6 +105,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
