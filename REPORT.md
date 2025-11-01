@@ -76,9 +76,13 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 
 ## Evaluation Report
 
-Through ten questions in questionnaires, we addressed different aspects of the game and the average results were: 
-- Q1: Control & Interaction experience -- 3.0 
-- Q2 
+
+Here is a detailed summary of the questionnaire results and changes we have made to the game. 
+| **Question* | **Gameplay Area Addressed** | **Average scores** | **Comments** | **Changes** | 
+|-------|-------------------|--------|----------------------------|-----------------------------|
+| Q1 | Control & Interaction design | 3.0 | While the mouse control of player movement felt intuitive, it was hard to control since most evaluations were done on a Mac with TrackPad. | No changes to the game. Suggestion is to use a physical mouse to play. | 
+| Q2 | Technical performance | 3.6 | 
+| Q3 | Gameplay clarity | 3.5 | 
 
 ## Shaders and Special Effects
 
@@ -91,6 +95,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
