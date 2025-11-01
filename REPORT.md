@@ -78,12 +78,18 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 
 
 Here is a detailed summary of the questionnaire results and changes we have made to the game. 
-| **Question* | **Gameplay Area Addressed** | **Average scores** | **Comments** | **Changes** | 
+| **Question* | **Gameplay Area Addressed** | **Average scores** | **Participants' Feedback** | **Changes** | 
 |-------|-------------------|--------|----------------------------|-----------------------------|
 | Q1 | Control & Interaction design | 3.0 | While the mouse control of player movement felt intuitive, it was hard to control since most evaluations were done on a Mac with TrackPad. | No changes to the game. Suggestion is to use a physical mouse to play. | 
 | Q2 | Technical performance | 3.6 | There were two bugs tested out during evaluations when the player walks into hidden areas or accidentally into objects. Jumping and climbing animations were not completed. |   | 
 | Q3 | Gameplay clarity | 3.5 | It was challanging for half of the users to understand how to progress the game, partially because they didn't watch trailer as well. Some users think it's acceptable that a puzzle game takes a bit longer than usual games to figure out the goal/progression. | A UI intro page was added at the start of the game for more clarity. | 
-| Q4 | 
+| Q4 | Narrative communication | 3.5 | The background transition was not complete. | Background change and UI for story dialogue |
+| Q5 | Level design | 4.0 |  The bedroom and workplace layout look pretty and natural. |  |
+| Q6 | Narrative communication | 3.5 | Without watching trailer or brief introduction of the game background, it's hard to know meaning of rooms. | UI for story dialogue | 
+| Q7 | Visual design | 4.0 | Visual elements look decent yet simple. Limited to three small spaces. |    | 
+| Q8 | Audio design | 4.0 | The music feels natural and comfortable. Not too relevant with player itself.  |       | 
+| Q9 | Overall experience | 3.9 | It's a playable game however can be very hard to play. | Created some glow and outline effects for hints. | 
+| Q10 | Engagement | 4.0 | Lack of excitement and interactions with different objects. |     | 
 
 ## Shaders and Special Effects
 
@@ -96,6 +102,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
