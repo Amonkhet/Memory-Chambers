@@ -81,8 +81,9 @@ Here is a detailed summary of the questionnaire results and changes we have made
 | **Question* | **Gameplay Area Addressed** | **Average scores** | **Comments** | **Changes** | 
 |-------|-------------------|--------|----------------------------|-----------------------------|
 | Q1 | Control & Interaction design | 3.0 | While the mouse control of player movement felt intuitive, it was hard to control since most evaluations were done on a Mac with TrackPad. | No changes to the game. Suggestion is to use a physical mouse to play. | 
-| Q2 | Technical performance | 3.6 | 
-| Q3 | Gameplay clarity | 3.5 | 
+| Q2 | Technical performance | 3.6 | There were two bugs tested out during evaluations when the player walks into hidden areas or accidentally into objects. Jumping and climbing animations were not completed. |   | 
+| Q3 | Gameplay clarity | 3.5 | It was challanging for half of the users to understand how to progress the game, partially because they didn't watch trailer as well. Some users think it's acceptable that a puzzle game takes a bit longer than usual games to figure out the goal/progression. | A UI intro page was added at the start of the game for more clarity. | 
+| Q4 | 
 
 ## Shaders and Special Effects
 
@@ -95,6 +96,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
