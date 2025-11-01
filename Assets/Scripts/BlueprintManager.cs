@@ -14,19 +14,28 @@ public class BlueprintManager : MonoBehaviour
     public bool AllOnCorrectTile {get; private set;}
     // Only check if all on correct tile if there is a difference between last state and current state
     private bool lastState;
-
+    private static bool hasPlayed = false;
     // Update is called once per frame
     void Update()
     {
+        if (hasPlayed)
+        {
+            return;
+        }
         AllOnCorrectTile = CheckAllOnCorrectTile();
         if (AllOnCorrectTile != lastState)
         {
             lastState = AllOnCorrectTile;
-            if (AllOnCorrectTile)
+            if (AllOnCorrectTile && !hasPlayed)
             {
                 Debug.Log("All On Correct Tile 1");
                 WhenAllOnCorrectTile();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            WhenAllOnCorrectTile();
         }
     }
 
@@ -40,5 +49,21 @@ public class BlueprintManager : MonoBehaviour
     {
         timeline.Play();
         Debug.Log("All On Correct Tile 2");
+        hasPlayed = true;
     }
+    void OnEnable()
+    {
+        if (timeline) timeline.stopped += OnTimelineStopped;
+    }
+
+    void OnDisable()
+    {
+        if (timeline) timeline.stopped -= OnTimelineStopped;
+    }
+
+    void OnTimelineStopped(PlayableDirector director)
+    {
+        director.gameObject.SetActive(false); 
+    }
+
 }
