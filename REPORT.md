@@ -134,12 +134,15 @@ This shader was used to make the whole scene look more like a comic or hand-draw
 - _DepthScale and _NormalScale control whether the outlines are more affected by depth changes or by surface details.
 - _EdgeThreshold and _EdgeSoftness change the line intensity and smoothness, while _Overlay decides whether the lines are drawn over the original image or shown alone.
 
+Before adding these 2 shaders: 
 <img width="1034" height="741" alt="WechatIMG208" src="https://github.com/user-attachments/assets/748f82af-2a7c-44da-967f-968f836afa8a" />
-Before adding these 2 shaders 
 
-<img width="1044" height="741" alt="WechatIMG206" src="https://github.com/user-attachments/assets/c0b1f334-b575-46ef-b4af-956bb533281e" /> After adding flat color and normal details
+After adding flat color and normal details:
+<img width="1044" height="741" alt="WechatIMG206" src="https://github.com/user-attachments/assets/c0b1f334-b575-46ef-b4af-956bb533281e" /> 
+
+After adding sobel outline shader:
 <img width="1026" height="720" alt="WechatIMG204" src="https://github.com/user-attachments/assets/acf7e3e3-1392-4981-a136-87d1ff34f9fb" />
-After adding sobel outline shader
+
 
 #### Particle System
  
@@ -151,6 +154,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
