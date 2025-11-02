@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;   
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SceneSubtitle : MonoBehaviour
 {
     [Header("UI References")]
-    public CanvasGroup panelGroup;     
-    public TMP_Text subtitleText;      
+    public CanvasGroup panelGroup;
+    public TMP_Text subtitleText;
 
     [Header("Subtitle Settings")]
     [TextArea(5, 10)]
@@ -24,33 +25,27 @@ public class SceneSubtitle : MonoBehaviour
     public float fadeTime = 0.8f;
     public bool canSkip = true;
 
-    private bool isPlaying = false;
+    private string sceneKey;
 
     void Start()
     {
-   
-        if (PlayerPrefs.GetInt("RoomLife_Intro_Played", 0) == 1)
+     
+        string sceneName = SceneManager.GetActiveScene().name;
+        sceneKey = "SubtitlePlayed_" + sceneName;
+
+ 
+        if (PlayerPrefs.GetInt(sceneKey, 0) == 1)
         {
-            if (panelGroup != null)
-            {
-                panelGroup.alpha = 0f;
-                panelGroup.gameObject.SetActive(false);
-            }
-            if (subtitleText != null)
-            {
-                subtitleText.text = "";
-            }
+            HidePanel();
             return;
         }
 
-        // only play in first time 
+
         StartCoroutine(PlaySubtitle());
     }
 
     IEnumerator PlaySubtitle()
     {
-        isPlaying = true;
-
         if (panelGroup != null)
             yield return StartCoroutine(FadeCanvas(panelGroup, 0, 1, fadeTime));
 
@@ -63,7 +58,6 @@ public class SceneSubtitle : MonoBehaviour
             {
                 subtitleText.text += c;
                 yield return new WaitForSeconds(typingSpeed);
-
             }
             yield return new WaitForSeconds(lineDelay);
         }
@@ -71,21 +65,30 @@ public class SceneSubtitle : MonoBehaviour
         if (panelGroup != null)
             yield return StartCoroutine(FadeCanvas(panelGroup, 1, 0, fadeTime));
 
-        if (panelGroup != null)
-            panelGroup.gameObject.SetActive(false);
+        HidePanel();
 
-        isPlaying = false;
-
-   
-        PlayerPrefs.SetInt("RoomLife_Intro_Played", 1);
+    
+        PlayerPrefs.SetInt(sceneKey, 1);
         PlayerPrefs.Save();
+    }
+
+    void HidePanel()
+    {
+        if (panelGroup != null)
+        {
+            panelGroup.alpha = 0f;
+            panelGroup.gameObject.SetActive(false);
+        }
+        if (subtitleText != null)
+        {
+            subtitleText.text = "";
+        }
     }
 
     IEnumerator FadeCanvas(CanvasGroup cg, float start, float end, float duration)
     {
         if (cg == null) yield break;
-
-        float t = 0;
+        float t = 0f;
         while (t < duration)
         {
             cg.alpha = Mathf.Lerp(start, end, t / duration);
@@ -93,11 +96,5 @@ public class SceneSubtitle : MonoBehaviour
             yield return null;
         }
         cg.alpha = end;
-    }
-
-
-    public void ResetSubtitlePlayedFlag()
-    {
-        PlayerPrefs.DeleteKey("RoomLife_Intro_Played");
     }
 }
