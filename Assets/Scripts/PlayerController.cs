@@ -31,14 +31,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if left mouse clicked every frame
-       if (Input.GetMouseButtonDown(0) && !isJumping)
+        if (Input.GetMouseButtonDown(1) && !isJumping)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hitClick))
             {
                 EventManager.WhenObjectClicked(hitClick, transform);
             }
+        }
+        // Check if left mouse clicked every frame
+       if (Input.GetMouseButtonDown(0) && !isJumping)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
                 int mask = agent.areaMask;
