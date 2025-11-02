@@ -76,7 +76,13 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 
 ## Evaluation Report
 
-For think-aloud and posttask walkthroughs,
+From think-aloud notes: 
+- Most participants found the gameplay unclear when the LifeRoom started. Due to limitied interactions in the first stage, some users expreesed "**Confused**" feelings.
+- After 1-2 minutes average when participants exited from the first door and entered another space (OutWorld), 7 users showed **excitement** and had a good understanding of the door/size transitions between the rooms.
+- When the XS size player entered into the first room, half of the participants expressed "**interesting**" while the other half of participants found it "confusing".
+- 
+- During XS size player's exploration in the first room, 6 participants found the movement&control a bit tricky. Since only specific areas can trigger the movement, this technical issue caused some **frustrations**. And walking-stairs animation was still imcompelte, this didn't meet users' expections either.
+- 
 
 
 
@@ -105,6 +111,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
