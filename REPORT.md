@@ -94,7 +94,7 @@ Here is a detailed summary of the questionnaire results and changes we have made
 | Q3 | Gameplay clarity | 3.5 | It was challanging for half of the users to understand how to progress the game, partially because they didn't watch trailer as well. Some users think it's acceptable that a puzzle game takes a bit longer than usual games to figure out the goal/progression. | A UI intro page was added at the start of the game for more clarity. | 
 | Q4 | Narrative communication | 3.5 | The background transition was not complete. | Background change and UI for story dialogue |
 | Q5 | Level design | 4.0 |  The bedroom and workplace layout look pretty and natural. |  |
-| Q6 | Narrative communication | 3.5 | Without watching trailer or brief introduction of the game background, it's hard to know meaning of rooms. | UI for story dialogue | 
+| Q6 | Narrative communication | 3.5 | Without watching trailer or brief introduction of the game background, it's hard to know meaning of rooms. Object interactions seem quite random and not strongly logical, it's hard to connect into a story and meanings. | UI for story dialogue | 
 | Q7 | Visual design | 4.0 | Visual elements look decent yet simple. Limited to three small spaces. |    | 
 | Q8 | Audio design | 4.0 | The music feels natural and comfortable. Not too relevant with player itself.  |       | 
 | Q9 | Overall experience | 3.9 | It's a playable game however can be very hard to play. | Created some glow and outline effects for hints. | 
@@ -118,6 +118,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
