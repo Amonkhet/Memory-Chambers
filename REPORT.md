@@ -151,7 +151,11 @@ After adding sobel outline shader:
 
 
 #### Particle System
- 
+
+![Untitled design](https://github.com/user-attachments/assets/556cc8c0-d98b-40b1-bb7f-111bce2b03e8)
+
+
+
 
 ## Summary of Contributions
 
@@ -160,6 +164,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
