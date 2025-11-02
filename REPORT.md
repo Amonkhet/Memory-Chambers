@@ -173,7 +173,8 @@ Shader: https://www.youtube.com/watch?v=jlKNOirh66E
 
 https://www.youtube.com/watch?v=1QPA3s0S3Oo&list=PLAUha41PUKAaYVYT7QwxOtiUllckLZrir&index=1
 
-Player animation clips was downloaded: https://www.mixamo.com/#/
+Player animation clips: https://www.mixamo.com/#/
+
 
 
 
