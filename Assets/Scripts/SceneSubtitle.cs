@@ -64,11 +64,6 @@ public class SceneSubtitle : MonoBehaviour
                 subtitleText.text += c;
                 yield return new WaitForSeconds(typingSpeed);
 
-                if (canSkip && Input.anyKeyDown)
-                {
-                    subtitleText.text = line;
-                    break;
-                }
             }
             yield return new WaitForSeconds(lineDelay);
         }
