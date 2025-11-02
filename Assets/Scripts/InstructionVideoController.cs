@@ -21,7 +21,6 @@ public class InstructionVideoController : MonoBehaviour
         videoUI.SetActive(false);
     }
 
-    // Optional: Add a method to close manually
     public void CloseVideo()
     {
         if (videoPlayer != null)
