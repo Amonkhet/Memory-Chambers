@@ -2034,7 +2034,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 5fb351f8b61f21048ab57f3b7f318479, type: 3}
+  m_Resource: {fileID: 8300000, guid: a0da48966b0f472428da593983f6dba4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.463
   m_Pitch: 1
@@ -3704,7 +3704,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2019721885}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []

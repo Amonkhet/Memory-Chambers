@@ -9,33 +9,31 @@ public class SceneBGMManager : MonoBehaviour
     [System.Serializable]
     public class SceneBGM
     {
-        public string sceneName;   
-        public AudioClip bgmClip;  
+        public string sceneName;
+        public AudioClip bgmClip;
         public float volume = 0.7f;
     }
 
-    public AudioSource bgmSource;         
-    public List<SceneBGM> sceneBGMs;      
+    public AudioSource bgmSource;
+    public List<SceneBGM> sceneBGMs;
 
     private void Awake()
     {
-
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-       
+            DontDestroyOnLoad(gameObject);   // ← 如果你不想跨场景保留，就删掉这一行
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
 
     private void Start()
     {
-   
         PlayBGMForScene(SceneManager.GetActiveScene().name);
     }
 
@@ -46,12 +44,10 @@ public class SceneBGMManager : MonoBehaviour
 
     private void PlayBGMForScene(string sceneName)
     {
-      
         foreach (var item in sceneBGMs)
         {
             if (item.sceneName == sceneName)
             {
-            
                 if (bgmSource.clip == item.bgmClip && bgmSource.isPlaying)
                     return;
 
@@ -63,7 +59,9 @@ public class SceneBGMManager : MonoBehaviour
             }
         }
 
-       
+        // 场景没配置 → 停
         bgmSource.Stop();
+        bgmSource.clip = null;
+        Debug.Log($"[SceneBGMManager] No BGM set for scene: {sceneName}, stop playing.");
     }
 }
