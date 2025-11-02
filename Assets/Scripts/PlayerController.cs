@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,8 +17,8 @@ public class PlayerController : MonoBehaviour
     // Event listener to get click position and for adding future animation/effects
     public static event System.Action<Vector3> WhenGroundClicked;
     [Header("Jump Settings")]
-    [SerializeField] float jumpHeightThreshold = 0.5f; // how high must the target be to jump
-    [SerializeField] float jumpDuration = 2.0f;        // how long jump animation lasts
+    [SerializeField] float jumpHeightThreshold = 1.0f; // how high must the target be to jump
+    [SerializeField] float jumpDuration = 5.9f;        // how long jump animation lasts
     private bool isJumping = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,9 +44,8 @@ public class PlayerController : MonoBehaviour
                 int mask = agent.areaMask;
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, rangeWalkable, mask))
                 {
-                    float heightDiff = MathF.Abs(navHit.position.y - transform.position.y);
-                    // jump
-                    // if (heightDiff < jumpHeightThreshold)
+                    // float heightDiff = navHit.position.y - transform.position.y;
+                    // if (heightDiff > jumpHeightThreshold)
                     // {
                     //     StartCoroutine(JumpTo(navHit.position));
                     // }
@@ -78,7 +76,7 @@ public class PlayerController : MonoBehaviour
         
         //     anim.SetTrigger("Jump"); // trigger jump animation
         
-        //     yield return new WaitForSeconds(jumpDuration * 0.2f);
+        //     yield return new WaitForSeconds(jumpDuration * 0.8f);
         
         //     agent.Warp(destination); // teleport or move the character to new position
         //     agent.isStopped = false;
