@@ -3868,8 +3868,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a25b091248f44f5ae2c167639b50f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechanicKey: BookDrop
+  mechanicKey: DoorLActivate
   activeWhenDropped: 1
+  playerTag: Player
+  activeWhenTriggered: 1
 --- !u!1 &2103040300
 GameObject:
   m_ObjectHideFlags: 0

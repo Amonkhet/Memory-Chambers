@@ -23,6 +23,9 @@ public class GameStatus : MonoBehaviour
     
     // For move room status in outworld scene
     private static readonly Dictionary<string, Vector3> roomMove = new Dictionary<string, Vector3>();
+    
+    // For door L activate in outworld scene
+    private static readonly Dictionary<string, bool> activatedDoorL = new Dictionary<string, bool>();
     void Awake()
     {
         if (_instance == null)
@@ -111,5 +114,16 @@ public class GameStatus : MonoBehaviour
     public static bool GetBuildingRiseStage(string key, out int stage)
     {
         return buildingRiseStage.TryGetValue(key, out stage);
+    }
+    
+    // For door l activate in outworld
+    public static void SetDoorLState(string key, bool value)
+    {
+        activatedDoorL[key] = value;
+    }
+
+    public static bool GetDoorLState(string key)
+    {
+        return activatedDoorL.TryGetValue(key, out bool value) && value;
     }
 }
