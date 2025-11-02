@@ -45,6 +45,7 @@ public class ClimbActivate : MonoBehaviour
         }
     }
 
+
     System.Collections.IEnumerator ClimbStair()
     {
         climbing = true;
@@ -61,9 +62,9 @@ public class ClimbActivate : MonoBehaviour
         Vector3 endPosition = fromA ? b : a;
 
         // if use animation, use this
-        bool climbUp = endPosition.y > startPosition.y;
+        // bool climbUp = endPosition.y > startPosition.y;
         playerAnimator.SetBool("isClimbing", true); // requires a bool parameter in Animator
-        playerAnimator.CrossFade(climbUp ? "ClimbUp" : "ClimbDown", 0.1f);
+        // playerAnimator.CrossFade(climbUp ? "ClimbUp" : "ClimbDown", 0.1f);
 
         float duration = 3.0f;
         float t = 0f;
@@ -75,6 +76,7 @@ public class ClimbActivate : MonoBehaviour
         while (t < 1f)
         {
             t += Time.deltaTime / duration;
+            playerAgent.transform.position = Vector3.Lerp(startPosition, endPosition, t);
             Vector3 pos = Vector3.Lerp(startPosition, endPosition, t);
             pos.y += Mathf.Sin(t * Mathf.PI) * 0.3f;    
             playerAgent.transform.position = pos;
@@ -83,6 +85,7 @@ public class ClimbActivate : MonoBehaviour
         }
 
         playerAgent.Warp(endPosition);
+        playerAnimator.SetBool("isClimbing", false);
         playerAgent.updatePosition = true;
         playerAgent.isStopped = false;
         climbing = false;
