@@ -25,7 +25,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _OutlineWidth: 10
+    - _OutlineWidth: 3
     - _ZTest: 8
     m_Colors:
     - _OutlineColor: {r: 0.8164182, g: 1, b: 0, a: 1}

@@ -76,23 +76,36 @@ We adopt think-aloud and post-task walkthroughs during observations. Because our
 
 ## Evaluation Report
 
-For think-aloud and posttask walkthroughs,
-
+From think-aloud notes and posttask walkthroughs, we noted down the following qualitative data: 
+- Most participants found the gameplay unclear when the LifeRoom started. Due to limitied interactions in the first stage, some users expreesed "**Confused**" feelings.
+- After 1-2 minutes average when participants exited from the first door and entered another space (OutWorld), 7 users showed **excitement** and had a good understanding of the door/size transitions between the rooms.
+- When the XS size player entered into the first room, half of the participants expressed "**interesting**" while the other half of participants found it "confusing".
+- Two unexpected bugs happened to 4 paricipants when the player accidentally entered into the books and the screen started shaking. -- Had to stop the gameplay which caused **disappointment**. 
+- During XS size player's exploration in the first room, 6 participants found the movement&control a bit tricky. Since only specific areas can trigger the movement, this technical issue caused some **frustrations**. And walking-stairs animation was still imcompelte, this didn't meet users' expections either.
+- In the third scene (WorkRoom), half of the participants expressed "it's quite **difficult** to control the big model".
+- 4 participants spent more than 10mins finishing the game; 3 participants spent 8~10 minutes; 3 participants didn't finish the game.
 
 
 Here is a detailed summary of the questionnaire results and changes we have made to the game. 
 | **Question* | **Gameplay Area Addressed** | **Average scores** | **Participants' Feedback** | **Changes** | 
 |-------|-------------------|--------|----------------------------|-----------------------------|
 | Q1 | Control & Interaction design | 3.0 | While the mouse control of player movement felt intuitive, it was hard to control since most evaluations were done on a Mac with TrackPad. | No changes to the game. Suggestion is to use a physical mouse to play. | 
-| Q2 | Technical performance | 3.6 | There were two bugs tested out during evaluations when the player walks into hidden areas or accidentally into objects. Jumping and climbing animations were not completed. |   | 
+| Q2 | Technical performance | 3.6 | There were two bugs tested out during evaluations when the player walks into hidden areas or accidentally into objects. Jumping and climbing animations were not completed. | Walking up animation was improved to keep character upright. | 
 | Q3 | Gameplay clarity | 3.5 | It was challanging for half of the users to understand how to progress the game, partially because they didn't watch trailer as well. Some users think it's acceptable that a puzzle game takes a bit longer than usual games to figure out the goal/progression. | A UI intro page was added at the start of the game for more clarity. | 
 | Q4 | Narrative communication | 3.5 | The background transition was not complete. | Background change and UI for story dialogue |
-| Q5 | Level design | 4.0 |  The bedroom and workplace layout look pretty and natural. |  |
-| Q6 | Narrative communication | 3.5 | Without watching trailer or brief introduction of the game background, it's hard to know meaning of rooms. | UI for story dialogue | 
-| Q7 | Visual design | 4.0 | Visual elements look decent yet simple. Limited to three small spaces. |    | 
-| Q8 | Audio design | 4.0 | The music feels natural and comfortable. Not too relevant with player itself.  |       | 
+| Q5 | Level design | 4.0 |  The bedroom and workplace layout look pretty and natural. | No change - met overall expectation. |
+| Q6 | Narrative communication | 3.5 | Without watching trailer or brief introduction of the game background, it's hard to know meaning of rooms. Object interactions seem quite random and not strongly logical, it's hard to connect into a story and meanings. | UI for story dialogue | 
+| Q7 | Visual design | 4.0 | Visual elements look decent yet simple. Limited to three small spaces. |  No change - met overall expectation | 
+| Q8 | Audio design | 4.0 | The music feels natural and comfortable. Not too relevant with player itself.  |  No change - met overall expectation. | 
 | Q9 | Overall experience | 3.9 | It's a playable game however can be very hard to play. | Created some glow and outline effects for hints. | 
 | Q10 | Engagement | 4.0 | At this stage, it's lack of excitement and interactions with different objects. With more developed elements, it'd be an interesting game to play. |     | 
+
+Based on the evaluations above, we made following decisions/changes in the gameplay:
+- Walking up/down animation improved.
+- UI text for story narrative added.
+- Outline effect on objects for hints.
+
+If time allows, we will keep working on more object interactions, climbing animations, atmospheric texts for story narrative, a "help" button which provides small hints.
 
 ## Shaders and Special Effects
 
@@ -105,6 +118,12 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
+
+
+
+
+
 
 
 
