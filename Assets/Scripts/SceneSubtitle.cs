@@ -14,7 +14,7 @@ public class SceneSubtitle : MonoBehaviour
         "Where... where am I? This place... it’s my room.",
         "The desk, the bed, the shelves — everything looks so familiar, yet so distant.",
         "Why am I so small? Have I shrunk, or has this world grown around me?",
-        "I feel trapped inside my own design — a space that once defined me.",
+        "I feel trapped inside my shell.",
         "I need to get out... I can’t stay here any longer."
     };
 
