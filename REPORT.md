@@ -113,6 +113,7 @@ Here are two custome vertex and fragment shaders used in the game:
 
 #### Shader 1 – Flat Color With Normal Detail
 **File path**: Assets/Shaders/Moebius/FlatColorWithNormalDetail.shader
+
 This shader is mainly used to create a hand-drawn style for the room scene in our game. It makes objects look like they are painted flat, similar to illustrations. In addition, simple lighting and rim highlights were also added on to give it some depth, so the scene not look too plain. This shader is applied to most objects in the “RoomLife” scene, including the bed, table, and walls. Its material parameters are open to change, so we could directly adjust color, gradient range, or normal texture in the editor and see results right away. All textures were added as images and fine-tuned with parameters, without creating new materials or changing code. This significantly reduced the workload, allowing for faster and more flexible style adjustments. 
 
 **Main features**:
@@ -124,6 +125,7 @@ This shader is mainly used to create a hand-drawn style for the room scene in ou
 
 #### Shader 2 - Sobel Outline Shader
 **File path**: Assets/Shaders/Moebius/SobelOutline_Fullscreen.shader
+
 This shader was used to make the whole scene look more like a comic or hand-drawn artwork. It added an outline layer over the image, so we didn’t need to create a separate outline pass for every material. It also let us control the thickness of the lines globally in one place. A second pass was also added that used the stencil buffer to exclude the player character, so the outline did not cover the player model. The player’s material wrote a stencil value, and the outline shader only drew on areas where the stencil value was different. This made the outline effect work smoothly with the rest of the rendering system.The basic Moebius flat shader gave nice pastel colors, but without outlines, the scene looked too clean and 3D-like. It accessed the final color, depth, and normal information, then drew outlines over the whole screen. It kept the visual style unified so we don't have to create separate materials for every object. 
 
 **Main featuers**:
@@ -132,6 +134,8 @@ This shader was used to make the whole scene look more like a comic or hand-draw
 - _DepthScale and _NormalScale control whether the outlines are more affected by depth changes or by surface details.
 - _EdgeThreshold and _EdgeSoftness change the line intensity and smoothness, while _Overlay decides whether the lines are drawn over the original image or shown alone.
 
+
+#### Particle System
  
 
 ## Summary of Contributions
@@ -141,6 +145,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
