@@ -152,6 +152,8 @@ After adding sobel outline shader:
 
 #### Particle System
 
+The particle system was made to add dust effect based on the story theme, where the player found himself in bedroom and lost memory. 
+
 ![Untitled design](https://github.com/user-attachments/assets/556cc8c0-d98b-40b1-bb7f-111bce2b03e8)
 
 
@@ -164,6 +166,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
