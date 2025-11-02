@@ -111,7 +111,7 @@ If time allows, we will keep working on more object interactions, climbing anima
 
 Here are two custome vertex and fragment shaders used in the game: 
 
-#### Shader 1 – Flat Color With Normal Detail
+#### Shader 1 – Moebius/Flat Color With Normal Detail
 **File path**: Assets/Shaders/Moebius/FlatColorWithNormalDetail.shader
 
 This shader is mainly used to create a hand-drawn style for the room scene in our game. It makes objects look like they are painted flat, similar to illustrations. In addition, simple lighting and rim highlights were also added on to give it some depth, so the scene not look too plain. This shader is applied to most objects in the “RoomLife” scene, including the bed, table, and walls. Its material parameters are open to change, so we could directly adjust color, gradient range, or normal texture in the editor and see results right away. All textures were added as images and fine-tuned with parameters, without creating new materials or changing code. This significantly reduced the workload, allowing for faster and more flexible style adjustments. 
@@ -123,7 +123,7 @@ This shader is mainly used to create a hand-drawn style for the room scene in ou
 - Includes a simple, stylized highlight band where the thickness and brightness can be adjusted.
 - Adds rim light to make objects stand out more clearly from the background.
 
-#### Shader 2 - Sobel Outline Shader
+#### Shader 2 - Moebius/Sobel Outline_Fullscreen
 **File path**: Assets/Shaders/Moebius/SobelOutline_Fullscreen.shader
 
 This shader was used to make the whole scene look more like a comic or hand-drawn artwork. It added an outline layer over the image, so we didn’t need to create a separate outline pass for every material. It also let us control the thickness of the lines globally in one place. A second pass was also added that used the stencil buffer to exclude the player character, so the outline did not cover the player model. The player’s material wrote a stencil value, and the outline shader only drew on areas where the stencil value was different. This made the outline effect work smoothly with the rest of the rendering system.The basic Moebius flat shader gave nice pastel colors, but without outlines, the scene looked too clean and 3D-like. It accessed the final color, depth, and normal information, then drew outlines over the whole screen. It kept the visual style unified so we don't have to create separate materials for every object. 
@@ -161,11 +161,16 @@ The particle system was made to add dust effects to enhance environmental atmosp
 
 ## Summary of Contributions
 
-TODO - see specification for details
+Since all of us were not very familar with Unity and GitHub and concerned about conflicts on GitHub commits, we all worked on the same laptop at the start. 
+
+Yao Chen - Visual arts, audio design, models, shaders
+Yue Wang - Game level design, object interactions, programming 
+Joly Lin - Player anaimations, outline shaders, particle system, evaluation analysis
 
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
