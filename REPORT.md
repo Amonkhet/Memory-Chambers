@@ -109,7 +109,21 @@ If time allows, we will keep working on more object interactions, climbing anima
 
 ## Shaders and Special Effects
 
-TODO - see specification for details
+#### Shader 1 – Moebius/FlatColorWithNormalDetail
+**File path**: Assets/Shaders/Moebius/FlatColorWithNormalDetail.shader
+This is a **custom vertex and fragment shader**. This shader is mainly used to create a hand-drawn style for the room scene in our game. It makes objects look like they are painted flat, similar to illustrations. In addition, simple lighting and rim highlights were also added on to give it some depth, so the scene not look too plain. This shader is applied to most objects in the “RoomLife” scene, including the bed, table, and walls. Its material parameters are open to change, so we could directly adjust color, gradient range, or normal texture in the editor and see results right away. All textures were added as images and fine-tuned with parameters, without creating new materials or changing code. This significantly reduced the workload, allowing for faster and more flexible style adjustments. 
+
+#### Shader 2 - 
+
+
+Main features:
+- Adds a color gradient based on the object’s height in the world. For example, the top part of a wall can look brighter than the bottom.
+- Supports different texture mapping modes (model UV, world XZ, or triplanar) to avoid visible seams between modular objects.
+- The normal map can follow the same world-space direction as the texture, so the surface looks more natural.
+- Includes a simple, stylized highlight band where the thickness and brightness can be adjusted.
+- Adds rim light to make objects stand out more clearly from the background.
+
+
 
 ## Summary of Contributions
 
@@ -118,6 +132,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
