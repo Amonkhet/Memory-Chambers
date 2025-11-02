@@ -135,12 +135,18 @@ This shader was used to make the whole scene look more like a comic or hand-draw
 - _EdgeThreshold and _EdgeSoftness change the line intensity and smoothness, while _Overlay decides whether the lines are drawn over the original image or shown alone.
 
 Before adding these 2 shaders: 
+
+
 <img width="517" height="370" alt="WechatIMG208" src="https://github.com/user-attachments/assets/748f82af-2a7c-44da-967f-968f836afa8a" />
 
 After adding flat color and normal details:
+
+
 <img width="517" height="370" alt="WechatIMG206" src="https://github.com/user-attachments/assets/c0b1f334-b575-46ef-b4af-956bb533281e" /> 
 
 After adding sobel outline shader:
+
+
 <img width="517" height="370" alt="WechatIMG204" src="https://github.com/user-attachments/assets/acf7e3e3-1392-4981-a136-87d1ff34f9fb" />
 
 
@@ -154,6 +160,7 @@ TODO - see specification for details
 ## References and External Resources
 
 TODO - see specification for details
+
 
 
 
