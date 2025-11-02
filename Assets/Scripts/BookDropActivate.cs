@@ -17,6 +17,8 @@ public class BookDropActivate : MonoBehaviour
     [Header("Activate range")]
     [SerializeField] private float activateRange = 0.2f;
     [SerializeField] private bool activateOnce = true;
+    [Header("VC timeline")]
+    [SerializeField] private PlayableDirector vcTimeline;
     private bool hasTriggered = false;
     private Transform player;
     public static bool Dropped = false;
@@ -89,6 +91,13 @@ public class BookDropActivate : MonoBehaviour
             playableDirector.playOnAwake = false;
             playableDirector.time = 0;
             playableDirector.Play();
+        }
+
+        if (vcTimeline)
+        {
+            vcTimeline.playOnAwake = false;
+            vcTimeline.time = 0;
+            vcTimeline.Play();
         }
         // Activate navmeshlink
         if (navMeshLink)
