@@ -187,9 +187,9 @@ The particle system was made to add dust effects to enhance environmental atmosp
 
 Since all of us were not very familar with Unity and GitHub and concerned about conflicts on GitHub commits, we all worked on the same laptop at the start. 
 
-- Yue Wang: Visual arts, audio design, models, shaders
+- Yue Wang: Visual arts, audio design, models, main shaders
 - Yao Chen: Game evel design, player control, programming 
-- Joly Lin: Anaimation, outline shaders, particle system, evaluation analysis
+- Joly Lin: Anaimation, outline shaders, UI, evaluation analysis
 
 ## References and External Resources
 
@@ -210,6 +210,7 @@ https://www.youtube.com/watch?v=P_ibDJhFVMU
 https://www.youtube.com/watch?v=7wjYbAC0c6k
 
 https://docs.unity3d.com/6000.2/Documentation/Manual/scripting.html
+
 
 
 
