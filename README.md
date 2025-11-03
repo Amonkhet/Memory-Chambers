@@ -129,7 +129,7 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
       - Each room space has puzzle that requires players to be in different scale to solve.
       - Scale are changed by uisng doors. Some door will enlarge player and some will shrink them.
     - Room list (see level design for details):
-      - **Out world room**
+      - **Outworld**
       - **Room Life**
       - **Room Work**
       - **Room Childhood**
@@ -163,7 +163,7 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 
 >  [!NOTE]
 >  **Version:** v2 & 3 
->  **Updated:** 07-10-2025 
+>  **Updated:** 04-11-2025 (designed in 28-09-2025)
 >  **Change Log:** Update level design in v2, and implemented in v3 (room childhoold are removed due to time constraints)
 
 **Overview**
@@ -180,52 +180,83 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 
 **Game Level Design**
 
-- **Outworld Room**
+- **Overview**
+  - The game world structure consists of two different rooms and a out world.
+    - 1. Outworld
+    - 2. Room Life
+    - 3. Room Work
+  - **‼️Note: Childhood room was orginial planned as part of the game level design but was removed due to time constraint when implementing v3.**
+
+- **1. Outworld**
 
   <p align="center">
-    <em>Overall game level</em><br>
-    <img src="ConceptArt/Draft/GDD v1/gameworld.jpg" width="600">
+    <em>Outworld</em><br>
+    <img src="ConceptArt/Draft/GDD v2/GameLevel.png" width="100%">
   </p>
 
-- The game world structure consists of seven different rooms with each in a shape of cube. The game world is an arrangement of interlocking cubes shown above. Following are names for different room cubes.
-  - Centre room: Located at the centre of the structure
-  - Junk room: Located at the bottom of the structure
-  - M1 M2 M3 M4: Located around the centre room
-  - Exit room: Located above the centre room.
-- The camera view will show the room in an isometric view. The camera will zoom in when player scale is small and it will zoom out with black background when player scale is large.
+​	The Out world is a space contains all other two rooms. There is a large door in the outworld as the final goal of the game. Player will need to find out how to change their scale to the size of the door to open it. When the door open, game ends.
 
-  <p align="center">
-    <em>Overall level progression steps</em><br>
-    <img src="ConceptArt/Draft/GDD v1/leveldesign.jpg" width="600">
-  </p>
+​	Progression - During the game, player will need to go back and forth from rooms to rooms to solve puzzles. All rooms will move when certain mechanics are triggered and when all rooms are aligned into a single cuboid, a new door will open. This door will allow player to grow to a large scale. Through this mechanics, player can open the final door.
 
-- The progression is as follows: (sequence of the above draft is from top left to right, then right to left, then left to right)
-  1. M1 to M2 to C: Player solve puzzle in room M1 and proceed to room M2 and to Room C (central)
-  2. C to M3: Player get a crucial item, allow M1 to move to a new position
-  3. M3 to C to M1: In the new posisiton, a new door open, allow player to change to a different scale. Player discover and trigger new gimmick, unlock M4.
-  4. M1 to C to M4: Player enter M4
-  5. Player unlock mechanics to allow M4 movement. Player move M1 and M4 to align it with M2, unlock a path to Junk room (J)
-  6. M4 to M1 to M2 to J: Player go to J, get crucial item and unlock new puzzle in M3, which will allow movement of J
-  7. M3 to C to M2 to J: Player unlcok movement in M3, and move J to be below C, which unlock a path from J to E (from bottom to the top)
-  8. J to C to E: Player enter Exit room (E)
-  9. Move M1 M2 M3 M4 down, unlock the final door in E
-  10. Player exit from E, Game Over.
+- **2. Room Life**
 
-  <p align="center">
-    <em>Camera move</em><br>
-    <img src="ConceptArt/Draft/GDD v1/cameramove.jpg" width="600">
-  </p>
+<p align="center">
+  <em>Room Life</em><br>
+  <img src="ConceptArt/Draft/GDD v2/LevelLife.png" width="100%">
+</p>
 
-- This draft shows how camera will move and shift when players enter from one space to another (from one room to another). There will be a short cutscene to cover the scale shifting animation when using the door to enter another room, allowing a smooth transition.
+​	The room life represents the memory where protagonist is still studing in school. In this room, players goal is to change their scale to small (XS) by exit the room and re-enter the room. Then by pushing the specific book on bookshelf, a path that direct to a different door is unlocked. (see above design sketches for details).
+
+​	Stage 1 - Player weak up and re-enter the room from above, become small.
+
+​	Stage 2 - Player go to right book shelf and push a book, then go left, jump on the desk and go outside again. 
+
+​	Stage 3 - Player re-enter the room with scale changed to S (use the door on left, demonstrated as a triangle marker on the ground, will always change player scale to S), player will be able to climb the bookshelf and walk through the path created by the book, exit the room using the door on right, which will change his scale to L.
+
+​	Stage 4 - Player now becomes large scale in outworld. Then they can push the room life to be adjacent to room work, unlock a path to room work. (**In v3, this design was changed. Now player will need to be large scale to pull a lever in outworld, then the room life will move automatically **)
+
+- **3. Room Work**
+
+<p align="center">
+  <em>Room Work</em><br>
+  <img src="ConceptArt/Draft/GDD v2/LevelWork.png" width="100%">
+</p>
+
+​	The room work represents the memory where protagonist are working every day and night. There are two mechanics in this room. Time door in the central building requires player to be small to use it. When entering the door on the right side, the time will move forward, and building will rise up. There are 4 stages of building to demonstrate the time passed by. There are also some blueprint bricks (sites) that are specific to each buildings. 
+
+​	Every building consists of two parts. The lower parts are the same for all buildings and will be present in building stage 2 and 3. The upper part is specifc to each building and will only present in stage 4. Based on the combination of upper part and lower part, player can identify the corresponding blueprint brick to it. For instance, for the building with a cylindrical upper part, the corresponding blueprint brick (site) is the one with a rectangle representing lower part and a circle inside the rectangle reperesenting upper part .
+
+​	The goal of the room is to use the Time door on the right to move time forward and find out what each building's upper part looks like. Then use the Time door on the left to move the time backwards to reveal some hidden blueprint bricks. Player will need to go outside and re-enter the room from another door to become large. Only in the large size, player can push buildings and move them to their corresponding blueprint bricks (site)
+
+<p align="center">
+  <em>Room Work - Progression</em><br>
+  <img src="ConceptArt/Draft/GDD v2/LevelWork_2.png" width="100%">
+</p>
+
+**Note: The position of blueprint bricks are changed in v3 based on evaluation and test to reduce the difficulty. The effect of sun rise and fall are not implemented due to time constraints.**
+
+- **4. Room Childhood (removed in v3)**
+
+<p align="center">
+  <em>Room Childhood (removed)</em><br>
+  <img src="ConceptArt/Draft/GDD v2/LevelChildhood.png" width="100%">
+</p>
+
+<p align="center">
+  <em>Room Childhood (removed)</em><br>
+  <img src="ConceptArt/Draft/GDD v2/LevelChildhood_2.png" width="100%">
+</p>
+
+**Above stage 5 is how the game will end in v3**
 
 ---
 
 #### **Art and Audio**
 
 >  [!NOTE]
->  **Version:** v1 
->  **Updated:** 07-10-2025 
->  **Change Log:** No change from v0
+>  **Version:** v2 & v3 
+>  **Updated:** 04-11-2025 (designed during development)
+>  **Change Log:** Update sound and art
 
 - **Art Style**
 Our game will adopt a comic/cartoon style art direction, featuring Moebius Art style. Following are some references of Moebius Art Style.
@@ -272,9 +303,9 @@ Following are some other Moebius art style we are looking.
 #### User Interface (UI)
 
 >  [!NOTE]
->  **Version:** v1 
->  **Updated:** 07-10-2025 
->  **Change Log:** No change from v0
+>  **Version:** v2 & v3 
+>  **Updated:** 04-11-2025 (designed during development)
+>  **Change Log:** Update
 
 UI design has relatively low priority, this will be updated later when games' features are completed.
 **Concept**
@@ -282,7 +313,7 @@ UI design has relatively low priority, this will be updated later when games' fe
 - Minimalist art style, simple and clear to use.
 - Considering our game is a puzzle game, all interfaces should maintain minimum amount of buttons and notifications. Allowing players to fully immersed in the world and focused on puzzle-solving experience.
 
-- **Illustrations Draft**
+- **Final**
 
 Homepage
 <p align="center">
@@ -388,6 +419,16 @@ Setting
 | Absent or illness                                            | Tasks should be reallocated properly. Other team members should assist in completing unfinished tasks, |
 
 ---
+
+
+
+
+
+
+
+
+
+
 
 ## Appendix
 
