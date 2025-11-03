@@ -5,6 +5,6 @@ public class StartMenu : MonoBehaviour
     // Play game button
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("RoomLifeF");
+        SceneManager.LoadSceneAsync("GuideScene");
     }
 }
