@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/RoomWork.unity
     guid: ebc17ac8928f5426b9276e79073bf64f
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/Scenes/RoomLifeF.unity
     guid: 5a90edb88a4dc4fb4b623f1c2398125e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 47ac9079866f843bbb40904c3384f2f4, type: 3}
