@@ -90,7 +90,7 @@ Here is a detailed summary of the questionnaire results and changes we have made
 | **Question* | **Gameplay Area Addressed** | **Average scores** | **Participants' Feedback** | **Changes** | 
 |-------|-------------------|--------|----------------------------|-----------------------------|
 | Q1 | Control & Interaction design | 3.0 | While the mouse control of player movement felt intuitive, it was hard to control since most evaluations were done on a Mac with TrackPad. | No changes to the game. Suggestion is to use a physical mouse to play. | 
-| Q2 | Technical performance | 3.6 | There were two bugs tested out during evaluations when the player walks into hidden areas or accidentally into objects. Jumping and climbing animations were not completed. | Walking up animation was improved to keep character upright. | 
+| Q2 | Technical performance | 3.6 | There were two bugs tested out during evaluations when the player walks into hidden areas or accidentally into objects. Jumping and climbing animations were not completed. | Walking up animations and specified walkable areas were further improved | 
 | Q3 | Gameplay clarity | 3.5 | It was challanging for half of the users to understand how to progress the game, partially because they didn't watch trailer as well. Some users think it's acceptable that a puzzle game takes a bit longer than usual games to figure out the goal/progression. | A UI intro page was added at the start of the game for more clarity. | 
 | Q4 | Narrative communication | 3.5 | The background transition was not complete. | Background change and UI for story dialogue |
 | Q5 | Level design | 4.0 |  The bedroom and workplace layout look pretty and natural. | No change - met overall expectation. |
@@ -98,14 +98,13 @@ Here is a detailed summary of the questionnaire results and changes we have made
 | Q7 | Visual design | 4.0 | Visual elements look decent yet simple. Limited to three small spaces. |  No change - met overall expectation | 
 | Q8 | Audio design | 4.0 | The music feels natural and comfortable. Not too relevant with player itself.  |  No change - met overall expectation. | 
 | Q9 | Overall experience | 3.9 | It's a playable game however can be very hard to play. | Created some glow and outline effects for hints. | 
-| Q10 | Engagement | 4.0 | At this stage, it's lack of excitement and interactions with different objects. With more developed elements, it'd be an interesting game to play. |     | 
+| Q10 | Engagement | 4.0 | At this stage, it's lack of excitement and interactions with different objects. With more developed elements, it'd be an interesting game to play. |   | 
 
-Based on the evaluations above, we made following decisions/changes in the gameplay:
-- Walking up/down animation improved.
+Based on the evaluations above, we made following changes in the game:
+- Player movement improved with specified walkable areas and consistent animations.
 - UI text for story narrative added at the start and the end.
-- Outline effect on objects for hints.
-
-If time allows, we will keep working on more object interactions, climbing animations, atmospheric texts for story narrative, a "help" button which provides small hints.
+- UI videos for hints.
+- Outline effects and camera adjustment for hints.
 
 ## Shaders and Special Effects
 
@@ -174,6 +173,7 @@ Shader: https://www.youtube.com/watch?v=jlKNOirh66E
 https://www.youtube.com/watch?v=1QPA3s0S3Oo&list=PLAUha41PUKAaYVYT7QwxOtiUllckLZrir&index=1
 
 Player animation clips: https://www.mixamo.com/#/
+
 
 
 
