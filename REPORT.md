@@ -11,15 +11,42 @@ placeholder for it [here](README.md).
 
 ## Table of Contents
 
+- [Important Reminders](#evaluation-plan)
+
 - [Evaluation Plan](#evaluation-plan)
 - [Evaluation Report](#evaluation-report)
 - [Shaders and Special Effects](#shaders-and-special-effects)
 - [Summary of Contributions](#summary-of-contributions)
 - [References and External Resources](#references-and-external-resources)
 
+## Important Reminder
+
+There are some important issues in our game that need to be addressed.
+
+**Web build issue**
+
+During the development, we found that when using MacOS system to web build and run our game, there is a pink glitch (see below figures). However, when using WindowsOS system to web build and run, there is no such issue. It comes to our conclusion that this is an operating-system level issues that we cannot solved by debugging in Unity. Therefore, we **strongly encourage to play our game in Windows system**. 
+
+  <p align="Issues when using MacOS">
+    <em>Outworld</em><br>
+    <img src="ConceptArt/Reprot/Macos.png" width="100%">
+  </p>
+
+  <p align="No issues when using WindowsOS">
+    <em>Outworld</em><br>
+    <img src="ConceptArt/Reprot/Windows.png" width="100%">
+  </p>
+
+
+
+**Game Playthrough Video**
+
+We understand that our puzzle game might be challenging. Following are a complete playthrough of our game.
+
 ## Evaluation Plan
 
 **Evaluation techniques**: 
+
 - Observational methods: think-aloud, post-task walkthroughs. 
 - Querying technique: questionnaires.
 
