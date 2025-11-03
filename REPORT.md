@@ -135,11 +135,9 @@ This shader was used to make the whole scene look more like a comic or hand-draw
 
 Before adding these 2 shaders: 
 
-
 <img width="517" height="370" alt="WechatIMG208" src="https://github.com/user-attachments/assets/748f82af-2a7c-44da-967f-968f836afa8a" />
 
 After adding flat color and normal details:
-
 
 <img width="517" height="370" alt="WechatIMG206" src="https://github.com/user-attachments/assets/c0b1f334-b575-46ef-b4af-956bb533281e" /> 
 
@@ -173,6 +171,18 @@ Shader: https://www.youtube.com/watch?v=jlKNOirh66E
 https://www.youtube.com/watch?v=1QPA3s0S3Oo&list=PLAUha41PUKAaYVYT7QwxOtiUllckLZrir&index=1
 
 Player animation clips: https://www.mixamo.com/#/
+
+Tutorials for Unity and programming:https://www.youtube.com/watch?v=sBHpUi71eno
+
+https://www.youtube.com/watch?v=DX7HyN7oJjE
+
+https://www.youtube.com/watch?v=SMWxCpLvrcc
+
+https://www.youtube.com/watch?v=P_ibDJhFVMU
+
+https://www.youtube.com/watch?v=7wjYbAC0c6k
+
+https://docs.unity3d.com/6000.2/Documentation/Manual/scripting.html
 
 
 
