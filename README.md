@@ -198,6 +198,13 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 
 ​	Progression - During the game, player will need to go back and forth from rooms to rooms to solve puzzles. All rooms will move when certain mechanics are triggered and when all rooms are aligned into a single cuboid, a new door will open. This door will allow player to grow to a large scale. Through this mechanics, player can open the final door.
 
+​	**Final output from game**
+
+<p align="center">
+  <em>Outworld V3</em><br>
+  <img src="ConceptArt/Draft/GDD v2/outworld.png" width="100%">
+</p>
+
 - **2. Room Life**
 
 <p align="center">
@@ -214,6 +221,13 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 ​	Stage 3 - Player re-enter the room with scale changed to S (use the door on left, demonstrated as a triangle marker on the ground, will always change player scale to S), player will be able to climb the bookshelf and walk through the path created by the book, exit the room using the door on right, which will change his scale to L.
 
 ​	Stage 4 - Player now becomes large scale in outworld. Then they can push the room life to be adjacent to room work, unlock a path to room work. (**In v3, this design was changed. Now player will need to be large scale to pull a lever in outworld, then the room life will move automatically **)
+
+​	**Final output from game**
+
+<p align="center">
+  <em>Room Life V3</em><br>
+  <img src="ConceptArt/Draft/GDD v2/roomlife.png" width="100%">
+</p>
 
 - **3. Room Work**
 
@@ -232,8 +246,14 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
   <em>Room Work - Progression</em><br>
   <img src="ConceptArt/Draft/GDD v2/LevelWork_2.png" width="100%">
 </p>
-
 **Note: The position of blueprint bricks are changed in v3 based on evaluation and test to reduce the difficulty. The effect of sun rise and fall are not implemented due to time constraints.**
+
+​	**Final output from game**
+
+<p align="center">
+  <em>Room Life V3</em><br>
+  <img src="ConceptArt/Draft/GDD v2/roomwork.png" width="100%">
+</p>
 
 - **4. Room Childhood (removed in v3)**
 

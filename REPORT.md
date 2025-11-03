@@ -11,7 +11,7 @@ placeholder for it [here](README.md).
 
 ## Table of Contents
 
-- [Important Reminders](#evaluation-plan)
+- [Important Reminders](#important-reminders)
 
 - [Evaluation Plan](#evaluation-plan)
 - [Evaluation Report](#evaluation-report)
@@ -38,10 +38,15 @@ During the development, we found that when using MacOS system to web build and r
   </p>
 
 
-
 **Game Playthrough Video**
 
 We understand that our puzzle game might be challenging. Following are a complete playthrough of our game.
+
+
+
+[![Watch the video](https://img.youtube.com/vi/sqnr9YDBe9E/0.jpg)](https://youtu.be/sqnr9YDBe9E)
+
+https://youtu.be/sqnr9YDBe9E
 
 ## Evaluation Plan
 
@@ -210,7 +215,6 @@ https://www.youtube.com/watch?v=P_ibDJhFVMU
 https://www.youtube.com/watch?v=7wjYbAC0c6k
 
 https://docs.unity3d.com/6000.2/Documentation/Manual/scripting.html
-
 
 
 
