@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.EventSystems;
 
 public class InstructionVideoController : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class InstructionVideoController : MonoBehaviour
             videoPlayer.Stop();
             videoUI.SetActive(false);
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        CloseVideo();
     }
 }
 
