@@ -28,14 +28,15 @@ There are some important issues in our game that need to be addressed.
 During the development, we found that when using MacOS system to web build and run our game, there is a pink glitch (see below figures). However, when using WindowsOS system to web build and run, there is no such issue. It comes to our conclusion that this is an operating-system level issues that we cannot solved by debugging in Unity. Therefore, we **strongly encourage to play our game in Windows system**. 
 
   <p align="Issues when using MacOS">
-    <em>Outworld</em><br>
+    <em>Issues when using MacOS</em><br>
     <img src="ConceptArt/Reprot/Macos.png" width="100%">
   </p>
 
   <p align="No issues when using WindowsOS">
-    <em>Outworld</em><br>
+    <em>No issues when using WindowsOS</em><br>
     <img src="ConceptArt/Reprot/Windows.png" width="100%">
   </p>
+
 
 
 **Game Playthrough Video**
