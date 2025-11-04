@@ -89,13 +89,13 @@ public class PlayerSwitcher : MonoBehaviour
             camL.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 20;
     }
 
-    void Update()
-    {
-         if (Input.GetKeyDown(KeyCode.Alpha1))
-             SwitchPlayer("XS");   
-         if (Input.GetKeyDown(KeyCode.Alpha2))
-             SwitchPlayer("S");    
-         if (Input.GetKeyDown(KeyCode.Alpha3))
-             SwitchPlayer("L");   
-    }
+    // void Update()
+    // {
+    //      if (Input.GetKeyDown(KeyCode.Alpha1))
+    //          SwitchPlayer("XS");   
+    //      if (Input.GetKeyDown(KeyCode.Alpha2))
+    //          SwitchPlayer("S");    
+    //      if (Input.GetKeyDown(KeyCode.Alpha3))
+    //          SwitchPlayer("L");   
+    // }
 }
