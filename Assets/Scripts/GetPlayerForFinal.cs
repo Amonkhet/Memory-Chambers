@@ -14,7 +14,6 @@ public class GetPlayerForFinal : MonoBehaviour
             if (o.outputTargetType == typeof(Animator))
             {
                 director.SetGenericBinding(o.sourceObject, lAnimator);
-                // 如果有多条动画轨道，你也可以根据 o.streamName 判断只绑“LWalkTrack”
             }
         }
         
