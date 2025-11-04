@@ -312,10 +312,9 @@ See pictures in Appendix.
 - Reduced Learning Curve: No need for memorizing keyboard commands.
 - Narrative Focus: Considering our game is a puzzle game, all interfaces should maintain minimum amount of buttons and notifications. Allowing players to fully immersed in the world and focused on puzzle-solving experience.
 
-- **Final**
-Left Click → Move: The player clicks anywhere on the navigable terrain or environment, and the character automatically moves to that location.
-
-Right Click → Interact: The player clicks on interactive objects (doors, buildings, items), triggering a context-specific action (open doors, climb, jump, push, etc.).
+**Final**
+- Left Click → Move: The player clicks anywhere on the navigable terrain or environment, and the character automatically moves to that location.
+- Right Click → Interact: The player clicks on interactive objects (doors, buildings, items), triggering a context-specific action (open doors, climb, jump, push, etc.).
 
 ---
 
@@ -713,6 +712,7 @@ Setting
 #### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
 
 
 
