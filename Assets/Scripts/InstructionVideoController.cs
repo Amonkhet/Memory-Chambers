@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.IO;
 using UnityEngine.Video;
 using UnityEngine.EventSystems;
 
@@ -11,9 +12,9 @@ public class InstructionVideoController : MonoBehaviour
     void Start()
     {
         #if UNITY_WEBGL
-        // Load video from StreamingAssets path
-        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
-        videoPlayer.url = videoPath;
+        videoPlayer.url = Path.Combine(Application.streamingAssetsPath, videoFileName);
+        #else
+            videoPlayer.url = "file://" + Path.Combine(Application.streamingAssetsPath, videoFileName);
         #endif
     }
 
