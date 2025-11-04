@@ -333,6 +333,45 @@ To achieve that we adopted:
 - Reduced Learning Curve: No need for memorizing keyboard commands.
 - Narrative Focus: Considering our game is a puzzle game, all interfaces should maintain minimum amount of buttons and notifications. Allowing players to fully immersed in the world and focused on puzzle-solving experience.
 
+**Iteration process**
+#### **v0 – Paper Draft**
+- Hand-drawn concept with **Start / Settings** in a vertical layout.  
+- Focus: establish basic information structure and screen composition.
+
+
+<p align="center">
+  <em>Paper portotype</em><br>
+  <img src="ConceptArt/Draft/GDD v2/UI_V0.png" width="100%">
+</p>>
+
+#### **v1 – Minimal Title Page**
+- Simple text-based title with small avatar button.  
+- Issue: **game theme not visually clear**, Start button lacked visibility.
+
+
+
+<p align="center">
+  <em>First iteration_for evaluation</em><br>
+  <img src="ConceptArt/Draft/GDD v2/UI_V1.png" width="100%">
+</p>>
+
+#### **v2 – Themed Title Page**
+- Introduced **main character illustration**, **Moebius-style color palette**, and **highlighted Start button**.  
+- Result: players instantly understand where to click and the emotional tone of the game.
+<p align="center">
+  <em>Final main UI interface</em><br>
+  <img src="ConceptArt/Draft/GDD v2/UI_V2.png" width="100%">
+</p>>
+
+#### **v3 – In-Game UI**
+- Added **on-screen hints** (“Left click to move / Right click to interact”) before game started.  
+- Added **‘? Hints’ icon** for contextual guidance during puzzles.  
+- Simplified HUD for focus and immersion.
+<p align="center">
+  <em>Tips UI for usability</em><br>
+  <img src="ConceptArt/Draft/GDD v2/UI_V3.png" width="100%">
+    <img src="ConceptArt/Draft/GDD v2/UI_V3.1.png" width="100%">
+</p>>
 **Final**
 - Left Click → Move: The player clicks anywhere on the navigable terrain or environment, and the character automatically moves to that location.
 - Right Click → Interact: The player clicks on interactive objects (doors, buildings, items), triggering a context-specific action (open doors, climb, jump, push, etc.).
