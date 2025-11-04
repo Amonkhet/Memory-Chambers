@@ -11,7 +11,7 @@ public class InstructionVideoController : MonoBehaviour
     {
 #if UNITY_WEBGL
         // Load video from StreamingAssets path
-        string videoPath = System.IO.Path.Combine(Application.VideosPath, videoFileName);
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
         videoPlayer.url = videoPath;
 #endif
     }
