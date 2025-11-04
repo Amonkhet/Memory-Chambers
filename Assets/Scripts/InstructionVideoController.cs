@@ -11,8 +11,10 @@ public class InstructionVideoController : MonoBehaviour
 
     void Start()
     {
-        #if UNITY_WEBGL
-        videoPlayer.url = Path.Combine(Application.streamingAssetsPath, videoFileName);
+       #if UNITY_WEBGL
+            string videoPath = Path.Combine(Application.streamingAssetsPath, videoFileName);
+            videoPath = videoPath.Replace("\\", "/"); // Ensure web-safe path
+            videoPlayer.url = videoPath;
         #else
             videoPlayer.url = "file://" + Path.Combine(Application.streamingAssetsPath, videoFileName);
         #endif
@@ -32,7 +34,8 @@ public class InstructionVideoController : MonoBehaviour
             {
                 
                 videoUI.SetActive(true);
-                videoPlayer.Play();
+                videoPlayer.Prepare();
+                videoPlayer.prepareCompleted += (vp) => vp.Play();
                 videoPlayer.loopPointReached += OnVideoEnd;
             }
         }
