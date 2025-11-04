@@ -45,9 +45,9 @@ We understand that our puzzle game might be challenging. Here is a complete play
 
 
 
-[![Watch the video](https://img.youtube.com/vi/H878p0o4SBo/0.jpg)](https://youtu.be/H878p0o4SBo)
+[![Watch the video](https://img.youtube.com/vi/H878p0o4SBo/0.jpg)](https://youtu.be/H878p0o4So)
 
-https://youtu.be/H878p0o4SBo
+https://youtu.be/H878p0o4So
 
 ## Evaluation Plan
 
