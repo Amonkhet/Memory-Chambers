@@ -279,10 +279,12 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 >  **Change Log:** Update sound and art
 
 - **Art Style**
-Our game will adopt a comic/cartoon style art direction, featuring Moebius Art style. To achieve that we adopted: 
+Our game adopts a comic/cartoon style art direction, featuring Moebius Art style. To achieve that we adopted: 
 - Flat Color With Normal Detail Shader
 - Sobel Outline Shader 
+- Fragment Shader Tint
 
+See more details in Report. 
 
 
 - **Sound and Music**
@@ -403,6 +405,7 @@ Setting
 | Week 4 (6/10 - 12/10)  | Integrate. Finish basic UI design                            |
 | Milestone 4 Submission | Test and Review                                              |
 | Milestone 5 Submission | Improve models, aesthetics, UI design                        |
+| Milestone 6 Submission | Conduct evaluation, report, improve UI after feedback        | 
 ---
 
 #### Possible Challenges
@@ -704,5 +707,6 @@ Following are some references of Moebius Art Style that we were aiming for.
 #### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
 
 
