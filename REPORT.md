@@ -141,7 +141,7 @@ Based on the evaluations above, we made following changes in the game:
 
 ## Shaders and Special Effects
 
-Here are two custome vertex and fragment shaders used in the game: 
+**Here are two custome vertex and fragment shaders used in the game that we chose to be marked:**
 
 #### Shader 1 – Moebius/Flat Color With Normal Detail
 **File path**: Assets/Shaders/Moebius/FlatColorWithNormalDetail.shader
@@ -231,6 +231,7 @@ https://www.youtube.com/watch?v=P_ibDJhFVMU
 https://www.youtube.com/watch?v=7wjYbAC0c6k
 
 https://docs.unity3d.com/6000.2/Documentation/Manual/scripting.html
+
 
 
 
