@@ -39,7 +39,7 @@ Shader "Moebius/FlatColorWithNormalDetail"
         _AlbedoDesat ("Albedo Desaturation", Range(0,1)) = 0.7
 
         _DiffuseStrength ("Diffuse Strength (0=flat,1=Lambert)", Range(0,1)) = 0.6
-        _DebugMode("Debug Mode (0=Off,1=Normals,2=SpecMark)", Float) = 0
+
 
         //  Albedo Uv world texture
         _AlbedoUVMode      ("Albedo UV Mode (0=MeshUV,1=WorldXZ,2=Triplanar)", Float) = 0
@@ -115,7 +115,7 @@ Shader "Moebius/FlatColorWithNormalDetail"
                 float4 _AlbedoTex_ST;
 
                 float  _DiffuseStrength;
-                float  _DebugMode;
+
 
                 float  _AlbedoUVMode;
                 float  _AlbedoWorldTiling;
@@ -204,7 +204,7 @@ Shader "Moebius/FlatColorWithNormalDetail"
                 float2 uvA = GetAlbedoUV_WorldXZ(positionWS);
                 float3 nTS = UnpackNormalScale(SAMPLE_TEXTURE2D(_NormalDetailMap, sampler_NormalDetailMap, uvA), _NormalScale);
 
-                // 把贴图法线从“XZ 贴图坐标系”旋转到世界
+
                 // move normal texture to world
                 float rad = radians(_AlbedoWorldRotDeg);
                 float c = cos(rad), s = sin(rad);
@@ -225,7 +225,7 @@ Shader "Moebius/FlatColorWithNormalDetail"
                 float3 nDetailWS;
                 if (_NormalFollowAlbedo > 0.5 && _AlbedoUVMode > 0.5) // WorldXZ or Triplanar
                 {
-                    // match World XZ；Triplanar 也
+                    // match World XZ；Triplanar 
                     nDetailWS = SampleNormal_WorldXZ(IN.positionWS, nWS0);
                 }
                 else
@@ -240,8 +240,7 @@ Shader "Moebius/FlatColorWithNormalDetail"
                 float  ndotl = saturate(dot(n, L));
                 float3 V = normalize(_WorldSpaceCameraPos.xyz - IN.positionWS);
 
-                if (_DebugMode > 0.5 && _DebugMode < 1.5)
-                    return half4(normalize(mul((float3x3)UNITY_MATRIX_V, n))*0.5+0.5,1);
+
 
                 // base color
                 float3 col = _BaseColor.rgb;
@@ -314,11 +313,7 @@ Shader "Moebius/FlatColorWithNormalDetail"
                 float shadow = lerp(1.0, ml.shadowAttenuation, _ShadowStrength);
                 col *= shadow;
 
-                if (_DebugMode > 1.5)
-                {
-                    float markMaskDbg = (_SpecMarkEnable > 0.5) ? markMask : step(_SpecThreshold, ndotl);
-                    return half4(lerp(_BaseColor.rgb, 1.0.xxx, markMaskDbg), 1);
-                }
+  
 
                 return half4(col,1);
             }
