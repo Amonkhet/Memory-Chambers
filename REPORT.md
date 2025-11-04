@@ -41,7 +41,7 @@ During the development, we found that when using MacOS system to web build and r
 
 **Game Playthrough Video**
 
-We understand that our puzzle game might be challenging. Following are a complete playthrough of our game.
+We understand that our puzzle game might be challenging. Here is a complete playthrough of our game:
 
 
 
@@ -182,7 +182,7 @@ After adding sobel outline shader:
 
 #### Particle System
 
-The particle system was made to add dust effects to enhance environmental atmosphere based on the story theme, where the player found himself in bedroom and lost memory.
+The particle system was made to add dust effects to enhance environmental atmosphere based on the story theme, where the player found himself in bedroom and lost memory. 
 
 ![Untitled design](https://github.com/user-attachments/assets/556cc8c0-d98b-40b1-bb7f-111bce2b03e8)
 
@@ -216,6 +216,7 @@ https://www.youtube.com/watch?v=P_ibDJhFVMU
 https://www.youtube.com/watch?v=7wjYbAC0c6k
 
 https://docs.unity3d.com/6000.2/Documentation/Manual/scripting.html
+
 
 
 
