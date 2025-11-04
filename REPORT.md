@@ -151,6 +151,7 @@ This shader was mainly used to create a hand-drawn style for the room scene in o
 Its material parameters are open to change, so we could directly adjust color, gradient range, or normal texture in the editor and see results right away. All textures were added as images and fine-tuned with parameters, without creating new materials or changing code. This significantly reduced the workload, allowing for faster and more flexible style adjustments. 
 
 **Pipeline Stage**:
+
 This shader operates primarily in the fragment/pixel shader stage:
 - Vertex Shader computes position, normal, and any extra data.
 - Fragment Shader determines pixel color.
@@ -170,6 +171,7 @@ This shader operates primarily in the fragment/pixel shader stage:
 This shader was used to make the whole scene look more like a comic or hand-drawn artwork. It accessed the final color, depth, and normal information as input to find edges between objects or surface changes, then drew outlines over the whole screen. It fits into screen-space processing so we don't have to create separate materials for every object. A second pass was also added that used the stencil buffer to exclude the player character, so the outline did not cover the player model. The player’s material has a stencil value, and the outline shader only drew on areas where the stencil value was different. This made the outline effect work smoothly with the rest of the rendering system. The basic Moebius flat shader gave nice pastel colors, but without outlines, the scene looked too clean and 3D-like. 
 
 **Pipeline Stage**:
+
 This shader operates in post-processing stage, after the scene is rendered:
 - Render the scene into a Render Texture (color and/or depth/normal buffers).
 - Apply the Sobel filter in a screen-space shader.
@@ -197,7 +199,7 @@ After adding sobel outline shader:
 
 #### Particle System
 
-The particle system was made to add dust effects to enhance environmental atmosphere based on the story theme, where the player found himself in bedroom and lost memory. 
+The particle system was made to add dust effects to enhance environmental atmosphere based on the story theme, where the player found himself in bedroom and lost memory.  
 
 ![Untitled design](https://github.com/user-attachments/assets/556cc8c0-d98b-40b1-bb7f-111bce2b03e8)
 
@@ -231,6 +233,7 @@ https://www.youtube.com/watch?v=P_ibDJhFVMU
 https://www.youtube.com/watch?v=7wjYbAC0c6k
 
 https://docs.unity3d.com/6000.2/Documentation/Manual/scripting.html
+
 
 
 
