@@ -352,8 +352,6 @@ To achieve that we adopted:
 	- Rider
 	- VSCODE
 - **Art and Audio tools**
-	- FMOD 2.03.09
-		- FMOD for Unity 2.03.09 (Integration)
 	- Blender
 	- Affinity Designer 2
 - **Collaboration and Management**
@@ -706,6 +704,7 @@ Setting
 
 
 #### Possible Challenges 
+
 
 
 
