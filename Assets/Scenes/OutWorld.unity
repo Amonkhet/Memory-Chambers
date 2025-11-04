@@ -987,6 +987,10 @@ PrefabInstance:
       propertyPath: activateKey
       value: 324
       objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetScene
+      value: RoomLifeF
+      objectReference: {fileID: 0}
     - target: {fileID: 4926330839687350759, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1024,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce30da7a97894d5db7c6cf05f99f766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Righ Mouse Click
+  text: 
 --- !u!1 &629501584
 GameObject:
   m_ObjectHideFlags: 3
@@ -2401,8 +2405,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7370634, y: 7.0680985, z: 0.7845484}
-  m_Center: {x: -0.011371151, y: 3.0340488, z: -0.0070762136}
+  m_Size: {x: 1.0797907, y: 7.0680985, z: 0.9693736}
+  m_Center: {x: 0.013127227, y: 3.0340488, z: 0.019125143}
 --- !u!114 &1376278980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2415,7 +2419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ccf5bfb606244318f3255fee61f3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: TestScene
+  targetScene: RoomLifeF
   targetSpawnPoint: SpawnXS
   targetScale: XS
   playerTag: Player
@@ -4297,6 +4301,10 @@ PrefabInstance:
     - target: {fileID: 4699843632844928530, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
+      propertyPath: targetScene
+      value: RoomLifeF
       objectReference: {fileID: 0}
     - target: {fileID: 4786852599317226122, guid: 28a1c4a18258148a99cf00f075769578, type: 3}
       propertyPath: targetSpawnPoint

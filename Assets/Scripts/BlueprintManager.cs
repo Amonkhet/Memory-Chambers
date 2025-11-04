@@ -33,10 +33,10 @@ public class BlueprintManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            WhenAllOnCorrectTile();
-        }
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     WhenAllOnCorrectTile();
+        // }
     }
 
     bool CheckAllOnCorrectTile()

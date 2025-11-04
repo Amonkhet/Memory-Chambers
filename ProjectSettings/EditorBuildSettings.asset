@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/StartScene.unity
     guid: 06cbe14e58ef1404d920a5b1f51db1ff
   - enabled: 1
+    path: Assets/Scenes/GuideScene.unity
+    guid: b30d77388b38d41a3a666e5823609360
+  - enabled: 1
     path: Assets/Scenes/OutWorld.unity
     guid: c6b311d8a83fb4b399db4809c6c20468
   - enabled: 0
@@ -20,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoomLifeF.unity
     guid: 5a90edb88a4dc4fb4b623f1c2398125e
+  - enabled: 0
+    path: Assets/Scenes/EndScene.unity
+    guid: 02f0a88ae4b284aa48201df8595184b5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 47ac9079866f843bbb40904c3384f2f4, type: 3}
   m_UseUCBPForAssetBundles: 0

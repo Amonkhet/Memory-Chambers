@@ -11,15 +11,48 @@ placeholder for it [here](README.md).
 
 ## Table of Contents
 
+- [Important Reminders](#important-reminders)
+
 - [Evaluation Plan](#evaluation-plan)
 - [Evaluation Report](#evaluation-report)
 - [Shaders and Special Effects](#shaders-and-special-effects)
 - [Summary of Contributions](#summary-of-contributions)
 - [References and External Resources](#references-and-external-resources)
 
+## Important Reminder
+
+There are some important issues in our game that need to be addressed.
+
+**Web build issue**
+
+During the development, we found that when using MacOS system to web build and run our game, there is a pink glitch (see below figures). However, when using WindowsOS system to web build and run, there is no such issue. It comes to our conclusion that this is an operating-system level issues that we cannot solved by debugging in Unity. Therefore, we **strongly encourage to play our game in Windows system**. 
+
+  <p align="Issues when using MacOS">
+    <em>Issues when using MacOS</em><br>
+    <img src="ConceptArt/Reprot/Macos.png" width="100%">
+  </p>
+
+  <p align="No issues when using WindowsOS">
+    <em>No issues when using WindowsOS</em><br>
+    <img src="ConceptArt/Reprot/Windows.png" width="100%">
+  </p>
+
+
+
+**Game Playthrough Video**
+
+We understand that our puzzle game might be challenging. Following are a complete playthrough of our game.
+
+
+
+[![Watch the video](https://img.youtube.com/vi/sqnr9YDBe9E/0.jpg)](https://youtu.be/sqnr9YDBe9E)
+
+https://youtu.be/sqnr9YDBe9E
+
 ## Evaluation Plan
 
 **Evaluation techniques**: 
+
 - Observational methods: think-aloud, post-task walkthroughs. 
 - Querying technique: questionnaires.
 
@@ -135,11 +168,9 @@ This shader was used to make the whole scene look more like a comic or hand-draw
 
 Before adding these 2 shaders: 
 
-
 <img width="517" height="370" alt="WechatIMG208" src="https://github.com/user-attachments/assets/748f82af-2a7c-44da-967f-968f836afa8a" />
 
 After adding flat color and normal details:
-
 
 <img width="517" height="370" alt="WechatIMG206" src="https://github.com/user-attachments/assets/c0b1f334-b575-46ef-b4af-956bb533281e" /> 
 
@@ -162,9 +193,9 @@ The particle system was made to add dust effects to enhance environmental atmosp
 
 Since all of us were not very familar with Unity and GitHub and concerned about conflicts on GitHub commits, we all worked on the same laptop at the start. 
 
-- Yue Wang: Visual arts, audio design, models, shaders
+- Yue Wang: Visual arts, audio design, models, main shaders
 - Yao Chen: Game evel design, player control, programming 
-- Joly Lin: Anaimation, outline shaders, particle system, evaluation analysis
+- Joly Lin: Anaimation, outline shaders, UI, evaluation analysis
 
 ## References and External Resources
 
@@ -173,6 +204,18 @@ Shader: https://www.youtube.com/watch?v=jlKNOirh66E
 https://www.youtube.com/watch?v=1QPA3s0S3Oo&list=PLAUha41PUKAaYVYT7QwxOtiUllckLZrir&index=1
 
 Player animation clips: https://www.mixamo.com/#/
+
+Tutorials for Unity and programming:https://www.youtube.com/watch?v=sBHpUi71eno
+
+https://www.youtube.com/watch?v=DX7HyN7oJjE
+
+https://www.youtube.com/watch?v=SMWxCpLvrcc
+
+https://www.youtube.com/watch?v=P_ibDJhFVMU
+
+https://www.youtube.com/watch?v=7wjYbAC0c6k
+
+https://docs.unity3d.com/6000.2/Documentation/Manual/scripting.html
 
 
 
