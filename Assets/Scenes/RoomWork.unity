@@ -8062,7 +8062,7 @@ PrefabInstance:
     - target: {fileID: 1511262947258160645, guid: 2ab26b4bc30be4fff93ba4e52b9b3df8, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 4a4d47de2c6484aa88d116b1077f2901, type: 3}
+      objectReference: {fileID: 32900000, guid: 4baa86c48cb36411298ee5ed91fcbb39, type: 3}
     - target: {fileID: 1511262947258160645, guid: 2ab26b4bc30be4fff93ba4e52b9b3df8, type: 3}
       propertyPath: m_RenderMode
       value: 2
