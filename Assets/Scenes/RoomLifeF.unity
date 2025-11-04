@@ -49817,7 +49817,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -223113,8 +223113,8 @@ MonoBehaviour:
   - " \"It feels like I\u2019m trapped inside one of my own designs.\""
   - '"A world I built... and forgot how to escape from."'
   - '"I need to find a way out of here."'
-  typingSpeed: 0.04
-  lineDelay: 1.2
+  typingSpeed: 0.01
+  lineDelay: 1.8
   fadeTime: 1
   canSkip: 1
 --- !u!4 &1547257771
