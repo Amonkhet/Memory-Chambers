@@ -305,30 +305,17 @@ See pictures in Appendix.
 >  **Updated:** 04-11-2025 (designed during development)
 >  **Change Log:** Update
 
-UI design has relatively low priority, this will be updated later when games' features are completed.
 **Concept**
 
-- Minimalist art style, simple and clear to use.
-- Considering our game is a puzzle game, all interfaces should maintain minimum amount of buttons and notifications. Allowing players to fully immersed in the world and focused on puzzle-solving experience.
+- Accessibility: Simple controls for casual players.
+- Precision: Point-and-click allows targeting objects easily.
+- Reduced Learning Curve: No need for memorizing keyboard commands.
+- Narrative Focus: Considering our game is a puzzle game, all interfaces should maintain minimum amount of buttons and notifications. Allowing players to fully immersed in the world and focused on puzzle-solving experience.
 
 - **Final**
+Left Click → Move: The player clicks anywhere on the navigable terrain or environment, and the character automatically moves to that location.
 
-Homepage
-<p align="center">
-  <img src="ConceptArt/Draft/home.jpg" width="300">
-</p>
-Gameplay interface (Hand as mouse)
-<p align="center">
-  <img src="ConceptArt/Draft/7c7423e89e7f2b950067417783b41a9c.jpg" width="300">
-</p>
-Tool bar and ability interface
-<p align="center">
-  <img src="ConceptArt/Draft/5fb49e8537dcde305fc115a9e02c1b8d.jpg" width="300">
-</p>
-Setting
-<p align="center">
-  <img src="ConceptArt/Draft/1819677a719b184aa5224673728bca75.jpg" width="300">
-</p>
+Right Click → Interact: The player clicks on interactive objects (doors, buildings, items), triggering a context-specific action (open doors, climb, jump, push, etc.).
 
 ---
 
@@ -699,13 +686,34 @@ Following are some references of Moebius Art Style that we were aiming for.
 
 
 
-#### User Interface (UI) 
+#### User Interface (UI) (OLD)
+
+- Minimalist art style, simple and clear to use.
+- Considering our game is a puzzle game, all interfaces should maintain minimum amount of buttons and notifications. Allowing players to fully immersed in the world and focused on puzzle-solving experience.
+
+Homepage
+<p align="center">
+  <img src="ConceptArt/Draft/home.jpg" width="300">
+</p>
+Gameplay interface (Hand as mouse)
+<p align="center">
+  <img src="ConceptArt/Draft/7c7423e89e7f2b950067417783b41a9c.jpg" width="300">
+</p>
+Tool bar and ability interface
+<p align="center">
+  <img src="ConceptArt/Draft/5fb49e8537dcde305fc115a9e02c1b8d.jpg" width="300">
+</p>
+Setting
+<p align="center">
+  <img src="ConceptArt/Draft/1819677a719b184aa5224673728bca75.jpg" width="300">
+</p>
 
 #### Technology and Tools 
 
 #### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
 
 
 
