@@ -279,12 +279,33 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 >  **Change Log:** Update sound and art
 
 - **Art Style**
-Our game adopts a comic/cartoon style art direction, featuring Moebius Art style. To achieve that we adopted: 
+Our game adopts a comic/cartoon style art direction, featuring Moebius Art style. Following are some references of Moebius Art Style that we are aiming for.
+
+To achieve that we adopted: 
 - Flat Color With Normal Detail Shader (See more details in Report)
 - Sobel Outline Shader (See more details in Report)
 - Fragment Shader Tint
 
-See pictures in Appendix.
+
+<p align="center">
+  <img src="ConceptArt/References/MoebiusGondola.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/ab5ac96353a641a498f1b29ab39edb23.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/Art_of_Moebius_.webp" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/67ca4ff66807549da432473482da0c89.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/1266e1f3-d1b8-42aa-8dc8-603ffd64f44f_rw_1920.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/a14fae1d-2cb3-442b-b892-e08e28c12a6f_rw_1920.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/8e2699c4-8fc9-4dbc-8a71-9dc807500d22_rw_1920.jpg" width="200" style="margin:10px;">
+</p>
+
+<p align="center">
+  <b>Some other references showing what our game level might look like:</b>
+</p>
+
+<p align="center">
+  <img src="ConceptArt/References/9a30bbf5fb2dbd64c2e59b1e65992d1f.jpg" width="250" style="margin:10px;">
+  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="250" style="margin:10px;">
+</p>
+
 
 - **Sound and Music**
   Sound and Music will focus on the theme of relaxing and calm. As our protagonist will experienced through their different memories, background music will also shift according to the scene. But the major tone is peaceful, gentle and soothing, implying our theme of healing and recovering yourself.
@@ -660,30 +681,6 @@ Inner World (space): Seven interconnected miniature scenes representing distinct
 
 - This draft shows how camera will move and shift when players enter from one space to another (from one room to another). There will be a short cutscene to cover the scale shifting animation when using the door to enter another room, allowing a smooth transition.
 
-#### **Art and Audio **
-Following are some references of Moebius Art Style that we were aiming for.
-
-
-<p align="center">
-  <img src="ConceptArt/References/MoebiusGondola.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/ab5ac96353a641a498f1b29ab39edb23.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/Art_of_Moebius_.webp" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/67ca4ff66807549da432473482da0c89.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/1266e1f3-d1b8-42aa-8dc8-603ffd64f44f_rw_1920.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/a14fae1d-2cb3-442b-b892-e08e28c12a6f_rw_1920.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/8e2699c4-8fc9-4dbc-8a71-9dc807500d22_rw_1920.jpg" width="200" style="margin:10px;">
-</p>
-
-<p align="center">
-  <b>Some other references showing what our game level might look like:</b>
-</p>
-
-<p align="center">
-  <img src="ConceptArt/References/9a30bbf5fb2dbd64c2e59b1e65992d1f.jpg" width="250" style="margin:10px;">
-  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="250" style="margin:10px;">
-</p>
-
-
 
 #### User Interface (UI) (OLD)
 
@@ -707,11 +704,9 @@ Setting
   <img src="ConceptArt/Draft/1819677a719b184aa5224673728bca75.jpg" width="300">
 </p>
 
-#### Technology and Tools 
-
-#### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
 
 
 
