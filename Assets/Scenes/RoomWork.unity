@@ -2070,9 +2070,9 @@ MonoBehaviour:
   - "I don\u2019t remember when I stopped building. Or why."
   - "But this site feels familiar \u2014 like a blueprint drawn from my memories."
   - "Maybe if I build it again\u2026 I\u2019ll remember who I was."
-  typingSpeed: 0.06
-  lineDelay: 1.6
-  fadeTime: 0.8
+  typingSpeed: 0.01
+  lineDelay: 1.8
+  fadeTime: 1
   canSkip: 1
 --- !u!4 &323249547
 Transform:
