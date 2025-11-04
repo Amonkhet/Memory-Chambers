@@ -279,32 +279,9 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 >  **Change Log:** Update sound and art
 
 - **Art Style**
-Our game will adopt a comic/cartoon style art direction, featuring Moebius Art style. Following are some references of Moebius Art Style.
-
-Following are some other Moebius art style we are looking.
-
-
-<p align="center">
-  <img src="ConceptArt/References/MoebiusGondola.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/ab5ac96353a641a498f1b29ab39edb23.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/Art_of_Moebius_.webp" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/67ca4ff66807549da432473482da0c89.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/1266e1f3-d1b8-42aa-8dc8-603ffd64f44f_rw_1920.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/a14fae1d-2cb3-442b-b892-e08e28c12a6f_rw_1920.jpg" width="200" style="margin:10px;">
-  <img src="ConceptArt/References/8e2699c4-8fc9-4dbc-8a71-9dc807500d22_rw_1920.jpg" width="200" style="margin:10px;">
-</p>
-
-<p align="center">
-  <b>Some other references showing what our game level might look like:</b>
-</p>
-
-<p align="center">
-  <img src="ConceptArt/References/9a30bbf5fb2dbd64c2e59b1e65992d1f.jpg" width="250" style="margin:10px;">
-  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="250" style="margin:10px;">
-</p>
-
-
-
+Our game will adopt a comic/cartoon style art direction, featuring Moebius Art style. To achieve that we adopted: 
+- Flat Color With Normal Detail Shader
+- Sobel Outline Shader 
 
 
 
@@ -696,6 +673,29 @@ Inner World (space): Seven interconnected miniature scenes representing distinct
 - This draft shows how camera will move and shift when players enter from one space to another (from one room to another). There will be a short cutscene to cover the scale shifting animation when using the door to enter another room, allowing a smooth transition.
 
 #### **Art and Audio **
+Following are some references of Moebius Art Style that we were aiming for.
+
+
+<p align="center">
+  <img src="ConceptArt/References/MoebiusGondola.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/ab5ac96353a641a498f1b29ab39edb23.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/Art_of_Moebius_.webp" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/67ca4ff66807549da432473482da0c89.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/1266e1f3-d1b8-42aa-8dc8-603ffd64f44f_rw_1920.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/a14fae1d-2cb3-442b-b892-e08e28c12a6f_rw_1920.jpg" width="200" style="margin:10px;">
+  <img src="ConceptArt/References/8e2699c4-8fc9-4dbc-8a71-9dc807500d22_rw_1920.jpg" width="200" style="margin:10px;">
+</p>
+
+<p align="center">
+  <b>Some other references showing what our game level might look like:</b>
+</p>
+
+<p align="center">
+  <img src="ConceptArt/References/9a30bbf5fb2dbd64c2e59b1e65992d1f.jpg" width="250" style="margin:10px;">
+  <img src="ConceptArt/References/59b4f5523897dc0832d3bc05e2d01b21.jpg" width="250" style="margin:10px;">
+</p>
+
+
 
 #### User Interface (UI) 
 
@@ -704,4 +704,5 @@ Inner World (space): Seven interconnected miniature scenes representing distinct
 #### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
 
