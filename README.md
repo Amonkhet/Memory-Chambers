@@ -280,12 +280,11 @@ Memory Manifestations (interactive/static objects): Objects and memories transfo
 
 - **Art Style**
 Our game adopts a comic/cartoon style art direction, featuring Moebius Art style. To achieve that we adopted: 
-- Flat Color With Normal Detail Shader
-- Sobel Outline Shader 
+- Flat Color With Normal Detail Shader (See more details in Report)
+- Sobel Outline Shader (See more details in Report)
 - Fragment Shader Tint
 
-See more details in Report. 
-
+See pictures in Appendix.
 
 - **Sound and Music**
   Sound and Music will focus on the theme of relaxing and calm. As our protagonist will experienced through their different memories, background music will also shift according to the scene. But the major tone is peaceful, gentle and soothing, implying our theme of healing and recovering yourself.
@@ -707,6 +706,7 @@ Following are some references of Moebius Art Style that we were aiming for.
 #### Team Communication, Timelines and Task Assignment
 
 #### Possible Challenges 
+
 
 
 
