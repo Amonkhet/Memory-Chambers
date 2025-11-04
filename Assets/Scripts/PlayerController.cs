@@ -73,19 +73,6 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", normalizedSpeed);
     }
 
-        // private System.Collections.IEnumerator JumpTo(Vector3 destination)
-        // {
-        //     isJumping = true;
-        //     agent.isStopped = true;
-        
-        //     anim.SetTrigger("Jump"); // trigger jump animation
-        
-        //     yield return new WaitForSeconds(jumpDuration * 0.8f);
-        
-        //     agent.Warp(destination); // teleport or move the character to new position
-        //     agent.isStopped = false;
-        
-        //     isJumping = false;
-        // }
+
             
 }
